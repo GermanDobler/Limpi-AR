@@ -21,10 +21,10 @@ function App() {
 }
 //const App = () => <div>Este es mi componente<Micomponente/></div> tambien se puede mostrar asi
 class Micomponente extends React.Component {
-  state ={
+  /*state ={
     show: true
-  }
-  render(){
+  }*/
+  /*render(){
     if (this.state.show){
       return (
         <div id="hola">
@@ -36,8 +36,7 @@ class Micomponente extends React.Component {
     } else {
       return <h1 class="h1hola">No hay elementos</h1>
     }
-    
-  }
+  }*/
 }
 
 export default App;
