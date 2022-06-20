@@ -1,6 +1,11 @@
 .contenedor_form{
-    border-radius: 8px;
+    border-radius: 5px;
     background-color: #b7c8d3;
-    margin:60px 550px 0;
     padding:20px 60px 20px;
+}
+.fondo{
+    background-color:#b7c8d3;
+}
+.img{
+    padding-left: 50px;
 }

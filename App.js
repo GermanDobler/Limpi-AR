@@ -11,9 +11,13 @@ import LoginForm from './src/UI/components/LoginForm';
 
 //Esto es un props
 //<View style={styles.container}>
+
+
+
 export default function App() {
-  return (<LoginForm style={styles.contenedor_form}/>
-  );
+  return (
+      <LoginForm style={styles.contenedor_form} />
+  )
 }
 
 const styles = StyleSheet.create({
