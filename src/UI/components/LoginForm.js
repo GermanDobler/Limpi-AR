@@ -5,17 +5,22 @@ import { TextInput, Button, Text, View } from "react-native";
 import './styles/LoginForm.css';
 export default function LoginForm() {
     return (
-
         <div className="fondo">
                 <img src={require('./logo.png')} className="img" />
             <div className="contenedor_form">
                 <View>
-                    <TextInput placeholder="Usuario/Email" className="input" />
-                    <br />
-                    <TextInput placeholder="Contraseña" className="input" />
-                    <br />
+                    <label htmlFor="dni">
+                        DNI
+                    </label>
+                    <TextInput placeholder="43.234.234" className="input" id="dni" />
+                        <br />
+                    <label htmlFor="contrasenia">
+                        Contraseña
+                    </label>
+                    <TextInput placeholder="*******" className="input" id="contrasenia" />
+                        <br />
                     <Button title="Aceptar" onPress={() => console.log("Enviar")} />
-                    <br />
+                        <br />
                     <Button title="Cancelar" onPress={() => console.log("Cancelar")} />
                 </View>
             </div>
