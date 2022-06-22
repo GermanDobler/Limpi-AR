@@ -14,20 +14,12 @@ export default function ImageDisplay() {
 
     return (
         <View>
-            <Row>
-                <Col sm="3">
-                    
-                </Col>
-                <Col className="container" sm="4">
+            <div className="ImageDisplay">
+                <Row >
+                <Col className="container" sm="2">
                     <SvgPerfil className="SvgPerfil" />
                 </Col>
-                <Col sm="3">
-                    
-                    </Col>
-            </Row>
-            <div className="ImageDisplay">
-                <Row>
-                    <Col >
+                    <Col sm="8" >
                         <br /> <br />
                         <input className="btn btn-primary" type="file" name="files" onChange={() => subirArchivo(e.target.files)} />
                     </Col>
