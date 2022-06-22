@@ -16,7 +16,7 @@ export default function Sector(props) {
                         {/* Con este props cambia la clase segun el estado (limpio/sucio) */}
                         <Row className={props.estado}>
                             <Col sm="9" className="sector">
-                                pasillo
+                                {props.nombre}
                             </Col>
                             <Col sm="1" className="fecha">
                                 <Flecha></Flecha>
