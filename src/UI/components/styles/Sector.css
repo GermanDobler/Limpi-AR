@@ -1,0 +1,21 @@
+.content{
+    margin: 20px 10px 20px;
+} 
+.sector{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.fecha{
+    padding-left: 60px;
+}
+.limpio{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: green;
+}
+.sucio{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: red;
+}
