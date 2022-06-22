@@ -1,13 +1,14 @@
 import React from 'react';
 import { View } from 'react-native-web';
+import ImageDisplay from './src/UI/components/ImageDisplay';
 //import LoginForm from './src/UI/components/LoginForm';
-import PrincipalScreen from './src/UI/components/PrincipalScreen';
-import Sector from './src/UI/components/Sector';
+
 function App() {
   return (
     <View>
       {/*<LoginForm></LoginForm>*/}
-      <PrincipalScreen></PrincipalScreen>
+      {/*<PrincipalScreen></PrincipalScreen>*/}
+      <ImageDisplay></ImageDisplay>
     </View>
   );
 }
