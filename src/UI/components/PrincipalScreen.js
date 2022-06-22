@@ -8,6 +8,7 @@ import Sector from "./Sector";
 //import Col from 'react-bootstrap/Col'
 export default function PrincipalScreen() {
     return (
+        <div className="fondo">
         <View>
             <Row>
                 <Col md="">
@@ -24,12 +25,13 @@ export default function PrincipalScreen() {
                 <label>Secciones</label>
             </Row>
             {/* props(estado=(sucio/limpio)) */}
-            <Sector estado="sucio"></Sector>
-            <Sector estado="limpio"></Sector>
-            <Sector estado="sucio"></Sector>
-            <Sector estado="limpio"></Sector>
-            <Sector estado="sucio"></Sector>
-            <Sector estado="sucio"></Sector>
+            <Sector estado="sucio" nombre="Pasillo"></Sector>
+            <Sector estado="limpio" nombre="Aula"></Sector>
+            <Sector estado="sucio" nombre="Sum"></Sector>
+            <Sector estado="limpio" nombre="Taller"></Sector>
+            <Sector estado="sucio" nombre="Cocina"></Sector>
+            <Sector estado="sucio" nombre="Patio"></Sector>
         </View>
+        </div>
     );
 }
