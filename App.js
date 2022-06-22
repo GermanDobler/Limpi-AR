@@ -9,8 +9,8 @@ function App() {
   return (
     <View>
       {/*<LoginForm></LoginForm>*/}
-      {/*<PrincipalScreen></PrincipalScreen>*/}
-      <ImageDisplay></ImageDisplay>
+    {/*<PrincipalScreen></PrincipalScreen>*/}
+     <ImageDisplay></ImageDisplay>
     </View>
   );
 }
