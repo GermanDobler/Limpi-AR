@@ -5,8 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SvgPerfil from "./SvgPerfil";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ButtonEditar from "./ButtonEditar";
 
-export default function ImageDisplay() {
+export default function ImageDisplay(props) {
     const [archivos, setArchivos] = useState(null);
     const subirArchivo = e => {
         setArchivos(e);
@@ -14,6 +15,14 @@ export default function ImageDisplay() {
 
     return (
         <View>
+            <Row>
+            <Col sm="5">
+            <ButtonEditar nombre="Editar Sector"/>
+            </Col>
+            <Col>
+            <ButtonEditar nombre="Editar Datos" />    
+                </Col>
+            </Row>
             <div className="ImageDisplay">
                 <Row >
                 <Col className="container" sm="2">

@@ -12,3 +12,7 @@
 .container{
 background-color: green;
 }
+.editar_boton{
+    border-radius: 10px;
+    background-color: violet;
+}
