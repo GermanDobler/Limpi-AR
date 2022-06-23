@@ -5,20 +5,22 @@ import './styles/PrincipalScreen.css'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Sector from "./Sector";
+import SvgFlechaizq from "./SvgFlechaizq";
+import SvgPerfil from "./SvgPerfil"
 //import Col from 'react-bootstrap/Col'
-export default function PrincipalScreen() {
+export default function PrincipalScreen(props) {
     return (
         <div className="fondo">
         <View>
             <Row>
-                <Col md="">
-                    hola
+                <Col md="3">
+                    <SvgFlechaizq />
                 </Col>
-                <Col md="">
-                    Bienvenido Usuario
+                <Col md="4">
+                    Bienvenido {props.nombre} 
                 </Col>
-                <Col md="">
-                    juancarlos
+                <Col md="5">
+                    <SvgPerfil></SvgPerfil>
                 </Col>
             </Row>
             <Row className="seccion">
@@ -31,6 +33,9 @@ export default function PrincipalScreen() {
             <Sector estado="limpio" nombre="Taller"></Sector>
             <Sector estado="sucio" nombre="Cocina"></Sector>
             <Sector estado="sucio" nombre="Patio"></Sector>
+            <Sector estado="limpio" nombre="Aula"></Sector>
+            <Sector estado="limpio" nombre="Aula"></Sector>
+
         </View>
         </div>
     );
