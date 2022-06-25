@@ -19,3 +19,11 @@ background-color: green;
 .fondo{
     background-color: #b7c8d3;
 }
+.botonDropdown{
+    background-color: orange !important; 
+ border-color: #C16A00  !important ;
+ border-width: 3px !important;
+}
+.centrar{
+    text-align: center !important;
+}
