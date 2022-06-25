@@ -16,3 +16,7 @@ background-color: green;
     border-radius: 10px;
     background-color: violet;
 }
+.background{
+    background-color: grey;
+    margin: auto;
+}

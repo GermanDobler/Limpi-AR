@@ -19,7 +19,7 @@ export default function SectorDisplay(props) {
   
         <Dropdown isOpen={dropdown} toggle={abrirCerrarDropdown} size="lg">
             <DropdownToggle caret >
-                Sector 1
+            {props.nombre_Sector}
             </DropdownToggle >
             <DropdownMenu>
                 <DropdownItem onClick={()=>accionPrueba()}>Pasillo 1er Piso</DropdownItem>
