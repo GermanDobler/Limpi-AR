@@ -1,11 +1,41 @@
 .seccion {
+
+    font-size: 20px;
+
+    color: #000;
+
+    font-weight: bold;
+
+    text-align: center;
+
     display: 'block';
-    margin: 5px;
-    padding: 5px;
-    width: 100px;
-    border-radius: 5px;
-    background-color: orange
+
+    margin: 10px 0 40px 30px;
+
+    padding: 5px 45px 5px 10px;
+
+    width: 180px;
+
+    border-radius: 20px;
+
+    border: #E4972B 4px solid;
+
+    background-color: #FFA629;
 }
 .fondo{
+
     background-color: #b7c8d3;
+
+}
+.header{
+
+    text-align: center;
+    
+    margin-top: 10px;
+
+}
+.container-sector{
+
+    margin-bottom: 25px;
+    
 }
