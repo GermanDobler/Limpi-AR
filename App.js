@@ -5,7 +5,10 @@ import PrincipalScreen from './src/UI/components/PrincipalScreen';
 import Sector from './src/UI/components/Sector';
 import SectorDisplay from './src/UI/components/SectorDisplay'
 import AsignarSector from './src/UI/components/AsignarSector';
-//import LoginForm from './src/UI/components/LoginForm';
+import Cancel from './src/UI/components/Cancel';
+import Guardar from './src/UI/components/Guardar';
+import LoginForm from './src/UI/components/LoginForm';
+import PersonalInfo from './src/UI/components/PersonalInfo';
 
 function App() {
   return (
@@ -13,8 +16,11 @@ function App() {
       {/*<LoginForm></LoginForm>*/}
       {/*<PrincipalScreen></PrincipalScreen>*/}
       {/*<SectorDisplay></SectorDisplay>*/}
-      <ImageDisplay></ImageDisplay>
+      {/*<ImageDisplay></ImageDisplay>*/}
       {/*<AsignarSector></AsignarSector>*/}
+      {/* <Cancel></Cancel> */}
+      {/* <Guardar></Guardar>  */}
+       <PersonalInfo></PersonalInfo> 
     </View>
   );
 }
