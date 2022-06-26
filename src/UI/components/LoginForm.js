@@ -1,30 +1,34 @@
 //Siempre deben de importar la estructura de react
-import react from "react";
+import react, { Fragment } from "react";
+import { Col, Row } from "react-bootstrap";
 //Este import genera la transición a los react
 import { TextInput, Button, View } from "react-native";
 import './styles/LoginForm.css';
 export default function LoginForm() {
     return (
-        <div className="fondo">
+        <Fragment>
+            <div className="fondo">
                 <img src={require('./logo.png')} className="img" />
-            <div className="contenedor_form">
-                <View>
-                    <label htmlFor="dni">
-                        DNI
-                    </label>
-                    <TextInput placeholder="43.234.234" className="input" id="dni" />
-                        <br />
-                    <label htmlFor="contrasenia">
-                        Contraseña
-                    </label>
-                    <TextInput placeholder="*******" className="input" id="contrasenia" />
-                        <br />
-                    <Button title="Aceptar" onPress={() => console.log("Enviar")} />
-                        <br />
-                    <Button title="Cancelar" onPress={() => console.log("Cancelar")} />
-                </View>
+                <Row className="contenedor">
+                    <Row >
+                        <label htmlFor="dni">DNI</label>
+                        <TextInput placeholder="43.234.234" className="input" id="dni" />
+                    </Row>
+                    <Row >
+                        <label htmlFor="contrasenia">Contraseña</label>
+                        <TextInput placeholder="*******" className="input" id="contrasenia" />
+                    </Row>
+                    <Row>
+                        <Col>
+                            {/* <Cancel></Cancel> */}
+                        </Col>
+                        <Col>
+                            {/* <Guardar registrar="Registar Usuario"></Guardar> */}
+                        </Col>
+                    </Row>
+                </Row>
             </div>
-        </div>
+        </Fragment>
     )
 }
 

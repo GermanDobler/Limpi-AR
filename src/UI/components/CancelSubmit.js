@@ -6,19 +6,19 @@ import { Button } from "@material-ui/core";
 import SvgGuardar from "./SvgGuardar";
 import SvgCancel from "./SvgCancel";
 
-function CancelSubmit() {
+function CancelSubmit(props) {
   return (
     <Fragment>
       <Row className="row">
         <Col className="col_cancel" sm="6">
           <Button className="btn_cancel" variant="contained">
-            <span>Cerrar Sesion</span>
+            <span>{props.cancelar}</span>
             <SvgCancel></SvgCancel>
           </Button>
         </Col>
         <Col className="col_guardar" sm="6">
           <Button className="btn_save" variant="contained">
-            <span>Guarda Cambios</span>
+            <span>{props.guardar}</span>
             <SvgGuardar></SvgGuardar>
           </Button>
         </Col>

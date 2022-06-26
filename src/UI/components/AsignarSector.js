@@ -8,9 +8,7 @@ import { Row, Col } from 'react-bootstrap'
 
 export default function AsignarSector(props) {
     return (
-
         <div className="fondo">
-            
             <View>
             <SvgFlechaizq></SvgFlechaizq>
                 <Row>

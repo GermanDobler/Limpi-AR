@@ -3,8 +3,6 @@ import { View} from "react-native-web";
 import './styles/ImageDisplay.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 export default function ButtonEditar(props) {
 
     return (
