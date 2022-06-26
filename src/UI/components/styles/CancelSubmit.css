@@ -10,11 +10,14 @@
 
 }
 .col_cancel{
+  font-weight: bold;
     padding-left: 150px;
 }
 .col_guardar{
+  font-weight: bold;
     padding-left: 50px;
 }
-.row{
+.container_rows{
+  font-weight: bold;
     margin-top: 20px;
 }
