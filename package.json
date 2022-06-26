@@ -9,7 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo/webpack-config": "~0.16.24",
+    "@expo/webpack-config": "^0.16.19",
+    "@material-ui/core": "^4.12.4",
     "@react-native-community/cli": "^8.0.2",
     "@react-native-community/cli-server-api": "^8.0.0",
     "@react-native-community/cli-tools": "^8.0.0",
@@ -23,7 +24,7 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "18.2.0",
-    "react-native": "^0.69.0",
+    "react-native": "^0.60.6",
     "react-native-web": "0.18.1",
     "reactstrap": "^9.1.1",
     "svgo": "^2.8.0",

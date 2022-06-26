@@ -13,8 +13,8 @@ function App() {
       {/*<LoginForm></LoginForm>*/}
       {/*<PrincipalScreen></PrincipalScreen>*/}
       {/*<SectorDisplay></SectorDisplay>*/}
-      {/* <ImageDisplay></ImageDisplay> */}
-      <AsignarSector></AsignarSector>
+      <ImageDisplay></ImageDisplay>
+      {/*<AsignarSector></AsignarSector>*/}
     </View>
   );
 }

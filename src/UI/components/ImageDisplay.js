@@ -14,34 +14,37 @@ export default function ImageDisplay(props) {
     }
 
     return (
+
         <View>
-            <Row>
-            <Col sm="5">
-            <ButtonEditar nombre="Editar Sector"/>
-            </Col>
-            <Col>
-            <ButtonEditar nombre="Editar Datos" />    
-                </Col>
-            </Row>
+            <div className="fondo">
             <div className="ImageDisplay">
-                <Row >
-                <Col className="container" sm="2">
-                    <SvgPerfil className="SvgPerfil" />
-                </Col>
-                    <Col sm="8" >
-                        <br /> <br />
-                        <input className="btn btn-primary" type="file" name="files" onChange={() => subirArchivo(e.target.files)} />
+                <Row className="top">
+                    <Col sm="3">
+                        <Col className="container" sm="2">
+                            <SvgPerfil className="SvgPerfil"/>
+                        </Col> 
+                    </Col>
+                    <Col sm="9">
+                        <Row>
+                        <Col sm="5" className="col">
+                            <input className="btn btn-primary cargar" type="file" name="files" onChange={() => subirArchivo(e.target.files)} />
+                        </Col>
+                        </Row>
+                        <Row>
+                        <Col sm="5" className="col">
+                            <Button className="cargar" title="Cargar Imagen" onPress={() => console.log("Enviar")} />
+                        </Col>
+                        </Row>
+                        <Row>
+                        <Col sm="5"  className="col">
+                            <Button className="borrar" title="Borrar Imagen" onPress={() => console.log("Enviar")} />
+                        </Col>
+                        </Row>
                     </Col>
                 </Row>
-                <Row >
-                    <Col sm="5">
-                        <Button className="cargar" title="Cargar Imagen" onPress={() => console.log("Enviar")} />
-                    </Col>
-                    <Col sm="5">
-                        <Button title="Borrar Imagen" onPress={() => console.log("Enviar")} />
-                    </Col>
-                </Row>
+                </div>
             </div>
         </View >
+
     );
 }
