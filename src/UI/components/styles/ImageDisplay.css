@@ -34,3 +34,7 @@ border-color: #CA340C !important;
 .top{
     margin-top: 7px !important;
 }
+.btn-primary:hover{
+    background-color: #952ADF !important ;
+    border-color: #952ADF !important;
+}
