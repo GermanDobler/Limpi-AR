@@ -7,7 +7,6 @@ import Col from 'react-bootstrap/Col';
 import Sector from "./Sector";
 import SvgFlechaizq from "./SvgFlechaizq";
 import SvgPerfil from "./SvgPerfil"
-import CancelSubmit from "./CancelSubmit";
 //import Col from 'react-bootstrap/Col'
 export default function PrincipalScreen(props) {
     return (

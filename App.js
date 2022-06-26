@@ -1,6 +1,5 @@
 import React from 'react';
 import { View } from 'react-native-web';
-import CancelSubmit from './src/UI/components/CancelSubmit';
 import ImageDisplay from './src/UI/components/ImageDisplay';
 import PrincipalScreen from './src/UI/components/PrincipalScreen';
 import Sector from './src/UI/components/Sector';
@@ -21,7 +20,7 @@ function App() {
       {/*<AsignarSector></AsignarSector>*/}
       {/* <Cancel></Cancel> */}
       {/* <Guardar></Guardar>  */}
-       <PersonalInfo></PersonalInfo> 
+       {/* <PersonalInfo></PersonalInfo>  */}
     </View>
   );
 }
