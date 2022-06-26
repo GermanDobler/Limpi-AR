@@ -16,9 +16,9 @@ export default function SectorDisplay(props) {
     }
     
     return (
-  
+        <div >
         <Dropdown isOpen={dropdown} toggle={abrirCerrarDropdown} size="lg">
-            <DropdownToggle caret >
+            <DropdownToggle caret  className="botonDropdown">
             {props.nombre_Sector}
             </DropdownToggle >
             <DropdownMenu>
@@ -28,5 +28,6 @@ export default function SectorDisplay(props) {
                 <DropdownItem>Baños planta baja</DropdownItem>
             </DropdownMenu>
         </Dropdown>
+        </div>
     )
 }

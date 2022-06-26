@@ -1,22 +1,40 @@
 .ImageDisplay {
     margin: auto;
 }
-
-.cargar {
-    color: pink;
-    position: absolute;
+.borrar{
+border-color: #CA340C !important;
 }
-.SvgPerfil{
-        background-color: grey;
-}
-.container{
-background-color: green;
+.cargar{
+    background-color:#A95AE0 !important ;
+    border-color: #952ADF !important;
 }
 .editar_boton{
     border-radius: 10px;
     background-color: violet;
 }
-.background{
-    background-color: grey;
-    margin: auto;
+.fondo{
+    background-color: #b7c8d3;
+}
+.botonDropdown{
+    background-color: orange !important; 
+ border-color: #C16A00  !important ;
+ border-width: 3px !important;
+}
+.centrar{
+    text-align: center !important;
+}
+.SvgPerfil{
+    text-align: left;
+    border: black 2px solid;
+   
+}
+.col{
+    margin-bottom: 5px !important;
+}
+.top{
+    margin-top: 7px !important;
+}
+.btn-primary:hover{
+    background-color: #952ADF !important ;
+    border-color: #952ADF !important;
 }
