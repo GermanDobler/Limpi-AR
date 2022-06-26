@@ -4,8 +4,8 @@ function SvgPerfil(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="50pt"
-      height="50pt"
+      width="100pt"
+      height="100pt"
       viewBox="0 0 1280.000000 1248.000000"
       {...props}
     >
