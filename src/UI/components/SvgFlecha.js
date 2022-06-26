@@ -5,7 +5,7 @@ function Flecha(props) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="40pt"
-      height="35pt"
+      height="45pt"
       viewBox="0 0 1280.000000 1280.000000"
       {...props}
     >
