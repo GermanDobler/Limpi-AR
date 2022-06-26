@@ -44,6 +44,7 @@ export default function PrincipalScreen(props) {
                     <Row className="container-sector">
                     <Sector estado="sucio" nombre="Aula" ></Sector>
                     </Row>
+                    <CancelSubmit></CancelSubmit>
             </div>
         </Fragment>
     );

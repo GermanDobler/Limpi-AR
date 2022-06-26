@@ -23,9 +23,15 @@
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "react": "17.0.2",
     "react-bootstrap": "^2.4.0",
+<<<<<<< HEAD
+    "react-dom": "18.2.0",
+    "react-native": "^0.69.0",
+    "react-native-web": "0.18.1",
+=======
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
     "react-native-web": "0.17.7",
+>>>>>>> 7658f93d1d51177e42ebcba946afe39e4615de09
     "reactstrap": "^9.1.1",
     "svgo": "^2.8.0",
     "uuid": "^8.3.2"

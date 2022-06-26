@@ -14,7 +14,7 @@ function App() {
   return (
     <View>
       {/*<LoginForm></LoginForm>*/}
-      {/*<PrincipalScreen></PrincipalScreen>*/}
+      <PrincipalScreen></PrincipalScreen>
       {/*<SectorDisplay></SectorDisplay>*/}
       {/*<ImageDisplay></ImageDisplay>*/}
       {/*<AsignarSector></AsignarSector>*/}
