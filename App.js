@@ -13,11 +13,11 @@ import PersonalInfo from './src/UI/components/PersonalInfo';
 function App() {
   return (
     <View>
-      <LoginForm></LoginForm>
+      {/*<LoginForm></LoginForm>*/}
       {/* <PrincipalScreen></PrincipalScreen> */}
       {/*<SectorDisplay></SectorDisplay>*/}
       {/*<ImageDisplay></ImageDisplay>*/}
-      {/*<AsignarSector></AsignarSector>*/}
+      <AsignarSector></AsignarSector>
       {/* <Cancel></Cancel> */}
       {/* <Guardar></Guardar>  */}
        {/* <PersonalInfo></PersonalInfo>  */}

@@ -22,10 +22,10 @@ export default function SectorDisplay(props) {
             {props.nombre_Sector}
             </DropdownToggle >
             <DropdownMenu>
-                <DropdownItem onClick={()=>accionPrueba()}>Pasillo 1er Piso</DropdownItem>
-                <DropdownItem>Pasillo Taller</DropdownItem>
-                <DropdownItem>Aula 2</DropdownItem>
-                <DropdownItem>Baños planta baja</DropdownItem>
+                <DropdownItem onClick={()=>accionPrueba()}>{props.nombre_lugar}</DropdownItem>
+                <DropdownItem>{props.nombre_lugar}</DropdownItem>
+                <DropdownItem>{props.nombre_lugar}</DropdownItem>
+                <DropdownItem>{props.nombre_lugar}</DropdownItem>
             </DropdownMenu>
         </Dropdown>
         </div>
