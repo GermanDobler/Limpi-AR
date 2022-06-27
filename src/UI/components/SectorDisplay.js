@@ -11,9 +11,13 @@ export default function SectorDisplay(props) {
         const abrirCerrarDropdown=()=>{
          setDropdown(!dropdown);
     }
-    const accionPrueba=(props)=>{
-     
-    }
+    const sectores = [
+        { id:1,  nombre_lugar: 'Pasillo Taller',},
+        { id:2, nombre_lugar: 'Baños Taller'},
+        { id:3,  nombre_lugar: 'Aula 1'},
+        { id:4,  nombre_lugar: 'Au'},
+        { id:5, nombre_lugar: 'limpio'},
+    ];
     
     return (
         <div >
@@ -22,10 +26,9 @@ export default function SectorDisplay(props) {
             {props.nombre_Sector}
             </DropdownToggle >
             <DropdownMenu>
-                <DropdownItem onClick={()=>accionPrueba()}>{props.nombre_lugar}</DropdownItem>
-                <DropdownItem>{props.nombre_lugar}</DropdownItem>
-                <DropdownItem>{props.nombre_lugar}</DropdownItem>
-                <DropdownItem>{props.nombre_lugar}</DropdownItem>
+            {sectores.map(sector =>(
+                        <DropdownItem key={sector.id} nombre_lugar={sector.nombre_lugar}>{sector.nombre_lugar}</DropdownItem>
+                    )) }
             </DropdownMenu>
         </Dropdown>
         </div>

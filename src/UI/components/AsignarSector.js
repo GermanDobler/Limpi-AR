@@ -23,7 +23,7 @@ export default function AsignarSector(props) {
                             <Col sm="5">
                             </Col>
                             <Col sm="5">
-                                <SectorDisplay nombre_Sector="Sector 1 " sm="5" nombre_lugar="Pasillo" />
+                                <SectorDisplay nombre_Sector="Sector 1 " sm="5" nombre_lugar="" />
                                 <br />
                             </Col>
                         </Row>
@@ -31,7 +31,7 @@ export default function AsignarSector(props) {
                             <Col sm="5">
                             </Col>
                             <Col sm="5" >
-                            <SectorDisplay nombre_Sector="Sector 2 " nombre_lugar="Pasillo" />
+                            <SectorDisplay nombre_Sector="Sector 2 " nombre_lugar=""  />
                             <br />
                             </Col>
                         </Row>
@@ -39,7 +39,7 @@ export default function AsignarSector(props) {
                             <Col sm="5">
                             </Col>
                             <Col sm="5" >
-                            <SectorDisplay nombre_Sector="Sector 3 " nombre_lugar="Pasillo"  />
+                            <SectorDisplay nombre_Sector="Sector 3 " nombre_lugar=""  />
                             <br />
                             </Col>
                         </Row>
@@ -47,7 +47,7 @@ export default function AsignarSector(props) {
                             <Col sm="5">
                             </Col>
                             <Col sm="5" >
-                            <SectorDisplay nombre_Sector="Sector 4 " nombre_lugar="Pasillo" />
+                            <SectorDisplay nombre_Sector="Sector 4 " nombre_lugar="" />
                             <br />
                             </Col>
                         </Row>
@@ -55,7 +55,7 @@ export default function AsignarSector(props) {
                             <Col sm="5">
                             </Col>
                             <Col sm="5" >
-                            <SectorDisplay nombre_Sector="Sector 5 (Opcional) "  nombre_lugar="Pasillo"/>
+                            <SectorDisplay nombre_Sector="Sector 5 (Opcional) "  nombre_lugar=""/>
                             <br />
                             </Col>
                         </Row>
