@@ -1,34 +1,9 @@
-.contenedor-row{
-    margin-top: 10px;
-    border-radius: 5px;
-    background-color: #b7c8d3;
-    padding:20px 60px 20px;
+.box{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
-.contenedor{
-    margin-bottom: 20px;
-    background-color: orange;
-    border-radius: 30px;
-    padding: 10px;
-}
+    
 
-.input{
- color:black;
- text-align: center;
 
- font-size: 40px;
-
- font-weight: bold;
-}
-
-.fondo{
-    background-color:#b7c8d3;
-}
-
-.img{
-    padding-left: 50px;
-}
-.perfil{
-    width: 150px;
-    height: 140px;
-
-    }
