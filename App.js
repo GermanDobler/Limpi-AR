@@ -19,10 +19,10 @@ function App() {
       {/*<SectorDisplay></SectorDisplay>*/}
       {/*<ImageDisplay></ImageDisplay>*/}
       {/*<AsignarSector></AsignarSector>*/}
-      <AsignarPortero></AsignarPortero>
+      {/* <AsignarPortero></AsignarPortero> */}
       {/* <Cancel></Cancel> */}
       {/* <Guardar></Guardar>  */}
-       {/* <PersonalInfo></PersonalInfo>  */}
+       <PersonalInfo></PersonalInfo> 
     </View>
   );
 }
