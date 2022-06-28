@@ -1,33 +1,47 @@
 import { StyleSheet, Button, View } from 'react-native'
-import React, { Fragment } from 'react'
-import { Row, Col } from 'react-bootstrap'
+import React, { Fragment, useState } from 'react'
+import { Row, Col, Accordion } from 'react-bootstrap'
 import './styles/Sector.css'
 import Flecha from './SvgFlecha'
 import { render } from 'react-dom'
+import Guardar from './Guardar'
 
 export default function Sector(props) {
-    return (
-        <Fragment>
-            <div className="content">
-                <Row>
-                    <Col sm="2">
-                        imagen
-                    </Col>
-                    <Col sm="9">
-                        {/* Con este props cambia la clase segun el estado (limpio/sucio) */}
-                        <Row className={props.estado}>
-                            <Col sm="8" className="sector">
+
+        return (
+            <Fragment>
+                <div className="content">
+                    <Accordion defaultActiveKey={0} >
+                        <Accordion.Item eventKey='0' className={props.estado}>
+                            <Accordion.Header>
+                            <Row className="sector">
                                 {props.nombre}
-                            </Col>
-                            <Col sm="1">
-                            </Col>
-                            <Col sm="3" className="fecha">
-                                <Flecha></Flecha>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-            </div>
-        </Fragment>
-    )
-}
+                            </Row>
+                            </Accordion.Header>
+                            <Accordion.Body>
+                                <Row>
+                                    <Col>
+                                    </Col>
+                                    <Col>
+                                    </Col>
+                                    <Col>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                    </Col>
+                                    <Col>
+                                    </Col>
+                                    <Col>
+                                    
+                                    <Guardar guardar="Cambiar estado"></Guardar>
+                                    </Col>
+                                </Row>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                </div>
+            </Fragment>
+        )
+    }
+
