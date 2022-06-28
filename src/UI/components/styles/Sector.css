@@ -25,7 +25,7 @@
 
     border-radius: 30px;
 
-    background-color: #14AE5C;
+    background-color: #14AE5C !important;
 
 }
 .sucio{
@@ -34,6 +34,8 @@
 
     border-radius: 30px;
 
-    background-color: #F24822;
+    background-color: #F24822 !important; 
+
 }
+
 
