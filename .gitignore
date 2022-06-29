@@ -55,9 +55,9 @@ web-build/
 dist/
 
 #archivos json
-/package.json
-/package-lock.json
-/yarn.lock
-/App.js
 
 .gitignore
+package-lock.json
+package.json
+yarn.lock
+App.js

@@ -43,13 +43,12 @@ export default function SignIn() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box className='box'>
-        <img src={require('./logo.png')} className="img" />
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            {/* <LockOutlinedIcon /> */}
+          <Avatar sx={{mt: 2,mb:2,bgcolor: 'success.main' }}>
           </Avatar>
           <Typography component="h1" variant="h5">
             Inicio de Sesión
           </Typography>
+          <img src={require('./logo.png')} className="img" height={400} width={400}/>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
@@ -79,7 +78,7 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 2, mb: 2 }}
             >
               Iniciar Sesión
             </Button>
@@ -97,7 +96,7 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }}></Copyright>
+        <Copyright sx={{ mt: 7, mb: 4 }}></Copyright>
       </Container>
     </ThemeProvider>
   );
