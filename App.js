@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native-web';
 import ImageDisplay from './src/UI/components/ImageDisplay';
-import PrincipalScreen from './src/UI/components/PrincipalScreen';
+import PrincipalScreen from './src/UI/screens/PrincipalScreen';
 import Sector from './src/UI/components/Sector';
 import SectorDisplay from './src/UI/components/SectorDisplay';
 import AsignarSector from './src/UI/components/AsignarSector';

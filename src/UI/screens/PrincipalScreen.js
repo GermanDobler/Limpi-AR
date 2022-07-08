@@ -1,8 +1,8 @@
 import react, { Fragment } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import './styles/PrincipalScreen.css'
-import NavBar from './NavBar';
-import Sector from "./Sector";
+import '../components/styles/PrincipalScreen.css'
+import NavBar from '../components/NavBar';
+import Sector from "../components/Sector";
 import { Container } from "react-bootstrap";
 //import Col from 'react-bootstrap/Col'
 export default function PrincipalScreen(props) {
