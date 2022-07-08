@@ -64,7 +64,7 @@ export default function SimpleAccordion(props) {
                                     </Modal>
                                 </Grid>
                                 <Grid xs={9}>
-                                    Ultima Limpieza: --/--/----
+                                    Ultima Limpieza: {props.fecha}
                                 </Grid>
                                 <Grid xs={9}>
                                 </Grid>

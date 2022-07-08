@@ -14,8 +14,8 @@ import AsignarPortero from './src/UI/components/AsignarPortero';
 function App() {
   return (
     <View>
-      <LoginForm></LoginForm>
-      {/* <PrincipalScreen></PrincipalScreen> */}
+      {/* <LoginForm></LoginForm> */}
+      <PrincipalScreen></PrincipalScreen>
       {/*<SectorDisplay></SectorDisplay>*/}
       {/* <ImageDisplay></ImageDisplay> */}
       {/*<AsignarSector></AsignarSector>*/}
