@@ -1,0 +1,32 @@
+
+.sector_nombre{
+
+    font-weight: bold !important;
+
+    font-size: 20px !important;
+
+}
+.limpio{
+
+    border: #0c8343 1px solid !important;
+
+    border-radius: 10px !important;
+
+    background-color: #26aa2d !important;
+
+}
+.sucio{
+
+    border: #df8b0e 1px solid !important;
+
+    border-radius: 10px !important;
+
+    background-color: #fb8c00 !important; 
+
+}
+.css-7e0s21-MuiPaper-root-MuiAppBar-root{
+    background-color: #205723 !important;
+}
+.css-t5cnmm-MuiPaper-root-MuiAccordion-root:last-of-type{
+    border-radius: 10px !important;
+}

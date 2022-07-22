@@ -53,3 +53,11 @@ buck-out/
 .expo/
 web-build/
 dist/
+
+#archivos json
+
+.gitignore
+package-lock.json
+package.json
+yarn.lock
+App.js
