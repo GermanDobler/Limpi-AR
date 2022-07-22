@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 
 export default function SectorDisplay(props) {
-    let nombre ="Ejemplo"
+    let nombre ="Ejemploprueba"
  
         const  [dropdown, setDropdown]=useState(false);
         const abrirCerrarDropdown=()=>{
