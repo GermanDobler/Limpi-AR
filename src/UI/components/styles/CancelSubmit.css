@@ -1,0 +1,23 @@
+.btn_save {
+  background-color: #0003ff !important;
+  font-weight: bold;
+  font-size: 10px;
+}
+.btn_cancel {
+  background-color: #ff0000 !important;
+  font-size: 10px;
+  font-weight: bold;
+
+}
+.col_cancel{
+  font-weight: bold;
+    padding-left: 150px;
+}
+.col_guardar{
+  font-weight: bold;
+    padding-left: 50px;
+}
+.container_rows{
+  font-weight: bold;
+    margin-top: 20px;
+}

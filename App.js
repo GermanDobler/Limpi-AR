@@ -1,31 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Saludar from './src/UI/components/Saludar';
+import { View } from 'react-native-web';
+import ImageDisplay from './src/UI/components/ImageDisplay';
+import PrincipalScreen from './src/UI/screens/PrincipalScreen';
+import Sector from './src/UI/components/Sector';
+import SectorDisplay from './src/UI/components/SectorDisplay';
+import AsignarSector from './src/UI/components/AsignarSector';
+import Cancel from './src/UI/components/Cancel';
+import Guardar from './src/UI/components/Guardar';
+import LoginForm from './src/UI/components/LoginForm';
+import PersonalInfo from './src/UI/components/PersonalInfo';
+import AsignarPortero from './src/UI/components/AsignarPortero';
 
-//Acá conecto mis pantallas
-
-//El saludar es estático ahora
-//      <Saludar/>
-//      <Saludar/>
-//      <Saludar/>
-
-//Esto es un props
-//<View style={styles.container}>
-export default function App() {
+function App() {
   return (
-    <View style={styles.container}>
-      
-      <Saludar name="Exequiel Wiedermann"/>
-
+    <View>
+      {/* <LoginForm></LoginForm> */}
+      <PrincipalScreen></PrincipalScreen>
+      {/*<SectorDisplay></SectorDisplay>*/}
+      {/* <ImageDisplay></ImageDisplay> */}
+      {/*<AsignarSector></AsignarSector>*/}
+      {/* <AsignarPortero></AsignarPortero> */}
+      {/* <Cancel></Cancel> */}
+      {/* <Guardar></Guardar>  */}
+       {/* <PersonalInfo></PersonalInfo>  */}
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default App;
