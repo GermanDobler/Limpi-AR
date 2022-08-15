@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Limpi-ar",
+    "slug": "primerProyecto",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
