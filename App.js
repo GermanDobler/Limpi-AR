@@ -1,9 +1,9 @@
 import React from 'react';
-import Home from './src/screens/Home'
-
-
+import MainStack from './navigation/MainStack'
 export default function App() {
   return (
-    <Home/>
+    <div>
+      <MainStack/>
+    </div>
   );
 }
