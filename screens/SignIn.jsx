@@ -60,7 +60,7 @@ export default function InicioSesion({ navigation }) {
             <Typography component="h1" variant="h5" >
               Inicio de Sesión
             </Typography>
-            <img src={require('../src/LOGO.png')} className="img" height={350} width={300} />
+            <img src={require('../src/UI/components/img/LOGO.png')} height={350} width={300} />
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
