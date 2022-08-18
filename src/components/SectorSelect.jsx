@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 
-export default function SectorSelect() {
+export default function SectorSelect(props) {
   const [sector, setSector] = React.useState('');
 
   const handleChange = (event) => {
@@ -16,12 +16,12 @@ export default function SectorSelect() {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Sector</InputLabel>
+        <InputLabel id="demo-simple-select-label">{props.nombre_sector}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={sector}
-          label="Sector"
+          label={props.nombre_sector}
           onChange={handleChange}
         >
           <MenuItem value={1}>Baño Ciclo Superior</MenuItem>
