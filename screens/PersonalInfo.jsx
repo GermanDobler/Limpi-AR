@@ -10,7 +10,28 @@ export default function PersonalInfo() {
       class="PersonalInfo"
       style={{ alignItems: "center", justifyContent: "center" }}
     >
-      <ArrowBackIcon onpress></ArrowBackIcon>
+      <ArrowBackIcon></ArrowBackIcon>
+        <h2>DATOS PERSONALES</h2>
+        <div>
+        <label>
+          Nombre:<input type="Nombre"></input>
+        </label>
+      </div>
+      <div>
+        <label>
+          Apellido:<input type="Apellido"></input>
+        </label>
+      </div>
+      <div>
+        <label>
+          Dni:<input type="DNI"></input>
+        </label>
+      </div>
+      <div>
+        <label>
+          Contraseña:<input type="password"></input>
+        </label>
+      </div>
       <Box sx={{ "& > :not(style)": { m: 80 } }}>
         <Fab size="small" color="primary" aria-label="add" variant="extended">
           <AddIcon sx={{ mr: 1 }} className="boton guardar" />
