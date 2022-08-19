@@ -12,5 +12,7 @@ export default function ScreenSector({ navigation, props }) {
 <SectorSelect nombre_sector="Sector 4"></SectorSelect>
 <SectorSelect nombre_sector="Sector 5 (Opcional)"></SectorSelect>
     </View>
+    
   );
 }
+
