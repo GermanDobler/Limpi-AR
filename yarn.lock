@@ -2163,7 +2163,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-transition-group@^4.4.4", "@types/react-transition-group@^4.4.5":
+"@types/react-transition-group@^4.4.1", "@types/react-transition-group@^4.4.4", "@types/react-transition-group@^4.4.5":
   "integrity" "sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA=="
   "resolved" "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.5.tgz"
   "version" "4.4.5"
@@ -8617,6 +8617,19 @@
     "ansi-styles" "^4.0.0"
     "react-is" "^17.0.1"
 
+"primeicons@^5.0.0":
+  "integrity" "sha512-heygWF0X5HFI1otlZE62pp6ye7sZ8om78J9au2BRkg8O7Y8AHTZ9qKMRzchZUHLe8zUAvdi6hZzzm9XxgwIExw=="
+  "resolved" "https://registry.npmjs.org/primeicons/-/primeicons-5.0.0.tgz"
+  "version" "5.0.0"
+
+"primereact@^8.3.0":
+  "integrity" "sha512-Y/8hlTnKsmgbTLlw6LWwMoA78rDMdA2PUcrJqm7wHgBUVxSPQ8l4f3JkbpVKVqESb5nuay9l+0BE4dx1zSBTAg=="
+  "resolved" "https://registry.npmjs.org/primereact/-/primereact-8.3.0.tgz"
+  "version" "8.3.0"
+  dependencies:
+    "@types/react-transition-group" "^4.4.1"
+    "react-transition-group" "^4.4.1"
+
 "process-nextick-args@~2.0.0":
   "integrity" "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag=="
   "resolved" "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz"
@@ -9086,7 +9099,7 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.12.0 || ^17.0.0 || ^18.0.0"
 
-"react-transition-group@^4.4.2", "react-transition-group@^4.4.5":
+"react-transition-group@^4.4.1", "react-transition-group@^4.4.2", "react-transition-group@^4.4.5":
   "integrity" "sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g=="
   "resolved" "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
   "version" "4.4.5"
