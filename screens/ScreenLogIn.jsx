@@ -1,15 +1,3 @@
-// import * as React from 'react';
-// import { Button, View, Text } from 'react-native';
-// export default function HomeScreen({ navigation }) {
-//   return (
-//     <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-//       <Button
-//         title="Go to ASDFASDE"
-//         onPress={() => navigation.navigate('Home')}
-//       />
-//     </View>
-//   );
-// }
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -91,7 +79,7 @@ export default function InicioSesion({ navigation }) {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 4, mb: 2 }}
-                onClick={() => navigation.navigate('Home')}
+                onClick={() => navigation.navigate('ScreenHome')}
               >
                 Iniciar Sesión
               </Button>

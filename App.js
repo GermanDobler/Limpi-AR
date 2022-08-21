@@ -4,14 +4,14 @@ import SectorSelect from './src/components/SectorSelect';
 import ScreenSector from './screens/ScreenSector';
 import SelectorDatosPersonales from './src/components/SelectorDatosPersonales';
 import ScreenSecretaria from './screens/ScreenSecretaria';
-import PersonalInfo from './screens/PersonalInfo';
+import ScreenLogIn from './screens/ScreenLogIn'
 export default function App() {
   return (
     <div>
-      {/* <MainStack/> */}
+      <MainStack/>
       {/* <ScreenSector/> */}
-      <ScreenSecretaria/>
-    {/* <PersonalInfo></PersonalInfo> */}
+      {/* <ScreenSecretaria/> */}
+      {/* <ScreenLogIn></ScreenLogIn> */}
     </div>
   );
 }
