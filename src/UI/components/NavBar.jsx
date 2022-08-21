@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
-// import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -13,10 +13,10 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pantallas = ['ScreenLogIn', 'ScreenSecretaria' ];
+const pantallasUser = ['ScreenPerfil', 'Configuración', 'LogOut'];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = ({navigation}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -49,7 +49,7 @@ const ResponsiveAppBar = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-                <img src={require('./img/menu.png')} height={50} width={50} />
+                <MenuIcon/>
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -69,15 +69,19 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pantallas.map((pantalla) => ( //Array map de Opciones y Botónes con conexiones entre pantallas 
+                <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
+                  <Button 
+                    onClick={() => navigation.navigate(pantalla)} //Botón el cual nos envia a la pantalla indicada en el prop(Pantalla)
+                  >{pantalla == "ScreenLogIn" ? "LOGIN":null} {/*Ifternario que compara el prop(Pantalla) con la pantalla indicada por string, 
+                  if == true imprime un string definido Else es igual a null*/}
+                  {pantalla == "ScreenSecretaria" ? "Secretaria":null}
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <Box
-            noWrap
             sx={{
               flexGrow: 1,
             }}
@@ -85,19 +89,19 @@ const ResponsiveAppBar = () => {
             <img src={require('./img/LOGO.png')} height={75} width={75} />
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pantallas.map((pantalla) => (
               <Button
-                key={page}
+                key={pantalla}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {pantalla}
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Abrir Usuario">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
@@ -118,9 +122,13 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              {pantallasUser.map((opcion) => (
+                <MenuItem key={opcion} onClick={handleCloseUserMenu}>
+                  <Button 
+                    onClick={() => navigation.navigate(opcion)} //Botón el cual nos envia a la pantalla indicada en el prop(Pantalla)
+                  >
+                    {opcion == "ScreenPerfil" ? "Perfil":null}
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
