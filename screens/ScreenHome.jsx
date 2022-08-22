@@ -13,12 +13,26 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import NavBar from '../src/UI/components/NavBar'
+import CustomizedAccordions from '../src/UI/components/Accordion';
 // import AdbIcon from '@mui/icons-material/Adb';
+const Sectores = [
+  {id:1, nombre:'Pasillo', estado:null, fecha:null, detalles:'', img:'imagen'},
+  {id:2, nombre:'Dirección', estado:null, fecha:null, detalles:'', img:'imagen'},
+  {id:3, nombre:'Taller - Soldadura', estado:null, fecha:null, detalles:'', img:'imagen'},
+  {id:4, nombre:'Taller - Carpinteria', estado:null, fecha:null, detalles:'', img:'imagen'},
+  {id:5, nombre:'Taller - Electricidad', estado:null, fecha:null, detalles:'', img:'imagen'},
+  {id:6, nombre:'Taller - Electronica', estado:null, fecha:null, detalles:'', img:'imagen'},
+  {id:7, nombre:'Cocina', estado:null, fecha:null, detalles:'', img:'imagen'}
+  ]; 
 
 export default function HomeScreen({ navigation }) {
+  console.log(navigation);
   return (
     <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <NavBar navigation={navigation}></NavBar>
+      <NavBar navigation={navigation} paqueteP={"Pantalla Home"}></NavBar>
+      {Sectores.map(sector =>(
+      <CustomizedAccordions key={sector.id.toString()} sector={sector}></CustomizedAccordions>
+      ))}
     </View>
   );
 }
