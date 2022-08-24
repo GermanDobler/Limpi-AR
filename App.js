@@ -5,6 +5,7 @@ import ScreenSector from './screens/ScreenSector';
 import SelectorDatosPersonales from './src/components/SelectorDatosPersonales';
 import ScreenSecretaria from './screens/ScreenSecretaria';
 import ScreenLogIn from './screens/ScreenLogIn'
+import ScreenPerfil from './screens/ScreenPerfil'
 export default function App() {
   return (
     <div>
@@ -12,6 +13,7 @@ export default function App() {
       {/* <ScreenSector/> */}
       {/* <ScreenSecretaria/> */}
       {/* <ScreenLogIn></ScreenLogIn> */}
+      {/* <ScreenPerfil></ScreenPerfil> */}
     </div>
   );
 }
