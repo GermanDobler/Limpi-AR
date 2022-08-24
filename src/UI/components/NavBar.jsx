@@ -13,14 +13,14 @@ import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 
 const pantallasUser = ['ScreenPerfil', 'Configuración', 'LogOut'];
-const pantallasH = ['ScreenLogIn', 'ScreenSecretaria','ScreenPerfil'];
-const pantallasS = ['ScreenHome'];
-
-const ResponsiveAppBar = ({ paqueteP, navigation}) => {
+const pantallasHome = ['ScreenLogIn', 'ScreenSecretaria'];
+const pantallasSecretaria = ['ScreenHome', 'ScreenSector'];
+const pantallasSector = ['ScreenHome', 'ScreenSecretaria']
+const ResponsiveAppBar = ({ paqueteP, navigation }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   console.log(paqueteP);
-  
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -35,38 +35,50 @@ const ResponsiveAppBar = ({ paqueteP, navigation}) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  
-  if (paqueteP == "Pantalla Home"){ 
-    //Preguntamos que trae paqueteP(este contiene el valor de la pantalla desde la que fue enviado, 
-    //pregunta si es igual a la "pantalla", con esto logramos mostrar las opciones de cierta pantalla
-    var opciones = (pantallasH.map((pantalla) => ( //Array map de opciones y Botónes con conexiones entre pantallas 
-    console.log(pantalla+"ENTRÓ A home"),
-      <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
-        <Button 
-          onClick={() => navigation.navigate(pantalla)} //Botón el cual nos envia a la pantalla indicada en el prop(Pantalla)
-        >{pantalla == "ScreenLogIn" ? "LOGIN":null} {/*Ifternario que compara el prop(Pantalla) con la pantalla indicada por string, 
+  switch (paqueteP) {
+    case "Pantalla Home":
+      var opciones = (pantallasHome.map((pantalla) => ( //Array map de opciones y Botónes con conexiones entre pantallas 
+        <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
+          <Button
+            onClick={() => navigation.navigate(pantalla)} //Botón el cual nos envia a la pantalla indicada en el prop(Pantalla)
+          >{pantalla == "ScreenLogIn" ? "LOGIN" : null} {/*Ifternario que compara el prop(Pantalla) con la pantalla indicada por string, 
         if == true imprime un string definido Else es igual a null*/}
-        {pantalla == "ScreenSecretaria" ? "Secretaria":null}
-        </Button>
-      </MenuItem>
-    )));
-  }else if(paqueteP == "Pantalla Secretaria"){
-    console.log(opciones+"ENTRÓ A Secretaria")
-    var opciones = (pantallasS.map((pantalla) => (
-    <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
-      <Button 
-        onClick={() => navigation.navigate(pantalla)}
-      >{pantalla == "ScreenHome" ? "Home":null}
-      </Button>
-    </MenuItem>
-  )));
+            {pantalla == "ScreenSecretaria" ? "Secretaria" : null}
+          </Button>
+        </MenuItem>
+      )));
+      break;
+    case "Pantalla Secretaria":
+      console.log(opciones + "ENTRÓ A Secretaria")
+      var opciones = (pantallasSecretaria.map((pantalla) => (
+        <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
+          <Button
+            onClick={() => navigation.navigate(pantalla)}
+          >
+            {pantalla == "ScreenHome" ? "Home" : null}
+            {pantalla == "ScreenSector" ? "Asignación Sector" : null}
+          </Button>
+        </MenuItem>
+      )));
+      break;
+    case "Pantalla Sector":
+      var opciones = (pantallasSector.map((pantalla) => (
+        <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
+          <Button
+            onClick={() => navigation.navigate(pantalla)}
+          >
+            {pantalla == "ScreenHome" ? "Home" : null}
+            {pantalla == "ScreenSecretaria" ? "Asignación Secretaria" : null}
+          </Button>
+        </MenuItem>
+      )));
   }
 
   return ( //Estructura del NavBar
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -75,7 +87,7 @@ const ResponsiveAppBar = ({ paqueteP, navigation}) => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-                <MenuIcon/>
+              <MenuIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -133,10 +145,10 @@ const ResponsiveAppBar = ({ paqueteP, navigation}) => {
             >
               {pantallasUser.map((opcion) => (
                 <MenuItem key={opcion} onClick={handleCloseUserMenu}>
-                  <Button 
+                  <Button
                     onClick={() => navigation.navigate(opcion)} //Botón el cual nos envia a la pantalla indicada en el prop(Pantalla)
                   >
-                    {opcion == "ScreenPerfil" ? "Perfil":null}
+                    {opcion == "ScreenPerfil" ? "Perfil" : null}
                   </Button>
                 </MenuItem>
               ))}
