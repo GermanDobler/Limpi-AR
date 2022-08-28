@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
+
 const pantallasUser = ['ScreenPerfil', 'Configuración', 'LogOut'];
 const pantallasH = ['ScreenLogIn', 'ScreenSecretaria','ScreenPerfil'];
 const pantallasS = ['ScreenHome'];
@@ -19,7 +20,8 @@ const ResponsiveAppBar = ({ paqueteP, navigation}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   console.log(paqueteP);
-
+  
+=======
 const pantallasHome = ['ScreenLogIn', 'ScreenSecretaria'];
 const pantallasSecretaria = ['ScreenHome', 'ScreenSector'];
 const pantallasSector = ['ScreenHome', 'ScreenSecretaria']
@@ -27,6 +29,8 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   console.log(paqueteP);
+
+>>>>>>> 82faa199427262a35ae18909b92f3f5253cf7c35
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -41,6 +45,8 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+<<<<<<< HEAD
+  
   if (paqueteP == "Pantalla Home"){ 
     //Preguntamos que trae paqueteP(este contiene el valor de la pantalla desde la que fue enviado, 
     //pregunta si es igual a la "pantalla", con esto logramos mostrar las opciones de cierta pantalla
@@ -65,7 +71,7 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
       </Button>
     </MenuItem>
   )));
-
+=======
   switch (paqueteP) {
     case "Pantalla Home":
       var opciones = (pantallasHome.map((pantalla) => ( //Array map de opciones y Botónes con conexiones entre pantallas 
@@ -190,5 +196,4 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
     </AppBar>
   );
 };
-};}
 export default ResponsiveAppBar;
