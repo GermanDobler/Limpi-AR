@@ -9,11 +9,11 @@ import ScreenPerfil from './screens/ScreenPerfil';
 export default function App() {
   return (
     <div>
-      <MainStack/>
+      {/* <MainStack/> */}
       {/* <ScreenSector/> */}
-      {/* <ScreenSecretaria/> */}
+      <ScreenSecretaria/>
       {/* <ScreenLogIn></ScreenLogIn> */}
-    <ScreenPerfil></ScreenPerfil>
+    {/* <ScreenPerfil></ScreenPerfil> */}
     </div>
   );
 }
