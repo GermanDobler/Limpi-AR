@@ -21,7 +21,7 @@ const ResponsiveAppBar = ({ paqueteP, navigation}) => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   console.log(paqueteP);
   
-
+=======
 const pantallasHome = ['ScreenLogIn', 'ScreenSecretaria'];
 const pantallasSecretaria = ['ScreenHome', 'ScreenSector'];
 const pantallasSector = ['ScreenHome', 'ScreenSecretaria']
@@ -30,6 +30,7 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   console.log(paqueteP);
 
+>>>>>>> 82faa199427262a35ae18909b92f3f5253cf7c35
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -44,6 +45,7 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+<<<<<<< HEAD
   
   if (paqueteP == "Pantalla Home"){ 
     //Preguntamos que trae paqueteP(este contiene el valor de la pantalla desde la que fue enviado, 
@@ -51,7 +53,7 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
     var opciones = (pantallasH.map((pantalla) => ( //Array map de opciones y Botónes con conexiones entre pantallas 
     console.log(pantalla+"ENTRÓ A home"),
       <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
-        <Button 
+        <Button
           onClick={() => navigation.navigate(pantalla)} //Botón el cual nos envia a la pantalla indicada en el prop(Pantalla)
         >{pantalla == "ScreenLogIn" ? "LOGIN":null} {/*Ifternario que compara el prop(Pantalla) con la pantalla indicada por string, 
         if == true imprime un string definido Else es igual a null*/}
@@ -63,12 +65,13 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
     console.log(opciones+"ENTRÓ A Secretaria")
     var opciones = (pantallasS.map((pantalla) => (
     <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
-      <Button 
+      <Button
         onClick={() => navigation.navigate(pantalla)}
       >{pantalla == "ScreenHome" ? "Home":null}
       </Button>
     </MenuItem>
   )));
+=======
   switch (paqueteP) {
     case "Pantalla Home":
       var opciones = (pantallasHome.map((pantalla) => ( //Array map de opciones y Botónes con conexiones entre pantallas 
@@ -192,7 +195,5 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
       </Container>
     </AppBar>
   );
-};
-};
 };
 export default ResponsiveAppBar;
