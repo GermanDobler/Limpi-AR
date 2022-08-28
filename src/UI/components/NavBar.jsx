@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
@@ -13,13 +12,15 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 
-const pantallas = ['ScreenLogIn', 'ScreenSecretaria' ];
 const pantallasUser = ['ScreenPerfil', 'Configuración', 'LogOut'];
+const pantallasH = ['ScreenLogIn', 'ScreenSecretaria','ScreenPerfil'];
+const pantallasS = ['ScreenHome'];
 
-const ResponsiveAppBar = ({navigation}) => {
+const ResponsiveAppBar = ({ paqueteP, navigation}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  console.log(paqueteP);
+  
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -34,9 +35,34 @@ const ResponsiveAppBar = ({navigation}) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  
+  if (paqueteP == "Pantalla Home"){ 
+    //Preguntamos que trae paqueteP(este contiene el valor de la pantalla desde la que fue enviado, 
+    //pregunta si es igual a la "pantalla", con esto logramos mostrar las opciones de cierta pantalla
+    var opciones = (pantallasH.map((pantalla) => ( //Array map de opciones y Botónes con conexiones entre pantallas 
+    console.log(pantalla+"ENTRÓ A home"),
+      <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
+        <Button 
+          onClick={() => navigation.navigate(pantalla)} //Botón el cual nos envia a la pantalla indicada en el prop(Pantalla)
+        >{pantalla == "ScreenLogIn" ? "LOGIN":null} {/*Ifternario que compara el prop(Pantalla) con la pantalla indicada por string, 
+        if == true imprime un string definido Else es igual a null*/}
+        {pantalla == "ScreenSecretaria" ? "Secretaria":null}
+        </Button>
+      </MenuItem>
+    )));
+  }else if(paqueteP == "Pantalla Secretaria"){
+    console.log(opciones+"ENTRÓ A Secretaria")
+    var opciones = (pantallasS.map((pantalla) => (
+    <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
+      <Button 
+        onClick={() => navigation.navigate(pantalla)}
+      >{pantalla == "ScreenHome" ? "Home":null}
+      </Button>
+    </MenuItem>
+  )));
+  }
 
-
-  return (
+  return ( //Estructura del NavBar
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -69,16 +95,7 @@ const ResponsiveAppBar = ({navigation}) => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pantallas.map((pantalla) => ( //Array map de Opciones y Botónes con conexiones entre pantallas 
-                <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
-                  <Button 
-                    onClick={() => navigation.navigate(pantalla)} //Botón el cual nos envia a la pantalla indicada en el prop(Pantalla)
-                  >{pantalla == "ScreenLogIn" ? "LOGIN":null} {/*Ifternario que compara el prop(Pantalla) con la pantalla indicada por string, 
-                  if == true imprime un string definido Else es igual a null*/}
-                  {pantalla == "ScreenSecretaria" ? "Secretaria":null}
-                  </Button>
-                </MenuItem>
-              ))}
+              {opciones}
             </Menu>
           </Box>
           <Box
@@ -89,15 +106,7 @@ const ResponsiveAppBar = ({navigation}) => {
             <img src={require('./img/LOGO.png')} height={75} width={75} />
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pantallas.map((pantalla) => (
-              <Button
-                key={pantalla}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {pantalla}
-              </Button>
-            ))}
+            {opciones}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
