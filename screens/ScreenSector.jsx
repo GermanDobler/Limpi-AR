@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, View} from 'react-native';
-import SectorSelect from '../src/components/SectorSelect';
+import SectorSelect from '../src/UI/components/SectorSelect';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import NavBar from '../src/UI/components/NavBar';
 export default function ScreenSector({ navigation, props }) {
