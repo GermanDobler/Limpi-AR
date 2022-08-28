@@ -5,9 +5,9 @@ import ScreenHome from '../screens/ScreenHome';
 import ScreenLogIn from '../screens/ScreenLogIn';
 import ScreenSecretaria from '../screens/ScreenSecretaria';
 import ScreenPerfil from '../screens/ScreenPerfil';
+import ScreenSector from '../screens/ScreenSector';
 
 const Stack = createNativeStackNavigator();
-
 export default function StackScreen() {
   return (
     <NavigationContainer>
@@ -27,6 +27,10 @@ export default function StackScreen() {
           <Stack.Screen 
           name='ScreenPerfil'
           component={ScreenPerfil}
+          />
+          <Stack.Screen 
+          name='ScreenSector'
+          component={ScreenSector}
           />
         </Stack.Navigator>
     </NavigationContainer>
