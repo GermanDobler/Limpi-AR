@@ -15,7 +15,6 @@ export default function ScreenSecretaria({ props }) {
  <SelectorDatosPersonales nombre="Contraseña"></SelectorDatosPersonales>
  <RadioButton></RadioButton>
     </View>
-    </View>
     
   );
 }
