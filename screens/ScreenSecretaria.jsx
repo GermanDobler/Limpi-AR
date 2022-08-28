@@ -1,14 +1,13 @@
 import * as React from 'react';
 import { Button, View} from 'react-native';
-import SelectorDatosPersonales from '../src/components/SelectorDatosPersonales';
-import RadioButton from '../src/components/RadioButton';
-import ImageSelector from '../src/components/ImageSelector';
+import SelectorDatosPersonales from '../src/UI/components/SelectorDatosPersonales';
+import RadioButton from '../src/UI/components/RadioButton'
+
 
 
 export default function ScreenSecretaria({ props }) {
   return (
     <View>
-        <ImageSelector nombre="Cargar Imagen"></ImageSelector>
  <SelectorDatosPersonales nombre="Nombre">Nombre</SelectorDatosPersonales>
  <SelectorDatosPersonales nombre="Apellido"></SelectorDatosPersonales>
  <SelectorDatosPersonales nombre="DNI"></SelectorDatosPersonales>
