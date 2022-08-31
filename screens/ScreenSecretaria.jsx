@@ -3,6 +3,7 @@ import { Button, View} from 'react-native';
 import SelectorDatosPersonales from '../src/UI/components/SelectorDatosPersonales';
 import RadioButton from '../src/UI/components/RadioButton';
 import NavBar from '../src/UI/components/NavBar';
+import ButtonMui from '../src/UI/components/ButtonMui';
 
 export default function ScreenSecretaria({ navigation, props}) {
   return (
@@ -13,6 +14,7 @@ export default function ScreenSecretaria({ navigation, props}) {
       <SelectorDatosPersonales nombre="DNI"></SelectorDatosPersonales>
       <SelectorDatosPersonales nombre="Contraseña"></SelectorDatosPersonales>
       <RadioButton></RadioButton>
+      <ButtonMui name="Asignar Sector"></ButtonMui>
     </View>
     
   );

@@ -8,8 +8,8 @@ import ScreenHome from './screens/ScreenHome'
 export default function App() {
   return (
     <div>
-      <MainStack/>
-      {/* <ScreenSector/> */}
+      {/* <MainStack/> */}
+      <ScreenSector/>
       {/* <ScreenSecretaria/> */}
       {/* <ScreenLogIn></ScreenLogIn> */}
       {/* <ScreenHome></ScreenHome> */}
