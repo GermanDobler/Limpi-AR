@@ -56,7 +56,6 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
             onClick={() => navigation.navigate(pantalla)}
           >
             {pantalla == "ScreenHome" ? "Home" : null}
-            {pantalla == "ScreenSector" ? "Asignación Sector" : null}
           </Button>
         </MenuItem>
       )));
