@@ -11,8 +11,8 @@ export default function App() {
       <MainStack/>
       {/* <ScreenSector/> */}
       {/* <ScreenSecretaria/> */}
-      {/* <ScreenLogIn></ScreenLogIn> */}
-      {/* <ScreenHome></ScreenHome> */}
+      {/* <ScreenLogIn></ScreenLogIn>
+      <ScreenHome></ScreenHome> */}
     </div>
   );
 }

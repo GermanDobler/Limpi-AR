@@ -3,14 +3,15 @@ import { View } from "react-native";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
+import NavBar from "../src/UI/components/NavBar"
 import AddIcon from "@mui/icons-material/Add";
-export default function ScreenPersonalInfo() {
+export default function ScreenPersonalInfo({navigation}) {
   return (
     <View
       class="PersonalInfo"
       style={{ alignItems: "center", justifyContent: "center" }}
     >
-      <ArrowBackIcon></ArrowBackIcon>
+      <NavBar navigation={navigation} paqueteP={"Pantalla Perfil"}/>
         <h2>DATOS PERSONALES</h2>
         <div>
         <label>

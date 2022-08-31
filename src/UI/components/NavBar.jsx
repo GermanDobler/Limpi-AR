@@ -72,6 +72,17 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
           </Button>
         </MenuItem>
       )));
+      case "Pantalla Perfil":
+        var opciones = (pantallasSector.map((pantalla) => (
+          <MenuItem key={pantalla} onClick={handleCloseNavMenu}>
+            <Button
+              onClick={() => navigation.navigate(pantalla)}
+            >
+              {pantalla == "ScreenHome" ? "Home" : null}
+              {pantalla == "ScreenSecretaria" ? "Asignación Secretaria" : null}
+            </Button>
+          </MenuItem>
+        )));
   }
 
   return ( //Estructura del NavBar
