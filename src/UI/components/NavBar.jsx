@@ -127,7 +127,7 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
               flexGrow: 1,
             }}
           >
-            <img src={require('./img/LOGO.png')} height={75} width={75} />
+            <img src={require('../../img/LOGO.png')} height={75} width={65} />
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {opciones}

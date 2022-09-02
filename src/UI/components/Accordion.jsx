@@ -11,6 +11,7 @@ import _JSXStyle from 'styled-jsx/style'
 import Slide from '@mui/material/Slide';
 import { Box } from '@mui/system';
 import CustomizedSwitches from './SwitchIOS';
+import { Image } from 'react-native';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -69,7 +70,7 @@ export default function CustomizedAccordions(props) {
     <>
       <style jsx="true">{`
       .Contendedor-Accordion{
-        width: 89% !important;
+        width: 100% !important;
         margin: 10px 0 15px 0;
       }
       .Grid-Item{
@@ -88,7 +89,7 @@ export default function CustomizedAccordions(props) {
             <Grid item xs={4} className='Grid-Item'>
               <Box
                 sx={{
-                  
+
                   display: 'flex',
                   borderRadius: 1,
                   bgcolor: (theme) =>
@@ -98,29 +99,22 @@ export default function CustomizedAccordions(props) {
                 className="Grid-Item"
                 ref={containerRef}
               >
-                  <Slide direction="up" in={checked} container={containerRef.current} style={{ transitionDelay: checked ? '250ms' : '0ms' }}>
-                    <img src={props.sector.img} height={180} width={150} />
-                  </Slide> 
+                <Slide direction="up" in={checked} container={containerRef.current} style={{ transitionDelay: checked ? '250ms' : '0ms' }}>
+                  <img src={props.sector.img} height={150} width={150} />
+                  {/* <img src={require('../../img/sectores/pasillo-taller.png')}/> */}
+                </Slide>
               </Box>
             </Grid>
             <Grid item xs={8} container className='Grid-Item'>
               <Grid item xs={12} className='Grid-Item'>
+              </Grid>
+              <Grid item xs={8} className='Grid-Item'>
                 <Typography>
-                  Detalles:{props.sector.detalles}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime possimus, quos provident sequi temporibus delectus, eius fuga ad quae illum saepe, atque error reprehenderit quia molestiae unde corrupti. Autem, facilis!
+                  Ultima Limpieza: --/--/----
                 </Typography>
               </Grid>
-              <Grid item xs={12} className='Grid-Item'>
-                Ultima Limpieza: --/--/----
-              </Grid>
               <Grid item xs={4} className='Grid-Item'>
-                
-              </Grid>
-              <Grid item xs={4} className='Grid-Item'>
-                
-              </Grid>
-              <Grid item xs={4} className='Grid-Item'>
-              <CustomizedSwitches/>
+                <CustomizedSwitches />
               </Grid>
             </Grid>
           </Grid>

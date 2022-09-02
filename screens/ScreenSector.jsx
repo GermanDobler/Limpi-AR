@@ -19,12 +19,9 @@ export default function ScreenSector({ navigation, props }) {
       </div>
       <style jsx>{`
       body {
-        background: grey;
-      }
-      .fondo{
         background: #EEE5E3;
       }
-    `}</style>
+      `}</style>
     </View>
 
   );
