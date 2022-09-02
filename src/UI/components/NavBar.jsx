@@ -10,9 +10,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+// import _JSXStyle from 'styled-jsx/style'
 // import AdbIcon from '@mui/icons-material/Adb';
 
-const pantallasUser = ['ScreenPerfil', 'Configuración', 'LogOut'];
+const pantallasUser = ['ScreenPerfil'];// 'Configuración', 'LogOut'
 const pantallasHome = ['ScreenLogIn', 'ScreenSecretaria'];
 const pantallasSecretaria = ['ScreenHome', 'ScreenSector'];
 const pantallasSector = ['ScreenHome', 'ScreenSecretaria']
@@ -56,6 +57,7 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
             onClick={() => navigation.navigate(pantalla)}
           >
             {pantalla == "ScreenHome" ? "Home" : null}
+            {pantalla == "ScreenSector" ? "Sector" : null}
           </Button>
         </MenuItem>
       )));
@@ -67,7 +69,7 @@ const ResponsiveAppBar = ({ paqueteP, navigation }) => {
             onClick={() => navigation.navigate(pantalla)}
           >
             {pantalla == "ScreenHome" ? "Home" : null}
-            {pantalla == "ScreenSecretaria" ? "Asignación Secretaria" : null}
+            {pantalla == "ScreenSecretaria" ? "Sector" : null}
           </Button>
         </MenuItem>
       )));

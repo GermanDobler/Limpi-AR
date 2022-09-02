@@ -10,9 +10,9 @@ export default function App() {
     <div>
       {/* <MainStack/> */}
       {/* <ScreenSector/> */}
-      <ScreenSecretaria/>
-      {/* <ScreenLogIn></ScreenLogIn>
-      <ScreenHome></ScreenHome> */}
+      {/* <ScreenSecretaria/> */}
+      {/* <ScreenLogIn></ScreenLogIn>*/}
+      <ScreenHome></ScreenHome> 
     </div>
   );
 }
