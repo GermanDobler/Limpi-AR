@@ -27,6 +27,7 @@ export default function HomeScreen({ navigation }) {
             <CustomizedCard key={sector.id.toString()} sector={sector}></CustomizedCard>
             ))}
         </div>
+        <img />
     </div>
     <style jsx="true" global="true">{`
       *{
@@ -67,8 +68,12 @@ export default function HomeScreen({ navigation }) {
         text-align:center;
       }
 
-      .modal-modal-title{
+      .css-qc420c-MuiTypography-root{
         background-color:#fff;
+        margin:0 !important;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom: 1px solid #000;
       }
 
       .cards {

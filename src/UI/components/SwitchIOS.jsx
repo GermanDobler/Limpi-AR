@@ -57,7 +57,7 @@ const IOSSwitch = styled((props) => (
     return (
         <FormControlLabel
           control={<IOSSwitch />}
-          label="Limpio"//poner props según el estado y si el estado es limpio deshabilitar el switch!!!
+          //label="Limpio"//poner props según el estado y si el estado es limpio deshabilitar el switch!!!
         />
     );
   }
