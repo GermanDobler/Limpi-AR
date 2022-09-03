@@ -2,17 +2,23 @@ import * as React from 'react';
 import NavBar from '../src/UI/components/NavBar'
 import CustomizedAccordions from '../src/UI/components/Accordion';
 import CustomizedCard from '../src/UI/components/Card';
-import _JSXStyle from 'styled-jsx/style'
-
+import _JSXStyle from 'styled-jsx/style';
+import PasilloTaller from '../src/img/sectores/pasillo-taller.png';
+import Direccion from '../src/img/sectores/Direccion.png';
+import Soldadura from '../src/img/sectores/Soldadura.png';
+import Carpinteria from '../src/img/sectores/Carpinteria.png';
+import Electricidad from '../src/img/sectores/Electricidad.png';
+import Electronica from '../src/img/sectores/Electronica.png';
+import Cocina from '../src/img/sectores/Cocina.png';
 // import AdbIcon from '@mui/icons-material/Adb';
 const Sectores = [
-  {id:1, nombre:'Pasillo', estado:null, fecha:"02-09-2022", img:'/static/media/pasillo-taller.061f3f5c.png'},
-  {id:2, nombre:'Dirección', estado:null, fecha:null, img:''},
-  {id:3, nombre:'Taller - Soldadura', estado:null, fecha:null, img:'imagen'},
-  {id:4, nombre:'Taller - Carpinteria', estado:null, fecha:null, img:'imagen'},
-  {id:5, nombre:'Taller - Electricidad', estado:null, fecha:null, img:'imagen'},
-  {id:6, nombre:'Taller - Electronica', estado:null, fecha:null, img:'imagen'},
-  {id:7, nombre:'Cocina', estado:null, fecha:null, img:'imagen'}
+  {id:1, nombre:'Pasillo', estado:1, fecha:"02-09-2022", img:PasilloTaller},
+  {id:2, nombre:'Dirección', estado:1, fecha:"03-09-2022", img:Direccion},
+  {id:3, nombre:'Taller - Soldadura', estado:0, fecha:null, img:Soldadura},
+  {id:4, nombre:'Taller - Carpinteria', estado:0, fecha:null, img:Carpinteria},
+  {id:5, nombre:'Taller - Electricidad', estado:0, fecha:null, img:Electricidad},
+  {id:6, nombre:'Taller - Electronica', estado:1, fecha:null, img:Electronica},
+  {id:7, nombre:'Cocina', estado:1, fecha:null, img:Cocina}
   ]; 
 // const Img = require.context('../src/img');
 export default function HomeScreen({ navigation }) {
@@ -27,7 +33,6 @@ export default function HomeScreen({ navigation }) {
             <CustomizedCard key={sector.id.toString()} sector={sector}></CustomizedCard>
             ))}
         </div>
-        <img />
     </div>
     <style jsx="true" global="true">{`
       *{
@@ -86,10 +91,6 @@ export default function HomeScreen({ navigation }) {
         gap:20px 37px;
       }
       
-      .card__like {
-        width: 18px;
-      }
-      
       .card__clock {
         width: 15px;
         vertical-align: middle;
@@ -138,8 +139,8 @@ export default function HomeScreen({ navigation }) {
         top: 0;
         
       }
-      .card {
-        transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+      .card {//estilos de la carta
+        transition: all .4s cubic-bezier(0.175, 0.885, 0, 0.5);
         background-color: #fff;
         width: 45%;
         position: relative;
@@ -147,9 +148,9 @@ export default function HomeScreen({ navigation }) {
         overflow: hidden;
         box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
       }
-      .card:hover {
+      .card:hover {//Estilo para que se agrande la carta
         box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-          transform: scale(1.10, 1.10);
+        transform: scale(1.02, 1.02);
       }
       
       .card__info {

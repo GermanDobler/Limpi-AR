@@ -54,12 +54,12 @@ export default function Card(props) {
                 </div>
                 <div className="card__info">
                     <Grid item xs={12} container className='Grid-Item'>
-                        <Grid item xs={8} className='Grid-Item'>
+                        <Grid item xs={10} className='Grid-Item'>
                             <Typography>
                                 {props.sector.nombre}
                             </Typography>
                         </Grid>
-                        <Grid item xs={4} className='Grid-Item'>
+                        <Grid item xs={2} className='Grid-Item'>
                             <CustomizedSwitches />
                         </Grid>
                     </Grid>
