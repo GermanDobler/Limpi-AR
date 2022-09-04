@@ -14,13 +14,17 @@ const Stack = createNativeStackNavigator();
 
 export default function StackScreen() {
   const isAuthenticated = useAuth0().isAuthenticated;
-  if (isAuthenticated) {
+  const Loading = useAuth0().isLoading;
+  if (isAuthenticated && !Loading) {
     return (
       <NavigationContainer>
         <Auth0Provider domain='limpi-ar.us.auth0.com'
           clientId='hXGGWtPNGHTkotavIkwcgoiKrkn0u9E6'
           redirectUri={window.location.origin}>
-          <Stack.Navigator>
+          <Stack.Navigator 
+            screenOptions={{
+            headerShown: false
+          }}>
             <Stack.Screen
               name='ScreenHome'
               component={ScreenHome}
@@ -41,13 +45,16 @@ export default function StackScreen() {
         </Auth0Provider>
       </NavigationContainer>
     );
-  } else if (!isAuthenticated) {
+  } else if (!isAuthenticated && !Loading) {
     return (
       <NavigationContainer>
         <Auth0Provider domain='limpi-ar.us.auth0.com'
           clientId='hXGGWtPNGHTkotavIkwcgoiKrkn0u9E6'
           redirectUri={window.location.origin}>
-          <Stack.Navigator>
+          <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}>
             <Stack.Screen
               name='ScreenLogIn'
               component={ScreenLogIn}

@@ -59,16 +59,6 @@ export default function Card(props) {
                     </div>
                 </div>
                 <div className="card__info">
-                    {/* <Grid item xs={12} container className='Grid-Item'>
-                        <Grid item xs={7} className='Grid-Item'>
-                            <Typography>
-                                {props.sector.nombre}
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={5} className='Grid-Item'>
-                            <CustomizedSwitches />
-                        </Grid>
-                    </Grid> */}
                     <Grid item xs={12} className='Grid-Item'>
                         <Typography>
                             {props.sector.nombre}
