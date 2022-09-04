@@ -12,13 +12,13 @@ import Electronica from '../src/img/sectores/Electronica.png';
 import Cocina from '../src/img/sectores/Cocina.png';
 // import AdbIcon from '@mui/icons-material/Adb';
 const Sectores = [
-  {id:1, nombre:'Pasillo', estado:1, fecha:"02-09-2022", img:PasilloTaller},
-  {id:2, nombre:'Dirección', estado:1, fecha:"03-09-2022", img:Direccion},
-  {id:3, nombre:'Taller - Soldadura', estado:0, fecha:null, img:Soldadura},
-  {id:4, nombre:'Taller - Carpinteria', estado:0, fecha:null, img:Carpinteria},
-  {id:5, nombre:'Taller - Electricidad', estado:0, fecha:null, img:Electricidad},
-  {id:6, nombre:'Taller - Electronica', estado:1, fecha:null, img:Electronica},
-  {id:7, nombre:'Cocina', estado:1, fecha:null, img:Cocina}
+  {id:1, nombre:'Pasillo', estado:true, fecha:"02-09-2022", img:PasilloTaller},
+  {id:2, nombre:'Dirección', estado:true, fecha:"03-09-2022", img:Direccion},
+  {id:3, nombre:'Taller - Soldadura', estado:false, fecha:null, img:Soldadura},
+  {id:4, nombre:'Taller - Carpinteria', estado:false, fecha:null, img:Carpinteria},
+  {id:5, nombre:'Taller - Electricidad', estado:false, fecha:null, img:Electricidad},
+  {id:6, nombre:'Taller - Electronica', estado:true, fecha:null, img:Electronica},
+  {id:7, nombre:'Cocina', estado:true, fecha:null, img:Cocina}
   ]; 
 // const Img = require.context('../src/img');
 export default function HomeScreen({ navigation }) {
@@ -39,7 +39,7 @@ export default function HomeScreen({ navigation }) {
         box-sizing: border-box;
       }
       body {
-        background: #EEE5E3;
+        background: #fff;
       }
       body, html {
         font-family: 'Roboto Slab', serif;
@@ -88,7 +88,7 @@ export default function HomeScreen({ navigation }) {
         display: flex;
         flex-direction: row;
         flex-wrap:wrap;
-        gap:20px 37px;
+        gap:10px 35px;
       }
       
       .card__clock {
@@ -97,7 +97,7 @@ export default function HomeScreen({ navigation }) {
         fill: #AD7D52;
       }
       .card__time {
-        font-size: 12px;
+        font-size: 20px;
         color: #AD7D52;
         vertical-align: middle;
         margin-left: 5px;
@@ -148,17 +148,15 @@ export default function HomeScreen({ navigation }) {
         overflow: hidden;
         box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
       }
-      .card:hover {//Estilo para que se agrande la carta
-        box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-        transform: scale(1.02, 1.02);
-      }
       
       .card__info {
+        justify-content:center;
+        text-align:center;
         z-index: 2;
-        background-color: #fff;
+        background-color: #A9D8F0;
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
-        padding: 16px 24px 24px 24px;
+        padding-top:10px;
       }
       
       .card__category {
@@ -190,17 +188,9 @@ export default function HomeScreen({ navigation }) {
       
       .card:hover .card__img--hover {
           height: 100%;
-          opacity: 0.3;
-      }
-      
-      .card:hover .card__info {
-        background-color: transparent;
-        position: relative;
-      }
-      
-      .card:hover .card__info-hover {
           opacity: 1;
       }
+
     `}</style>
   </>
   );

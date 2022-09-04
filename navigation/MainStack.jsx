@@ -8,6 +8,7 @@ import ScreenPerfil from '../screens/ScreenPerfil';
 import ScreenSector from '../screens/ScreenSector';
 
 const Stack = createNativeStackNavigator();
+//Si user == "Secretario" ver ciertas pantallas()
 export default function StackScreen() {
   return (
     <NavigationContainer>
