@@ -16,7 +16,7 @@ export default function UploadButton(props) {
         <input hidden accept="image/*" type="file" />
         <PhotoCamera  />
       </IconButton>
-      <style jsx>{`
+      <style jsx="true">{`
       .botones{
         margin:5px !important;
         width :160px !important;

@@ -10,7 +10,7 @@ export default function CustomizedSwitches(props) {
           <label className="label"></label>
         </div>
       </section>
-      <style jsx>{`
+      <style jsx="true">{`
       .checkbox {
         position: relative;
         display: inline-block;
@@ -98,7 +98,7 @@ export default function CustomizedSwitches(props) {
         -o-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
         -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.4s linear;
         -webkit-transition-delay: 0.2s, 0s, 0s;
-        transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        transition: all 0.2s 0.2s, width 0.2s linear, text-indent 0.4s linear;
         top: 3px;
         left: auto;
         right: 2px;

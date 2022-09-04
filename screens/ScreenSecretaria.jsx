@@ -22,7 +22,7 @@ export default function ScreenSecretaria({ navigation, props }) {
       <SelectorDatosPersonales className="fondo" nombre="Contraseña"></SelectorDatosPersonales>
       <RadioButton></RadioButton>
       <ButtonMui name="Asignar Sector" onClick={() => navigation.navigate('Screen Secretaria')} ></ButtonMui>
-      <style jsx>{`
+      <style jsx="true">{`
       body {
         background: #EEE5E3;
       }

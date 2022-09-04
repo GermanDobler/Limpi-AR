@@ -17,7 +17,7 @@ export default function ScreenSector({ navigation, props }) {
       <SectorSelect nombre_sector="Sector 5 (Opcional)"></SectorSelect>
       <ButtonMui name="Guardar Sectores" onClick={() => navigation.navigate('ScreenSecretaria')}></ButtonMui>
       </div>
-      <style jsx>{`
+      <style jsx="true">{`
       body {
         background: #EEE5E3;
       }

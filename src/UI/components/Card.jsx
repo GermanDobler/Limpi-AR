@@ -4,7 +4,6 @@ import { Box } from '@mui/material'
 import React from 'react'
 import _JSXStyle from 'styled-jsx/style'
 import CustomizedSwitches from './SwitchIOS';
-import { useState } from 'react';
 
 export default function Card(props) {
     //cards

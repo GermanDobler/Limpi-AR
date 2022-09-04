@@ -11,12 +11,13 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import _JSXStyle from 'styled-jsx/style';
 import { createTheme } from '@mui/material/styles';
+import { useAuth0 } from '@auth0/auth0-react';
 
 // import _JSXStyle from 'styled-jsx/style'
 // import AdbIcon from '@mui/icons-material/Adb';
 
 const pantallasUser = ['ScreenPerfil'];// 'Configuración', 'LogOut'
-const pantallasHome = ['ScreenLogIn', 'ScreenSecretaria'];
+const pantallasHome = ['ScreenSecretaria'];
 const pantallasSecretaria = ['ScreenHome', 'ScreenSector'];
 const pantallasSector = ['ScreenHome', 'ScreenSecretaria']
 const ResponsiveAppBar = ({ paqueteP, navigation }) => {
@@ -96,7 +97,7 @@ const theme = createTheme({
         </MenuItem>
       )));
   }
-
+  const { logout } = useAuth0();
   return ( //Estructura del NavBar
     <>
       <AppBar position="sticky" theme={theme}>
@@ -167,6 +168,9 @@ const theme = createTheme({
                     {opcion == "ScreenPerfil" ? "Perfil" : null}
                   </MenuItem>
                 ))}
+                <MenuItem onClick={() => logout({ returnTo: window.location.origin })}>
+                  Log Out 
+                </MenuItem>
               </Menu>
             </Box>
           </Toolbar>

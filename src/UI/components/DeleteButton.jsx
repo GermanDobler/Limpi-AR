@@ -11,7 +11,7 @@ export default function DeleteButton() {
       <Button className="botones" variant="outlined" startIcon={<DeleteIcon />}>
        Borrar
       </Button>
-      <style jsx>{`
+      <style jsx="true">{`
       .botones{
         margin:5px !important;
        width :160px !important;
