@@ -10,6 +10,8 @@ import Carpinteria from '../src/img/sectores/Carpinteria.png';
 import Electricidad from '../src/img/sectores/Electricidad.png';
 import Electronica from '../src/img/sectores/Electronica.png';
 import Cocina from '../src/img/sectores/Cocina.png';
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
+
 // import AdbIcon from '@mui/icons-material/Adb';
 const Sectores = [
   {id:1, nombre:'Pasillo', estado:true, fecha:"02-09-2022", img:PasilloTaller},

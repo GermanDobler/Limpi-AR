@@ -18,6 +18,7 @@ import ButtonLogIn from '../src/UI/components/ButtonLogIn';
 
 
 function Copyright(props) {
+
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
@@ -31,7 +32,6 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
-
 export default function InicioSesion({ navigation }) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,7 +41,7 @@ export default function InicioSesion({ navigation }) {
       contrasenia: data.get('contrasenia'),
     });
   };
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect  } = useAuth0();
   return (
     <ThemeProvider theme={theme} >
       <Container component="main" maxWidth="xs">
@@ -53,30 +53,7 @@ export default function InicioSesion({ navigation }) {
           </Typography>
           <img src={require('../src/img/LOGO.png')} height={350} width={300} />
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            {/* <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="dni"
-                label="DNI"
-                name="DNI"
-                autoComplete="DNI"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="Contraseña"
-                label="Contraseña"
-                type="Contraseña"
-                id="contrasenia"
-                autoComplete="current-contraseña"
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Recordar"
-              /> */}
+
             <Grid container item >
               <Grid item xs={12} sx={{ mt: 1 }}>
                 <Button onClick={() => navigation.navigate('ScreenHome')}>HOLAAAAAAA</Button>
@@ -100,5 +77,6 @@ export default function InicioSesion({ navigation }) {
         <Copyright sx={{ mt: 10, mb: 4 }}></Copyright>
       </Container>
     </ThemeProvider>
+    
   );
 }
