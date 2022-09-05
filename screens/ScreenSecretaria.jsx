@@ -11,8 +11,9 @@ import _JSXStyle from 'styled-jsx/style'
 
 export default function ScreenSecretaria({ navigation, props }) {
   return (
+    <>
+    <NavBar navigation={navigation} paqueteP={"Pantalla Secretaria"}></NavBar>
     <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <NavBar navigation={navigation} paqueteP={"Pantalla Secretaria"}></NavBar>
       <UploadButton className="botones"></UploadButton>
       <DeleteButton className="botones"></DeleteButton>
       <SendButton className="botones"></SendButton>
@@ -26,8 +27,9 @@ export default function ScreenSecretaria({ navigation, props }) {
       body {
         background: #EEE5E3;
       }
-    `}</style>
+      `}</style>
     </View>
+      </>
     
 
   );

@@ -10,6 +10,8 @@ import { Auth0Provider } from '@auth0/auth0-react';
 
 export default function ScreenPersonalInfo({navigation}) {
   return (
+    <>
+    <NavBar navigation={navigation} paqueteP={"Pantalla Perfil"}/>
     <View
       class="PersonalInfo"
       style={{ alignItems: "center", justifyContent: "center" }}
@@ -17,7 +19,6 @@ export default function ScreenPersonalInfo({navigation}) {
             <Auth0Provider domain='limpi-ar.us.auth0.com'
         clientId='hXGGWtPNGHTkotavIkwcgoiKrkn0u9E6'
         redirectUri={window.location.origin}>
-      <NavBar navigation={navigation} paqueteP={"Pantalla Perfil"}/>
         <h2>DATOS PERSONALES</h2>
         <div>
         <label>
@@ -48,5 +49,6 @@ export default function ScreenPersonalInfo({navigation}) {
       </Box>
       </Auth0Provider>
     </View>
+    </>
   );
 }

@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:19006/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="react-native-stylesheet"></style>
+    
+    <meta httpequiv="X-UA-Compatible" content="IE=edge">
+    <!-- 
+      This viewport works for phones with notches.
+      It's optimized for gestures by disabling global zoom.
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.00001, viewport-fit=cover">
+    <title>ScreenHome</title>
+    <style>
+      /**
+       * Extend the react-native-web reset:
+       * https://github.com/necolas/react-native-web/blob/master/packages/react-native-web/src/exports/StyleSheet/initialRules.js
+       */
+      html,
+      body,
+      #root {
+        width: 100%;
+        /* To smooth any scrolling behavior */
+        -webkit-overflow-scrolling: touch;
+        margin: 0px;
+        padding: 0px;
+        /* Allows content to fill the viewport and go beyond the bottom */
+        min-height: 100%;
+      }
+      #root {
+        flex-shrink: 0;
+        flex-basis: auto;
+        flex-grow: 1;
+        display: flex;
+        flex: 1;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        /* Prevent text size change on orientation change https://gist.github.com/tfausak/2222823#file-ios-8-web-app-html-L138 */
+        -webkit-text-size-adjust: 100%;
+        height: calc(100% + env(safe-area-inset-top));
+      }
+
+      body {
+        display: flex;
+        /* Allows you to scroll below the viewport; default value is visible */
+        overflow-y: auto;
+        overscroll-behavior-y: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -ms-overflow-style: scrollbar;
+      }
+      /* Enable for apps that support dark-theme */
+      /*@media (prefers-color-scheme: dark) {
+        body {
+          background-color: black;
+        }
+      }*/
+    </style>
+  <style data-emotion="css" data-s="">.css-spompt-MuiGrid-root{box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;margin:0;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-spompt-MuiGrid-root{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-spompt-MuiGrid-root{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}}</style><style data-emotion="css" data-s="">@media (min-width:1200px){.css-spompt-MuiGrid-root{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}}</style><style data-emotion="css" data-s="">@media (min-width:1536px){.css-spompt-MuiGrid-root{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}}</style><style data-emotion="css" data-s="">.css-1osj8n2-MuiGrid-root{box-sizing:border-box;margin:0;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-basis:50%;-ms-flex-preferred-size:50%;flex-basis:50%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:50%;}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-1osj8n2-MuiGrid-root{-webkit-flex-basis:50%;-ms-flex-preferred-size:50%;flex-basis:50%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:50%;}}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-1osj8n2-MuiGrid-root{-webkit-flex-basis:50%;-ms-flex-preferred-size:50%;flex-basis:50%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:50%;}}</style><style data-emotion="css" data-s="">@media (min-width:1200px){.css-1osj8n2-MuiGrid-root{-webkit-flex-basis:50%;-ms-flex-preferred-size:50%;flex-basis:50%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:50%;}}</style><style data-emotion="css" data-s="">@media (min-width:1536px){.css-1osj8n2-MuiGrid-root{-webkit-flex-basis:50%;-ms-flex-preferred-size:50%;flex-basis:50%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:50%;}}</style><style data-emotion="css" data-s="">.css-1idn90j-MuiGrid-root{box-sizing:border-box;margin:0;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-1idn90j-MuiGrid-root{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-1idn90j-MuiGrid-root{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}}</style><style data-emotion="css" data-s="">@media (min-width:1200px){.css-1idn90j-MuiGrid-root{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}}</style><style data-emotion="css" data-s="">@media (min-width:1536px){.css-1idn90j-MuiGrid-root{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;max-width:100%;}}</style><style data-emotion="css" data-s="">.css-ahj2mt-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;}</style></head>
+
+  <body>
+    <!-- 
+      A generic no script element with a reload button and a message.
+      Feel free to customize this however you'd like.
+    -->
+    <noscript>
+      <form
+        action=""
+        style="
+          background-color: #fff;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 9999;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-family: Helvetica, sans-serif;
+            line-height: 24px;
+            margin: 10%;
+            width: 80%;
+          "
+        >
+          <p>Oh no! It looks like JavaScript is not enabled in your browser.</p>
+          <p style="margin: 20px 0;">
+            <button
+              type="submit"
+              style="
+                background-color: #4630eb;
+                border-radius: 100px;
+                border: none;
+                box-shadow: none;
+                color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+                line-height: 20px;
+                padding: 6px 16px;
+              "
+            >
+              Reload
+            </button>
+          </p>
+        </div>
+      </form>
+    </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root"><div class="css-view-175oi2r r-flex-13awgt0 r-pointerEvents-12vffkv"><div class="css-view-175oi2r r-flex-13awgt0 r-pointerEvents-12vffkv"><div class="css-view-175oi2r r-flex-13awgt0"><div class="css-view-175oi2r r-flex-13awgt0"><div class="css-view-175oi2r r-flex-13awgt0 r-flexDirection-1d5kdc7 r-bottom-1p0dtai r-left-1d2f490 r-position-u8s1d r-right-zchlnj r-top-ipm5af" style="background-color: rgb(242, 242, 242); display: flex;"><div class="css-view-175oi2r r-flex-13awgt0"><div class="css-view-175oi2r r-flex-13awgt0"><div><div class="Header"><div class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 css-spompt-MuiGrid-root"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root">menu</div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root">perfil</div></div></div><style jsx="true">
+      .Header{
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        height:55px;
+        background: #ffffff;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+      }
+    </style><div class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 css-spompt-MuiGrid-root"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"><article class="card card--1"><div><div class="card__info-hover"><div class="card__clock-info"><svg class="card__clock" viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg><span class="card__time">02-09-2022</span></div></div><div class="card__img"><img src="./ScreenHome_files/pasillo-taller.061f3f5c.png" alt="Pasillo" height="235" width="195"></div><div class="card__img--hover"><img src="./ScreenHome_files/pasillo-taller.061f3f5c.png" alt="Pasillo" height="100%" width="100%"></div></div><div class="card__info"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><p class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root">Pasillo</p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><section class="model-13"><div class="checkbox"><input class="input" type="checkbox"><label class="label"></label></div></section><style jsx="true">
+      .checkbox {
+        position: relative;
+        display: inline-block;
+      }
+      .checkbox:after, .checkbox:before {
+        font-family: FontAwesome;
+        font-feature-settings: normal;
+        -webkit-font-kerning: auto;
+                font-kerning: auto;
+        font-language-override: normal;
+        font-stretch: normal;
+        font-style: normal;
+        font-synthesis: weight style;
+        font-variant: normal;
+        font-weight: normal;
+        text-rendering: auto;
+      }
+      .checkbox .label {
+        width: 90px;
+        height: 42px;
+        background: #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 46px;
+        transition: 0.4s;
+      }
+      .checkbox .label:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        left: 0;
+        top: -5px;
+        z-index: 2;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: 0.4s;
+      }
+      .checkbox .input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+        margin:0;
+      }
+      .checkbox .input:hover + .label:after {
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      }
+      .checkbox .input:checked + .label:after {
+        left: 40px;
+      }
+      .model-13 .checkbox:after {
+        text-align:center;
+        content: 'Sucio';
+        font-family: Arial;
+        position: absolute;
+        color: #C67349;
+        top: 8px;
+        right: 13px;
+      }
+      .model-13 .checkbox .label {
+        background: none;
+        border: 3px solid #C67349;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .model-13 .checkbox .label:after {
+        text-align:center;
+        content: 'Limpio';
+        font-family: Arial;
+        color: #fff;
+        line-height: 28px;
+        text-indent: 100px;
+        background: #E28353;
+        overflow: hidden;
+        box-shadow: none;
+        border-radius: 14px;
+        transform: translateX(-50px);
+        -moz-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -o-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition-delay: 0.2s, 0s, 0s;
+        transition: all 0.2s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        top: 3px;
+        left: auto;
+        right: 2px;
+        width: 28px;
+        height: 28px;
+      }
+      .model-13 .checkbox .input:checked + .label {
+        border-color: #329043;
+      }
+      .model-13 .checkbox .input:checked + .label:after {
+        background: #3fb454;
+        left: auto;
+        transform: translateX(0px);
+        -moz-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -o-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.3s linear;
+        -webkit-transition-delay: 0s, 0.4s, 0.4s;
+        transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        width: 80px;
+        text-indent: 0;
+      }
+      </style></div></div></article></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"><article class="card card--1"><div><div class="card__info-hover"><div class="card__clock-info"><svg class="card__clock" viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg><span class="card__time">03-09-2022</span></div></div><div class="card__img"><img src="./ScreenHome_files/Direccion.339def77.png" alt="Dirección" height="235" width="195"></div><div class="card__img--hover"><img src="./ScreenHome_files/Direccion.339def77.png" alt="Dirección" height="100%" width="100%"></div></div><div class="card__info"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><p class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root">Dirección</p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><section class="model-13"><div class="checkbox"><input class="input" type="checkbox"><label class="label"></label></div></section><style jsx="true">
+      .checkbox {
+        position: relative;
+        display: inline-block;
+      }
+      .checkbox:after, .checkbox:before {
+        font-family: FontAwesome;
+        font-feature-settings: normal;
+        -webkit-font-kerning: auto;
+                font-kerning: auto;
+        font-language-override: normal;
+        font-stretch: normal;
+        font-style: normal;
+        font-synthesis: weight style;
+        font-variant: normal;
+        font-weight: normal;
+        text-rendering: auto;
+      }
+      .checkbox .label {
+        width: 90px;
+        height: 42px;
+        background: #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 46px;
+        transition: 0.4s;
+      }
+      .checkbox .label:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        left: 0;
+        top: -5px;
+        z-index: 2;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: 0.4s;
+      }
+      .checkbox .input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+        margin:0;
+      }
+      .checkbox .input:hover + .label:after {
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      }
+      .checkbox .input:checked + .label:after {
+        left: 40px;
+      }
+      .model-13 .checkbox:after {
+        text-align:center;
+        content: 'Sucio';
+        font-family: Arial;
+        position: absolute;
+        color: #C67349;
+        top: 8px;
+        right: 13px;
+      }
+      .model-13 .checkbox .label {
+        background: none;
+        border: 3px solid #C67349;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .model-13 .checkbox .label:after {
+        text-align:center;
+        content: 'Limpio';
+        font-family: Arial;
+        color: #fff;
+        line-height: 28px;
+        text-indent: 100px;
+        background: #E28353;
+        overflow: hidden;
+        box-shadow: none;
+        border-radius: 14px;
+        transform: translateX(-50px);
+        -moz-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -o-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition-delay: 0.2s, 0s, 0s;
+        transition: all 0.2s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        top: 3px;
+        left: auto;
+        right: 2px;
+        width: 28px;
+        height: 28px;
+      }
+      .model-13 .checkbox .input:checked + .label {
+        border-color: #329043;
+      }
+      .model-13 .checkbox .input:checked + .label:after {
+        background: #3fb454;
+        left: auto;
+        transform: translateX(0px);
+        -moz-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -o-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.3s linear;
+        -webkit-transition-delay: 0s, 0.4s, 0.4s;
+        transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        width: 80px;
+        text-indent: 0;
+      }
+      </style></div></div></article></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"><article class="card card--1"><div><div class="card__info-hover"><div class="card__clock-info"><svg class="card__clock" viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg><span class="card__time"></span></div></div><div class="card__img"><img src="./ScreenHome_files/Soldadura.398cfd0c.png" alt="Taller - Soldadura" height="235" width="195"></div><div class="card__img--hover"><img src="./ScreenHome_files/Soldadura.398cfd0c.png" alt="Taller - Soldadura" height="100%" width="100%"></div></div><div class="card__info"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><p class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root">Taller - Soldadura</p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><section class="model-13"><div class="checkbox"><input class="input" type="checkbox"><label class="label"></label></div></section><style jsx="true">
+      .checkbox {
+        position: relative;
+        display: inline-block;
+      }
+      .checkbox:after, .checkbox:before {
+        font-family: FontAwesome;
+        font-feature-settings: normal;
+        -webkit-font-kerning: auto;
+                font-kerning: auto;
+        font-language-override: normal;
+        font-stretch: normal;
+        font-style: normal;
+        font-synthesis: weight style;
+        font-variant: normal;
+        font-weight: normal;
+        text-rendering: auto;
+      }
+      .checkbox .label {
+        width: 90px;
+        height: 42px;
+        background: #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 46px;
+        transition: 0.4s;
+      }
+      .checkbox .label:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        left: 0;
+        top: -5px;
+        z-index: 2;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: 0.4s;
+      }
+      .checkbox .input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+        margin:0;
+      }
+      .checkbox .input:hover + .label:after {
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      }
+      .checkbox .input:checked + .label:after {
+        left: 40px;
+      }
+      .model-13 .checkbox:after {
+        text-align:center;
+        content: 'Sucio';
+        font-family: Arial;
+        position: absolute;
+        color: #C67349;
+        top: 8px;
+        right: 13px;
+      }
+      .model-13 .checkbox .label {
+        background: none;
+        border: 3px solid #C67349;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .model-13 .checkbox .label:after {
+        text-align:center;
+        content: 'Limpio';
+        font-family: Arial;
+        color: #fff;
+        line-height: 28px;
+        text-indent: 100px;
+        background: #E28353;
+        overflow: hidden;
+        box-shadow: none;
+        border-radius: 14px;
+        transform: translateX(-50px);
+        -moz-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -o-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition-delay: 0.2s, 0s, 0s;
+        transition: all 0.2s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        top: 3px;
+        left: auto;
+        right: 2px;
+        width: 28px;
+        height: 28px;
+      }
+      .model-13 .checkbox .input:checked + .label {
+        border-color: #329043;
+      }
+      .model-13 .checkbox .input:checked + .label:after {
+        background: #3fb454;
+        left: auto;
+        transform: translateX(0px);
+        -moz-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -o-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.3s linear;
+        -webkit-transition-delay: 0s, 0.4s, 0.4s;
+        transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        width: 80px;
+        text-indent: 0;
+      }
+      </style></div></div></article></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"><article class="card card--1"><div><div class="card__info-hover"><div class="card__clock-info"><svg class="card__clock" viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg><span class="card__time"></span></div></div><div class="card__img"><img src="./ScreenHome_files/Carpinteria.b50af3e8.png" alt="Taller - Carpinteria" height="235" width="195"></div><div class="card__img--hover"><img src="./ScreenHome_files/Carpinteria.b50af3e8.png" alt="Taller - Carpinteria" height="100%" width="100%"></div></div><div class="card__info"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><p class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root">Taller - Carpinteria</p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><section class="model-13"><div class="checkbox"><input class="input" type="checkbox"><label class="label"></label></div></section><style jsx="true">
+      .checkbox {
+        position: relative;
+        display: inline-block;
+      }
+      .checkbox:after, .checkbox:before {
+        font-family: FontAwesome;
+        font-feature-settings: normal;
+        -webkit-font-kerning: auto;
+                font-kerning: auto;
+        font-language-override: normal;
+        font-stretch: normal;
+        font-style: normal;
+        font-synthesis: weight style;
+        font-variant: normal;
+        font-weight: normal;
+        text-rendering: auto;
+      }
+      .checkbox .label {
+        width: 90px;
+        height: 42px;
+        background: #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 46px;
+        transition: 0.4s;
+      }
+      .checkbox .label:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        left: 0;
+        top: -5px;
+        z-index: 2;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: 0.4s;
+      }
+      .checkbox .input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+        margin:0;
+      }
+      .checkbox .input:hover + .label:after {
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      }
+      .checkbox .input:checked + .label:after {
+        left: 40px;
+      }
+      .model-13 .checkbox:after {
+        text-align:center;
+        content: 'Sucio';
+        font-family: Arial;
+        position: absolute;
+        color: #C67349;
+        top: 8px;
+        right: 13px;
+      }
+      .model-13 .checkbox .label {
+        background: none;
+        border: 3px solid #C67349;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .model-13 .checkbox .label:after {
+        text-align:center;
+        content: 'Limpio';
+        font-family: Arial;
+        color: #fff;
+        line-height: 28px;
+        text-indent: 100px;
+        background: #E28353;
+        overflow: hidden;
+        box-shadow: none;
+        border-radius: 14px;
+        transform: translateX(-50px);
+        -moz-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -o-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition-delay: 0.2s, 0s, 0s;
+        transition: all 0.2s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        top: 3px;
+        left: auto;
+        right: 2px;
+        width: 28px;
+        height: 28px;
+      }
+      .model-13 .checkbox .input:checked + .label {
+        border-color: #329043;
+      }
+      .model-13 .checkbox .input:checked + .label:after {
+        background: #3fb454;
+        left: auto;
+        transform: translateX(0px);
+        -moz-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -o-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.3s linear;
+        -webkit-transition-delay: 0s, 0.4s, 0.4s;
+        transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        width: 80px;
+        text-indent: 0;
+      }
+      </style></div></div></article></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"><article class="card card--1"><div><div class="card__info-hover"><div class="card__clock-info"><svg class="card__clock" viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg><span class="card__time"></span></div></div><div class="card__img"><img src="./ScreenHome_files/Electricidad.dafaa4ba.png" alt="Taller - Electricidad" height="235" width="195"></div><div class="card__img--hover"><img src="./ScreenHome_files/Electricidad.dafaa4ba.png" alt="Taller - Electricidad" height="100%" width="100%"></div></div><div class="card__info"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><p class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root">Taller - Electricidad</p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><section class="model-13"><div class="checkbox"><input class="input" type="checkbox"><label class="label"></label></div></section><style jsx="true">
+      .checkbox {
+        position: relative;
+        display: inline-block;
+      }
+      .checkbox:after, .checkbox:before {
+        font-family: FontAwesome;
+        font-feature-settings: normal;
+        -webkit-font-kerning: auto;
+                font-kerning: auto;
+        font-language-override: normal;
+        font-stretch: normal;
+        font-style: normal;
+        font-synthesis: weight style;
+        font-variant: normal;
+        font-weight: normal;
+        text-rendering: auto;
+      }
+      .checkbox .label {
+        width: 90px;
+        height: 42px;
+        background: #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 46px;
+        transition: 0.4s;
+      }
+      .checkbox .label:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        left: 0;
+        top: -5px;
+        z-index: 2;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: 0.4s;
+      }
+      .checkbox .input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+        margin:0;
+      }
+      .checkbox .input:hover + .label:after {
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      }
+      .checkbox .input:checked + .label:after {
+        left: 40px;
+      }
+      .model-13 .checkbox:after {
+        text-align:center;
+        content: 'Sucio';
+        font-family: Arial;
+        position: absolute;
+        color: #C67349;
+        top: 8px;
+        right: 13px;
+      }
+      .model-13 .checkbox .label {
+        background: none;
+        border: 3px solid #C67349;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .model-13 .checkbox .label:after {
+        text-align:center;
+        content: 'Limpio';
+        font-family: Arial;
+        color: #fff;
+        line-height: 28px;
+        text-indent: 100px;
+        background: #E28353;
+        overflow: hidden;
+        box-shadow: none;
+        border-radius: 14px;
+        transform: translateX(-50px);
+        -moz-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -o-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition-delay: 0.2s, 0s, 0s;
+        transition: all 0.2s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        top: 3px;
+        left: auto;
+        right: 2px;
+        width: 28px;
+        height: 28px;
+      }
+      .model-13 .checkbox .input:checked + .label {
+        border-color: #329043;
+      }
+      .model-13 .checkbox .input:checked + .label:after {
+        background: #3fb454;
+        left: auto;
+        transform: translateX(0px);
+        -moz-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -o-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.3s linear;
+        -webkit-transition-delay: 0s, 0.4s, 0.4s;
+        transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        width: 80px;
+        text-indent: 0;
+      }
+      </style></div></div></article></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"><article class="card card--1"><div><div class="card__info-hover"><div class="card__clock-info"><svg class="card__clock" viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg><span class="card__time"></span></div></div><div class="card__img"><img src="./ScreenHome_files/Electronica.7cafcbe7.png" alt="Taller - Electronica" height="235" width="195"></div><div class="card__img--hover"><img src="./ScreenHome_files/Electronica.7cafcbe7.png" alt="Taller - Electronica" height="100%" width="100%"></div></div><div class="card__info"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><p class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root">Taller - Electronica</p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><section class="model-13"><div class="checkbox"><input class="input" type="checkbox"><label class="label"></label></div></section><style jsx="true">
+      .checkbox {
+        position: relative;
+        display: inline-block;
+      }
+      .checkbox:after, .checkbox:before {
+        font-family: FontAwesome;
+        font-feature-settings: normal;
+        -webkit-font-kerning: auto;
+                font-kerning: auto;
+        font-language-override: normal;
+        font-stretch: normal;
+        font-style: normal;
+        font-synthesis: weight style;
+        font-variant: normal;
+        font-weight: normal;
+        text-rendering: auto;
+      }
+      .checkbox .label {
+        width: 90px;
+        height: 42px;
+        background: #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 46px;
+        transition: 0.4s;
+      }
+      .checkbox .label:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        left: 0;
+        top: -5px;
+        z-index: 2;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: 0.4s;
+      }
+      .checkbox .input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+        margin:0;
+      }
+      .checkbox .input:hover + .label:after {
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      }
+      .checkbox .input:checked + .label:after {
+        left: 40px;
+      }
+      .model-13 .checkbox:after {
+        text-align:center;
+        content: 'Sucio';
+        font-family: Arial;
+        position: absolute;
+        color: #C67349;
+        top: 8px;
+        right: 13px;
+      }
+      .model-13 .checkbox .label {
+        background: none;
+        border: 3px solid #C67349;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .model-13 .checkbox .label:after {
+        text-align:center;
+        content: 'Limpio';
+        font-family: Arial;
+        color: #fff;
+        line-height: 28px;
+        text-indent: 100px;
+        background: #E28353;
+        overflow: hidden;
+        box-shadow: none;
+        border-radius: 14px;
+        transform: translateX(-50px);
+        -moz-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -o-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition-delay: 0.2s, 0s, 0s;
+        transition: all 0.2s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        top: 3px;
+        left: auto;
+        right: 2px;
+        width: 28px;
+        height: 28px;
+      }
+      .model-13 .checkbox .input:checked + .label {
+        border-color: #329043;
+      }
+      .model-13 .checkbox .input:checked + .label:after {
+        background: #3fb454;
+        left: auto;
+        transform: translateX(0px);
+        -moz-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -o-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.3s linear;
+        -webkit-transition-delay: 0s, 0.4s, 0.4s;
+        transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        width: 80px;
+        text-indent: 0;
+      }
+      </style></div></div></article></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"><article class="card card--1"><div><div class="card__info-hover"><div class="card__clock-info"><svg class="card__clock" viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z"></path></svg><span class="card__time"></span></div></div><div class="card__img"><img src="./ScreenHome_files/Cocina.b044e77f.png" alt="Cocina" height="235" width="195"></div><div class="card__img--hover"><img src="./ScreenHome_files/Cocina.b044e77f.png" alt="Cocina" height="100%" width="100%"></div></div><div class="card__info"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><p class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root">Cocina</p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 Grid-Item css-1idn90j-MuiGrid-root"><section class="model-13"><div class="checkbox"><input class="input" type="checkbox"><label class="label"></label></div></section><style jsx="true">
+      .checkbox {
+        position: relative;
+        display: inline-block;
+      }
+      .checkbox:after, .checkbox:before {
+        font-family: FontAwesome;
+        font-feature-settings: normal;
+        -webkit-font-kerning: auto;
+                font-kerning: auto;
+        font-language-override: normal;
+        font-stretch: normal;
+        font-style: normal;
+        font-synthesis: weight style;
+        font-variant: normal;
+        font-weight: normal;
+        text-rendering: auto;
+      }
+      .checkbox .label {
+        width: 90px;
+        height: 42px;
+        background: #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 46px;
+        transition: 0.4s;
+      }
+      .checkbox .label:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        left: 0;
+        top: -5px;
+        z-index: 2;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: 0.4s;
+      }
+      .checkbox .input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+        margin:0;
+      }
+      .checkbox .input:hover + .label:after {
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      }
+      .checkbox .input:checked + .label:after {
+        left: 40px;
+      }
+      .model-13 .checkbox:after {
+        text-align:center;
+        content: 'Sucio';
+        font-family: Arial;
+        position: absolute;
+        color: #C67349;
+        top: 8px;
+        right: 13px;
+      }
+      .model-13 .checkbox .label {
+        background: none;
+        border: 3px solid #C67349;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .model-13 .checkbox .label:after {
+        text-align:center;
+        content: 'Limpio';
+        font-family: Arial;
+        color: #fff;
+        line-height: 28px;
+        text-indent: 100px;
+        background: #E28353;
+        overflow: hidden;
+        box-shadow: none;
+        border-radius: 14px;
+        transform: translateX(-50px);
+        -moz-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -o-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.4s linear;
+        -webkit-transition-delay: 0.2s, 0s, 0s;
+        transition: all 0.2s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        top: 3px;
+        left: auto;
+        right: 2px;
+        width: 28px;
+        height: 28px;
+      }
+      .model-13 .checkbox .input:checked + .label {
+        border-color: #329043;
+      }
+      .model-13 .checkbox .input:checked + .label:after {
+        background: #3fb454;
+        left: auto;
+        transform: translateX(0px);
+        -moz-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -o-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -webkit-transition: all 0.4s, width 0.2s linear, text-indent 0.3s linear;
+        -webkit-transition-delay: 0s, 0.4s, 0.4s;
+        transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        width: 80px;
+        text-indent: 0;
+      }
+      </style></div></div></article></div></div></div><style jsx="true" global="true">
+      *{
+        box-sizing: border-box;
+      }
+      body {
+        background: #73E5B1;
+      }
+      body, html {
+        font-family: 'Roboto Slab', serif;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+      //opacidad modal
+      .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{
+        
+      }
+
+      .contenedor-modal{
+        opacity:1 !important;
+        height: 400px;
+        width: 320px;
+        background-color: rgba(255, 255, 255, 1)!important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        backdrop-filter: blur(20px);
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 8px;
+        -webkit-box-shadow: 20px 20px 22px rgba(0,0,0,1);
+        box-shadow: 20px 20px 22px rgba(0,0,0,1);
+        font-family: 'Poppins',sans-serif;
+        text-align:center;
+      }
+
+      .css-qc420c-MuiTypography-root{
+        background-color:#fff;
+        margin:0 !important;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom: 1px solid #000;
+      }
+
+      .card__img {
+        visibility: hidden;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 235px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+      
+      .card__info-hover {
+        position: absolute;
+        padding: 16px;
+        width: 100%;
+        opacity: 0;
+        top: 0;
+      }
+      
+      .card__img--hover {
+        transition: 0.2s all ease-out;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        position: absolute;
+        height: 235px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        top: 0;
+        
+      }
+      .card {//estilos de la carta
+        transition: all .4s cubic-bezier(0.175, 0.885, 0, 0.5);
+        background-color: #fff;
+        margin:8px;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+      }
+      
+      .card__info {
+        justify-content:center;
+        text-align:center;
+        z-index: 2;
+        background-color: #A9D8F0;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        padding-top:10px;
+      }
+      
+      .card__category {
+        font-family: 'Raleway', sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px;
+        font-weight: 500;
+        color: #868686;
+      }
+      
+      .card__title {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-family: 'Roboto Slab', serif;
+      }
+      
+      .card__by {
+        font-size: 12px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+      }
+      
+      .card__author {
+        font-weight: 600;
+        text-decoration: none;
+        color: #AD7D52;
+      }
+      
+      .card:hover .card__img--hover {
+          height: 100%;
+          opacity: 1;
+      }
+
+    </style></div></div></div></div></div></div></div></div>
+  <script src="./ScreenHome_files/bundle.js.descarga"></script>
+
+<div style="position: fixed; left: 0px; top: 0px; width: 0px; height: 0px; z-index: -1; overflow: hidden; visibility: hidden; transition-duration: 0.05s; transition-property: padding; transition-delay: 0s; padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);"></div></body></html>

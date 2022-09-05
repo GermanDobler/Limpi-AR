@@ -17,6 +17,7 @@ export default function Card(props) {
     console.log(estado);
     return (
         <>
+        <Grid item xs={6}>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -29,8 +30,9 @@ export default function Card(props) {
                     </Typography>
                     <Grid id="modal-modal-description" item xs={12} container className='Grid-Item'>
                         <Grid item xs={12} className='Grid-Item' sx={{ p: 1 }}>
-                            <img src={props.sector.img} alt={props.sector.nombre} height={300} width="100%" />
+                            <img src={props.sector.img} alt={props.sector.nombre} height={200} width="100%" />
                         </Grid>
+                        <Grid container item xs={12}>
                         <Grid item xs={8} className='Grid-Item'>
                             <Typography>
                                 Ult Limpieza: {props.sector.fecha}
@@ -38,6 +40,7 @@ export default function Card(props) {
                         </Grid>
                         <Grid item xs={4} className='Grid-Item'>
                             <CustomizedSwitches onChange={switchEstado} checked={estado} />
+                        </Grid>
                         </Grid>
                     </Grid>
                 </Box>
@@ -51,7 +54,7 @@ export default function Card(props) {
                         </div>
                     </div>
                     <div className="card__img">
-                        <img src={props.sector.img} alt={props.sector.nombre} height={235} width={195} />
+                        <img src={props.sector.img} alt={props.sector.nombre} height="100%" width="100%" />
 
                     </div>
                     <div className="card__img--hover">
@@ -60,7 +63,7 @@ export default function Card(props) {
                 </div>
                 <div className="card__info">
                     <Grid item xs={12} className='Grid-Item'>
-                        <Typography>
+                        <Typography variant='h6' >
                             {props.sector.nombre}
                         </Typography>
                     </Grid>
@@ -69,6 +72,7 @@ export default function Card(props) {
                     </Grid>
                 </div>
             </article>
+            </Grid>
         </>
     )
 }

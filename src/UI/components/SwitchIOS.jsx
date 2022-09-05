@@ -15,23 +15,23 @@ export default function CustomizedSwitches(props) {
         position: relative;
         display: inline-block;
       }
-      .checkbox:after, .checkbox:before {
-        font-family: FontAwesome;
-        font-feature-settings: normal;
-        -webkit-font-kerning: auto;
-                font-kerning: auto;
-        font-language-override: normal;
-        font-stretch: normal;
-        font-style: normal;
-        font-synthesis: weight style;
-        font-variant: normal;
-        font-weight: normal;
-        text-rendering: auto;
-      }
+      // .checkbox:after, .checkbox:before {
+      //   font-family: FontAwesome;
+      //   font-feature-settings: normal;
+      //   -webkit-font-kerning: auto;
+      //           font-kerning: auto;
+      //   font-language-override: normal;
+      //   font-stretch: normal;
+      //   font-style: normal;
+      //   font-synthesis: weight style;
+      //   font-variant: normal;
+      //   font-weight: normal;
+      //   text-rendering: auto;
+      // }
       .checkbox .label {
         width: 90px;
         height: 42px;
-        background: #ccc;
+        background: #E74C3C;
         position: relative;
         display: inline-block;
         border-radius: 46px;
@@ -46,7 +46,7 @@ export default function CustomizedSwitches(props) {
         left: 0;
         top: -5px;
         z-index: 2;
-        background: #fff;
+        background: #E74C3C;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         transition: 0.4s;
       }
@@ -72,13 +72,13 @@ export default function CustomizedSwitches(props) {
         content: 'Sucio';
         font-family: Arial;
         position: absolute;
-        color: #C67349;
-        top: 8px;
+        color: #E74C3C;
+        top: 9px;
         right: 13px;
       }
       .model-13 .checkbox .label {
         background: none;
-        border: 3px solid #C67349;
+        border: 3px solid #E74C3C;
         height: 40px;
         border-radius: 20px;
       }

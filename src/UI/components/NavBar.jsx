@@ -21,6 +21,7 @@ const pantallasHome = ['ScreenSecretaria'];
 const pantallasSecretaria = ['ScreenHome', 'ScreenSector'];
 const pantallasSector = ['ScreenHome', 'ScreenSecretaria']
 const ResponsiveAppBar = ({ paqueteP, navigation }) => {
+  const { user, isAuthenticated } = useAuth0();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   console.log(paqueteP);
@@ -176,7 +177,41 @@ const theme = createTheme({
           </Toolbar>
         </Container>
       </AppBar>
+      <style jsx="true">{`
+      .css-i4bv87-MuiSvgIcon-root{
+        width:30px;
+        height:30px;
+      }
+      .css-12h3d6w-MuiPaper-root-MuiAppBar-root{
+        height:55px;
+        color: #37c8c3;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
+   `}</style>
     </>
   );
 };
 export default ResponsiveAppBar;
+// import { Grid } from '@mui/material'
+// import React from 'react'
+// import _JSXStyle from 'styled-jsx/style';
+// import Menu from './Menu';
+
+// export default function NavBar({ paqueteP, navigation }) {
+//   return (
+//     <>
+//       <div className='Header'>
+//         <Grid xs={12} item container>
+//           <Grid xs={6} item>
+//             <Menu paqueteP={paqueteP} navigation={navigation}></Menu>
+//           </Grid>
+//           <Grid xs={6} item>
+//             perfil
+//           </Grid>
+//         </Grid>
+//       </div>
+//     </>
+//   )
+// }
+

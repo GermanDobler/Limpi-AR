@@ -11,44 +11,70 @@ import Electricidad from '../src/img/sectores/Electricidad.png';
 import Electronica from '../src/img/sectores/Electronica.png';
 import Cocina from '../src/img/sectores/Cocina.png';
 import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
+import { Grid } from '@mui/material';
 
 // import AdbIcon from '@mui/icons-material/Adb';
 const Sectores = [
   {id:1, nombre:'Pasillo', estado:true, fecha:"02-09-2022", img:PasilloTaller},
   {id:2, nombre:'Dirección', estado:true, fecha:"03-09-2022", img:Direccion},
-  {id:3, nombre:'Taller - Soldadura', estado:false, fecha:null, img:Soldadura},
-  {id:4, nombre:'Taller - Carpinteria', estado:false, fecha:null, img:Carpinteria},
-  {id:5, nombre:'Taller - Electricidad', estado:false, fecha:null, img:Electricidad},
-  {id:6, nombre:'Taller - Electronica', estado:true, fecha:null, img:Electronica},
+  {id:3, nombre:'Soldadura', estado:false, fecha:null, img:Soldadura},
+  {id:4, nombre:'Carpinteria', estado:false, fecha:null, img:Carpinteria},
+  {id:5, nombre:'Electricidad', estado:false, fecha:null, img:Electricidad},
+  {id:6, nombre:'Electronica', estado:true, fecha:null, img:Electronica},
   {id:7, nombre:'Cocina', estado:true, fecha:null, img:Cocina}
   ]; 
 // const Img = require.context('../src/img');
 export default function HomeScreen({ navigation }) {
   console.log(navigation);
   return (
-    <>
-    <div>
+
+    <div className='color'>
       <NavBar navigation={navigation} paqueteP={"Pantalla Home"}></NavBar>
-        <div className='cards'>
+      <div className='contenedor-cards'>
+      <Grid item xs={12} container>
           {Sectores.map(sector =>(
             // <CustomizedAccordions key={sector.id.toString()} sector={sector}></CustomizedAccordions>
             <CustomizedCard key={sector.id.toString()} sector={sector}></CustomizedCard>
             ))}
-        </div>
-    </div>
+      </Grid>
+      </div>
     <style jsx="true" global="true">{`
+    .contenedor-cards{
+      height: 100vh;
+      width: 100vw;
+      width:100%;
+      overflow: auto;
+      overflow-style:none;
+      border-top-right-radius:30px;
+      border-top-left-radius:30px;
+      background-color:#ebf5f6;
+    }
+    .contenedor-cards::-webkit-scrollbar {
+      display: none;
+    }
+    .color{
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-color:#d4e2e1;
+    }
       *{
         box-sizing: border-box;
       }
-      body {
-        background: #fff;
-      }
       body, html {
-        font-family: 'Roboto Slab', serif;
+        font-family: 'Montserrat Alternates Thin';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Montserrat Alternates Thin'), url('MontserratAlternates-Thin.woff') format('woff');
+        color:#EEF2E6 !!!important;
         margin: 0;
         width: 100%;
         height: 100%;
         padding: 0;
+      }
+
+      .css-view-175oi2r r-flex-13awgt0{
+        overflow:auto;
       }
       //opacidad modal
       .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{
@@ -57,8 +83,8 @@ export default function HomeScreen({ navigation }) {
 
       .contenedor-modal{
         opacity:1 !important;
-        height: 400px;
-        width: 320px;
+        height: 50%;
+        width: 90%;
         background-color: rgba(255, 255, 255, 1)!important;
         -webkit-backdrop-filter: blur(20px) !important;
         backdrop-filter: blur(20px);
@@ -69,55 +95,49 @@ export default function HomeScreen({ navigation }) {
         top: 0;
         bottom: 0;
         border-radius: 8px;
-        -webkit-box-shadow: 20px 20px 22px rgba(0,0,0,1);
-        box-shadow: 20px 20px 22px rgba(0,0,0,1);
         font-family: 'Poppins',sans-serif;
         text-align:center;
       }
-
+      
+      
+      .card {//estilos de la carta
+        transition: all .4s cubic-bezier(0.175, 0.885, 0, 0.5);
+        background-color: #fff;
+        margin:15px 10px 8px 10px;
+        position: relative;
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.5);
+      }
       .css-qc420c-MuiTypography-root{
-        background-color:#fff;
+        background-color:#D6CDA4;
         margin:0 !important;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         border-bottom: 1px solid #000;
       }
 
-      .cards {
-        margin-top:10px;
-        padding-left:10px;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap:wrap;
-        gap:10px 35px;
-      }
-      
-      .card__clock {
-        width: 15px;
-        vertical-align: middle;
-        fill: #AD7D52;
-      }
-      .card__time {
-        font-size: 20px;
-        color: #AD7D52;
-        vertical-align: middle;
-        margin-left: 5px;
-      }
-      
-      .card__clock-info {
-          float: right;
-      }
-      
       .card__img {
         visibility: hidden;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         width: 100%;
-        height: 235px;
+        height: 175px;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
+      }
+      .card__img--hover {
+        transition: 0.2s all ease-out;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        position: absolute;
+        height: 175px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        top: 0;
       }
       
       .card__info-hover {
@@ -128,46 +148,26 @@ export default function HomeScreen({ navigation }) {
         top: 0;
       }
       
-      .card__img--hover {
-        transition: 0.2s all ease-out;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
-        position: absolute;
-        height: 235px;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-        top: 0;
-        
-      }
-      .card {//estilos de la carta
-        transition: all .4s cubic-bezier(0.175, 0.885, 0, 0.5);
-        background-color: #fff;
-        width: 45%;
-        position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
-      }
-      
       .card__info {
         justify-content:center;
         text-align:center;
         z-index: 2;
-        background-color: #A9D8F0;
+        background-color: #ffffff;
+        // background-color: #37c8c3;
+        // background-color: #07acb2;
+        color:#37c8c3;
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
-        padding-top:10px;
+        padding-top:8px;
       }
       
       .card__category {
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Montserrat Alternates Thin';
         text-transform: uppercase;
         font-size: 13px;
         letter-spacing: 2px;
         font-weight: 500;
-        color: #868686;
+        color: #37c8c3;
       }
       
       .card__title {
@@ -175,25 +175,13 @@ export default function HomeScreen({ navigation }) {
         margin-bottom: 10px;
         font-family: 'Roboto Slab', serif;
       }
-      
-      .card__by {
-        font-size: 12px;
-        font-family: 'Raleway', sans-serif;
-        font-weight: 500;
-      }
-      
-      .card__author {
-        font-weight: 600;
-        text-decoration: none;
-        color: #AD7D52;
-      }
-      
+
       .card:hover .card__img--hover {
           height: 100%;
           opacity: 1;
       }
 
     `}</style>
-  </>
+  </div>
   );
 }
