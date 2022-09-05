@@ -40,14 +40,13 @@ export default function HomeScreen({ navigation }) {
       </div>
     <style jsx="true" global="true">{`
     .contenedor-cards{
-      height: 100vh;
+      max-height: 100vh;
       width: 100vw;
-      width:100%;
       overflow: auto;
       overflow-style:none;
       border-top-right-radius:30px;
       border-top-left-radius:30px;
-      background-color:#ebf5f6;
+      background-color:#fff;
     }
     .contenedor-cards::-webkit-scrollbar {
       display: none;
@@ -66,7 +65,6 @@ export default function HomeScreen({ navigation }) {
         font-style: normal;
         font-weight: normal;
         src: local('Montserrat Alternates Thin'), url('MontserratAlternates-Thin.woff') format('woff');
-        color:#EEF2E6 !!!important;
         margin: 0;
         width: 100%;
         height: 100%;
@@ -102,7 +100,7 @@ export default function HomeScreen({ navigation }) {
       
       .card {//estilos de la carta
         transition: all .4s cubic-bezier(0.175, 0.885, 0, 0.5);
-        background-color: #fff;
+        background-color: #ebf5f6;
         margin:15px 10px 8px 10px;
         position: relative;
         border-radius: 25px;
@@ -152,13 +150,13 @@ export default function HomeScreen({ navigation }) {
         justify-content:center;
         text-align:center;
         z-index: 2;
-        background-color: #ffffff;
+        background-color: #ebf5f6;
         // background-color: #37c8c3;
         // background-color: #07acb2;
-        color:#37c8c3;
+        color:#07acb2;
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
-        padding-top:8px;
+        padding-top:5px;
       }
       
       .card__category {
@@ -167,7 +165,7 @@ export default function HomeScreen({ navigation }) {
         font-size: 13px;
         letter-spacing: 2px;
         font-weight: 500;
-        color: #37c8c3;
+        color: #07acb2;
       }
       
       .card__title {

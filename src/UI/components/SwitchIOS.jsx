@@ -15,19 +15,6 @@ export default function CustomizedSwitches(props) {
         position: relative;
         display: inline-block;
       }
-      // .checkbox:after, .checkbox:before {
-      //   font-family: FontAwesome;
-      //   font-feature-settings: normal;
-      //   -webkit-font-kerning: auto;
-      //           font-kerning: auto;
-      //   font-language-override: normal;
-      //   font-stretch: normal;
-      //   font-style: normal;
-      //   font-synthesis: weight style;
-      //   font-variant: normal;
-      //   font-weight: normal;
-      //   text-rendering: auto;
-      // }
       .checkbox .label {
         width: 90px;
         height: 42px;
@@ -72,13 +59,13 @@ export default function CustomizedSwitches(props) {
         content: 'Sucio';
         font-family: Arial;
         position: absolute;
-        color: #E74C3C;
-        top: 9px;
+        color: #000;
+        top: 10px;
         right: 13px;
       }
       .model-13 .checkbox .label {
         background: none;
-        border: 3px solid #E74C3C;
+        border: 3px solid #BC2B26;
         height: 40px;
         border-radius: 20px;
       }
@@ -89,7 +76,7 @@ export default function CustomizedSwitches(props) {
         color: #fff;
         line-height: 28px;
         text-indent: 100px;
-        background: #E28353;
+        background: #B20D07;
         overflow: hidden;
         box-shadow: none;
         border-radius: 14px;
@@ -106,10 +93,10 @@ export default function CustomizedSwitches(props) {
         height: 28px;
       }
       .model-13 .checkbox .input:checked + .label {
-        border-color: #329043;
+        border-color: #07acb2;
       }
       .model-13 .checkbox .input:checked + .label:after {
-        background: #3fb454;
+        background: #07acb2;
         left: auto;
         transform: translateX(0px);
         -moz-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;

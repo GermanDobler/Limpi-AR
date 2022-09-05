@@ -178,13 +178,16 @@ const theme = createTheme({
         </Container>
       </AppBar>
       <style jsx="true">{`
-      .css-i4bv87-MuiSvgIcon-root{
-        width:30px;
-        height:30px;
+      .css-1pz7awu-MuiButtonBase-root-MuiIconButton-root{
+        background-color:#07acb2;
+        padding:0;
+        border-radius:40px;
+        width:40px;
+        height:40px;
+
       }
       .css-12h3d6w-MuiPaper-root-MuiAppBar-root{
-        height:55px;
-        color: #37c8c3;
+        color: #fff;
         background: rgba(0, 0, 0, 0);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
       }
