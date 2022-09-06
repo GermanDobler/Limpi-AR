@@ -11,7 +11,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import _JSXStyle from 'styled-jsx/style';
 import { createTheme } from '@mui/material/styles';
-import { useAuth0 } from '@auth0/auth0-react';
+import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
+import Profile from './Profile';
 
 // import _JSXStyle from 'styled-jsx/style'
 // import AdbIcon from '@mui/icons-material/Adb';
@@ -100,7 +101,9 @@ const theme = createTheme({
   }
   const { logout } = useAuth0();
   return ( //Estructura del NavBar
-    <>
+    <Auth0Provider domain='limpi-ar.us.auth0.com'
+          clientId='hXGGWtPNGHTkotavIkwcgoiKrkn0u9E6'
+          redirectUri={window.location.origin}>
       <AppBar position="sticky" theme={theme}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -142,7 +145,10 @@ const theme = createTheme({
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Abrir Usuario">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  {/* <Avatar alt="Remy Sharp" src={user.image} /> */}
+                  <Avatar>
+                  <Profile/>
+                  </Avatar>
                 </IconButton>
               </Tooltip>
               <Menu
@@ -192,7 +198,7 @@ const theme = createTheme({
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
       }
    `}</style>
-    </>
+   </Auth0Provider>
   );
 };
 export default ResponsiveAppBar;
