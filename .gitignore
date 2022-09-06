@@ -53,8 +53,3 @@ buck-out/
 .expo/
 web-build/
 dist/
-
-# cosas
-/package-lock.json
-/package.json
-/yarn.lock
