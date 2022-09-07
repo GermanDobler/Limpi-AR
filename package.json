@@ -20,6 +20,7 @@
     "auth0": "^2.42.0",
     "bootstrap": "^5.2.0",
     "expo": "~46.0.7",
+    "expo-cli": "^6.0.5",
     "expo-splash-screen": "~0.16.1",
     "expo-status-bar": "~1.4.0",
     "primeicons": "^5.0.0",
