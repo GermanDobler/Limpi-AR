@@ -10660,10 +10660,10 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^2.6.6"
 
-"styled-jsx@^5.0.4":
-  "integrity" "sha512-sDFWLbg4zR+UkNzfk5lPilyIgtpddfxXEULxhujorr5jtePTUqiPDc5BC0v1NRqTr/WaFBGQQUoYToGlF4B2KQ=="
-  "resolved" "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.0.4.tgz"
-  "version" "5.0.4"
+"styled-jsx@^5.0.6":
+  "integrity" "sha512-xOeROtkK5MGMDimBQ3J6iPId8q0t/BDoG5XN6oKkZClVz9ISF/hihN8OCn2LggMU6N32aXnrXBdn3auSqNS9fA=="
+  "resolved" "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.0.6.tgz"
+  "version" "5.0.6"
 
 "stylehacks@^4.0.0":
   "integrity" "sha512-7GlLk9JwlElY4Y6a/rmbH2MhVlTyVmiJd1PfTCqFaIBEGMYNsrO/v3SeGTdhBThLg4Z+NbOk/qFMwCa+J+3p/g=="
