@@ -101,9 +101,7 @@ const theme = createTheme({
   }
   const { logout } = useAuth0();
   return ( //Estructura del NavBar
-    <Auth0Provider domain='limpi-ar.us.auth0.com'
-          clientId='hXGGWtPNGHTkotavIkwcgoiKrkn0u9E6'
-          redirectUri={window.location.origin}>
+  <>
       <AppBar position="sticky" theme={theme}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -198,7 +196,7 @@ const theme = createTheme({
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
       }
    `}</style>
-   </Auth0Provider>
+   </>
   );
 };
 export default ResponsiveAppBar;

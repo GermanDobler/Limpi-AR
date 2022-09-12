@@ -20,8 +20,7 @@ import React from 'react';
 import LoginButton from './src/UI/components/LoginButton';
 import LogoutButton from './src/UI/components/LogoutButton';
 import Profile from './src/UI/components/Profile';
-import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
-import { Auth0Provider } from '@auth0/auth0-react';
+import { useAuth0, withAuthenticationRequired, Auth0Provider } from '@auth0/auth0-react';
 import MainStack from './navigation/MainStack';
 withAuthenticationRequired(App);
 function App() {
