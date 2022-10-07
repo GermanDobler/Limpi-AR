@@ -58,7 +58,7 @@ export default function ScreenPersonalInfo({ navigation }) {
                     fullWidth
                     name="Contraseña"
                     label="Contraseña"
-                    type="Contraseña"
+                    type="password"
                     id="Contraseña"
                   />
                 </Grid>
