@@ -18,7 +18,7 @@ import Profile from './Profile';
 // import AdbIcon from '@mui/icons-material/Adb';
 
 const pantallasUser = ['ScreenPerfil'];// 'Configuración', 'LogOut'
-const pantallasHome = ['ScreenSecretaria'];
+const pantallasHome = ['ScreenSecretaria','ScreenSector'];
 const pantallasSecretaria = ['ScreenHome', 'ScreenSector'];
 const pantallasSector = ['ScreenHome', 'ScreenSecretaria']
 const ResponsiveAppBar = ({ paqueteP, navigation }) => {
@@ -63,6 +63,7 @@ const theme = createTheme({
           {pantalla == "ScreenLogIn" ? "LOGIN" : null} {/*Ifternario que compara el prop(Pantalla) con la pantalla indicada por string, 
         if == true imprime un string definido Else es igual a null*/}
           {pantalla == "ScreenSecretaria" ? "Secretaria" : null}
+          {pantalla == "ScreenSector" ? "Sectores" : null}
         </MenuItem>
       )));
       break;
