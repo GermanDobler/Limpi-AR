@@ -1,10 +1,11 @@
+import { View } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
-import { View } from 'react-native';
-import { useAuth } from '../context/AuthContext';
-import { useStyles } from '../context/GlobalStyles';
-import Title from '../UI/components/Title';
-export default function ScreenSignin({ navigation }) {
-  const { signup, getError, errorType } = useAuth();
+import { useAuth } from '../../context/AuthContext';
+import { useStyles } from '../../context/GlobalStyles';
+import Title from '../../UI/components/Title';
+import './ScreenLogin.css'
+export default function ScreenLogin({ navigation }) {
+  const { login, getError, errorType } = useAuth();
   const { style } = useStyles();
   const [user, setUser] = useState({
     email: '',
@@ -15,26 +16,27 @@ export default function ScreenSignin({ navigation }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signup(user.email, user.password)
+      await login(user.email, user.password)
       navigation.navigate('ScreenHome');
     } catch (error) {
-      getError(error)//mando a la funcion el error por parametro
+      getError(error)//mando el error por parametro
     }
   }
+
   return (
     <View>
       <div className="fondo">
         <View style={style.container_hola}>
           <View style={style.container}>
-            <Title titulo={'Registro'} />
+            <Title titulo={'Inicio de Sesión'} />
             {errorType && <p>{errorType}</p>}
             <label>Correo Electrónico</label>
             <input type="text" name='email' placeholder='Ingrese correo electrónico' onChange={handleChange} style={style.input} />
             <label>Contraseña</label>
             <input type="password" name='password' placeholder='Ingrese contraseña' onChange={handleChange} style={style.input} />
             <div style={style.containerFlex}>
-              <button onClick={handleSubmit} style={style.button}>Crear Cuenta</button>
-              <button onClick={() => navigation.navigate('ScreenLogin')} style={style.button}>Ya tengo cuenta</button>
+              <button onClick={handleSubmit} style={style.button}>Iniciar sesión</button>
+              <button onClick={() => navigation.navigate('ScreenSignin')} style={style.button}>Registrate</button>
             </div>
           </View>
         </View>

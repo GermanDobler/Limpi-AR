@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreenHome from '../screens/ScreenHome';
 import { StyleProvider, useStyles } from '../context/GlobalStyles';
-import ScreenLogin from '../screens/ScreenLogin';
+import ScreenLogin from '../screens/ScreenLogin/ScreenLogin';
 import { View } from 'react-native';
 import { AuthProvider } from '../context/AuthContext';
 import ScreenSignin from '../screens/ScreenSignin';
@@ -45,3 +45,10 @@ export default function MainStack() {
     </StyleProvider>
   );
 }
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <React.StrictMode>
+//     <StyleProvider>
+//       <Screens></Screens>
+//     </StyleProvider>
+//   </React.StrictMode>
+// );
