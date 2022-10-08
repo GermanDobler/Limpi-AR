@@ -1,4 +1,11 @@
-import React, { createContext } from "react";
+import React, { createContext, useContext } from "react";
+
+/*Usar el context*/
+export const useStyles = () =>{
+    const contextStyles = useContext(StyleContext);
+    return contextStyles;
+}
+/*Usar el context*/
 
 const styles = {
     mainContainer:{

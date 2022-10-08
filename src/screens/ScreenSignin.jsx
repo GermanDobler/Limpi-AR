@@ -1,9 +1,9 @@
-import { View } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
+import { View } from 'react-native';
 import { useAuth } from '../context/AuthContext';
 import { useStyles } from '../context/GlobalStyles';
-export default function ScreenLogin({navigation}) {
-  const { login } = useAuth();
+export default function ScreenSignin({navigation}) {
+  const { signup } = useAuth();
   const [ error, setError ] = useState('');
   const { style } = useStyles();
   const [ user, setUser ] = useState({
@@ -15,7 +15,7 @@ export default function ScreenLogin({navigation}) {
   const handleSubmit = async (e) => { 
     e.preventDefault();
     try{
-      await login(user.email, user.password)
+      await signup(user.email, user.password)
       navigation.navigate('ScreenHome');
     } catch (error){
       if(error.code === 'auth/invalid-email'){
@@ -24,21 +24,21 @@ export default function ScreenLogin({navigation}) {
         setError('No ingresó contraseña')
       } else if(error.code === 'auth/weak-password'){
         setError('Contraseña muy corta')
-      } else if(error.code === 'auth/user-not-found'){
-        setError('El usuario no existe/ Registrate')
+      }else if(error.code === 'auth/email-already-in-use'){
+        setError('El correo ya está en uso')
       }
     }
   } 
-
-    return (
-        <View>
-            {error && <p>{error}</p>}
-            <label>Correo Electronico</label>
-            <input type="text" name='email' placeholder='Ingrese su Correo electrónico' onChange={handleChange} />
-            <label>Contraseña</label>
-            <input type="password" name='password' placeholder='Ingrese su Contraseña' onChange={handleChange} />
-            <button onClick={handleSubmit}>Iniciar sesión</button>
-            <button onClick={()=>navigation.navigate('ScreenSignin')}>Registrate</button>
-        </View>
-    )
+  return (
+    
+    <View>
+      {error && <p>{error}</p>}
+      <label>Correo Electronico</label>
+      <input type="text" name='email' placeholder='Ingrese su Correo electrónico' onChange={handleChange}/>
+      <label>Contraseña</label>
+      <input type="password" name='password' placeholder='Ingrese su Contraseña' onChange={handleChange}/>
+      <button onClick={handleSubmit}>Crear Cuenta</button>
+      <button onClick={()=> navigation.navigate('ScreenLogin')}>Ya tengo cuenta</button>
+    </View>
+  )
 }

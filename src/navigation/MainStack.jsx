@@ -2,26 +2,48 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreenHome from '../screens/ScreenHome';
-import { StyleProvider } from '../context/GlobalStyles';
+import { StyleProvider, useStyles } from '../context/GlobalStyles';
 import ScreenLogin from '../screens/ScreenLogin';
-
+import { View } from 'react-native';
+import { AuthProvider } from '../context/AuthContext';
+import ScreenSignin from '../screens/ScreenSignin';
+import ProtectedNavigation from '../ProtectedNavigation';
 const Stack = createNativeStackNavigator();
 
-export default function MainStack() {
+function Screens() {
+  const {style} = useStyles();
   return (
-    <StyleProvider>
+    <View style={style.mainContainer}>
+      <AuthProvider>
       <NavigationContainer>
         <Stack.Navigator>
+          
         <Stack.Screen
-            name='ScreenSigIn'
+            name='ScreenLogin'
             component={ScreenLogin}
           />
+
+          <Stack.Screen
+            name='ScreenSignin'
+            component={ScreenSignin}
+          />
+          {/* <ProtectedNavigation> */}
           <Stack.Screen
             name='ScreenHome'
             component={ScreenHome}
           />
+          {/* </ProtectedNavigation> */}
         </Stack.Navigator>
       </NavigationContainer>
+      </AuthProvider>
+    </View>
+  );
+};
+
+export default function MainStack() {
+  return (
+    <StyleProvider>
+      <Screens></Screens>
     </StyleProvider>
   );
-} 
+}

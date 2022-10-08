@@ -1484,7 +1484,7 @@
   "resolved" "https://registry.npmjs.org/@firebase/auth-types/-/auth-types-0.11.0.tgz"
   "version" "0.11.0"
 
-"@firebase/auth@0.20.8":
+"@firebase/auth@^0.20.8", "@firebase/auth@0.20.8":
   "integrity" "sha512-ss0Uyp5sLrGRR/8bbkZTod5gmdgltqvcxQySAKYGbsyBq4j+RTjZzVqUHZHFY7f8NLm2Bz4hO1dZRaIUYW8zLw=="
   "resolved" "https://registry.npmjs.org/@firebase/auth/-/auth-0.20.8.tgz"
   "version" "0.20.8"
@@ -3801,7 +3801,7 @@
   dependencies:
     "micromatch" "^4.0.2"
 
-"firebase@^9.11.0":
+"firebase@^9.9.4":
   "integrity" "sha512-AOPj3FmpweMulG3A1901hOhbCoW22IHQuRfst0Tew9Xc8Ldq75uILu0MnmCYdMVGitF7uTFVOFeyhWyGvMxpKw=="
   "resolved" "https://registry.npmjs.org/firebase/-/firebase-9.11.0.tgz"
   "version" "9.11.0"
