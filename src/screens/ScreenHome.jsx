@@ -6,17 +6,18 @@ import StyleContext from '../context/GlobalStyles';
 export default function ScreenHome({ navigation }) {
   const { style } = useContext(StyleContext);
   const { logout, user, loading } = useAuth();
-  
+
   const handleLogout = async () => {
-    await logout()
+    navigation.navigate('ScreenLogin')
+    await logout();
   }
-
-  if (!user) return navigation.navigate('ScreenLogin')
-
   return (
     <View style={style.container}>
+      <div>
       <p>{user.email}</p>
       <button onClick={handleLogout}>logout</button>
+      </div>
     </View>
   )
+
 }

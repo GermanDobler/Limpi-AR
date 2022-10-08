@@ -7,34 +7,32 @@ import ScreenLogin from '../screens/ScreenLogin';
 import { View } from 'react-native';
 import { AuthProvider } from '../context/AuthContext';
 import ScreenSignin from '../screens/ScreenSignin';
-import ProtectedNavigation from '../ProtectedNavigation';
 const Stack = createNativeStackNavigator();
 
 function Screens() {
-  const {style} = useStyles();
+  const { style } = useStyles();
   return (
     <View style={style.mainContainer}>
       <AuthProvider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          
-        <Stack.Screen
-            name='ScreenLogin'
-            component={ScreenLogin}
-          />
-
-          <Stack.Screen
-            name='ScreenSignin'
-            component={ScreenSignin}
-          />
-          {/* <ProtectedNavigation> */}
-          <Stack.Screen
-            name='ScreenHome'
-            component={ScreenHome}
-          />
-          {/* </ProtectedNavigation> */}
-        </Stack.Navigator>
-      </NavigationContainer>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name='ScreenLogin'
+              component={ScreenLogin}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name='ScreenSignin'
+              component={ScreenSignin}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name='ScreenHome'
+              component={ScreenHome}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
       </AuthProvider>
     </View>
   );
