@@ -31,18 +31,17 @@ const styles = {
         justifyContent: 'center'
     },
     containerFlex: {
+        flex:1,
         display: 'flex',
         width: '70%',
-        gap: '30px'
+        gap: '20px'
     },
     //Inputs
     input: {
-        // textAlign: 'center',
         backgroundColor:'#f1f1f1',
         fontSize: '15px',
         border:'0px',
         borderBottom: '1px solid #121212',
-        // borderRadius: '25px',
         height: '30px',
         marginTop: '10px',
         marginBottom: '10px',
@@ -58,6 +57,12 @@ const styles = {
         marginTop: '10px',
         marginBottom: '10px',
         width: '70%'
+    },
+    buttonGoogle:{
+        border: '0.1px solid #12121239',
+        borderRadius: '25px',
+        width:'100%',
+        height:'40px'
     },
     //Titulo-Encabezado
     titulo:{

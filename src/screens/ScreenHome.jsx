@@ -11,6 +11,7 @@ export default function ScreenHome({ navigation }) {
     navigation.navigate('ScreenLogin')
     await logout();
   }
+  console.log(user)
   return (
     <View style={style.container}>
       <div>

@@ -4,8 +4,9 @@ import { useAuth } from '../../context/AuthContext';
 import { useStyles } from '../../context/GlobalStyles';
 import Title from '../../UI/components/Title';
 import './ScreenLogin.css'
+import google from '../../assets/image 1.png';
 export default function ScreenLogin({ navigation }) {
-  const { login, getError, errorType } = useAuth();
+  const { login, getError, errorType, loginWithGoogle } = useAuth();
   const { style } = useStyles();
   const [user, setUser] = useState({
     email: '',
@@ -23,6 +24,11 @@ export default function ScreenLogin({ navigation }) {
     }
   }
 
+  const handleGoogleLogin = async () => {
+    await loginWithGoogle();
+    navigation.navigate('ScreenHome');
+  }
+
   return (
     <View>
       <div className="fondo">
@@ -37,6 +43,9 @@ export default function ScreenLogin({ navigation }) {
             <div style={style.containerFlex}>
               <button onClick={handleSubmit} style={style.button}>Iniciar sesión</button>
               <button onClick={() => navigation.navigate('ScreenSignin')} style={style.button}>Registrate</button>
+            </div>
+            <div style={style.containerFlex}>
+              <button onClick={handleGoogleLogin} style={style.buttonGoogle}><img src={google} alt="googleimg" width={'20px'} height={'20px'}/>Goggle</button>
             </div>
           </View>
         </View>
