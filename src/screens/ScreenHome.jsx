@@ -1,22 +1,21 @@
-import React, { useContext, useEffect } from 'react'
-import { View } from 'react-native'
+import React from 'react';
+import { View } from 'react-native';
 import { useAuth } from '../context/AuthContext';
-import StyleContext from '../context/GlobalStyles';
 
 export default function ScreenHome({ navigation }) {
-  const { style } = useContext(StyleContext);
   const { logout, user, loading } = useAuth();
 
   const handleLogout = async () => {
     navigation.navigate('ScreenLogin')
     await logout();
   }
-  console.log(user)
+  // console.log(user)
   return (
-    <View style={style.container}>
+    <View>
       <div>
       <p>{user.email}</p>
-      <button onClick={handleLogout}>logout</button>
+      <img src={user.photoURL} alt="" />
+      <button onClick={handleLogout}>Cerrar Sesión</button>
       </div>
     </View>
   )

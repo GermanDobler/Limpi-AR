@@ -1,5 +1,7 @@
 .fondo {
-    background-image: url("../../assets/MobileBackground.png");
+    /* background-image: url("../../assets/MobileBackground.png"); */
+    /* background-image: url("../../assets/Rectangle.png"); */
+    /* background-color: #0F9565; */
     height: 100vh;
     width: 100vw;
     background-size: cover;
