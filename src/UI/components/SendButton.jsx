@@ -11,7 +11,7 @@ export default function SendButton(props) {
       <Button className="botones" variant="contained" endIcon={<SendIcon />}>
         Enviar
       </Button>
-      <style jsx>{`
+      <style jsx="true">{`
       .botones{
         margin:5px !important;
         width :160px !important;
