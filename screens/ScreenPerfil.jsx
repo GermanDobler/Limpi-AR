@@ -7,7 +7,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import NavBar from "../src/UI/components/NavBar";
 import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
@@ -17,7 +16,6 @@ export default function ScreenPersonalInfo({ navigation }) {
   return (
     isAuthenticated && ( 
     <>
-      <NavBar navigation={navigation} paqueteP={"Pantalla Perfil"} />
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />

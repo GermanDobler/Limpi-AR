@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Button, View } from 'react-native';
 import SelectorDatosPersonales from '../src/UI/components/SelectorDatosPersonales';
 import RadioButton from '../src/UI/components/RadioButton';
-import NavBar from '../src/UI/components/NavBar';
 import ButtonMui from '../src/UI/components/ButtonMui';
 import UploadButton from '../src/UI/components/UploadButton';
 import DeleteButton from '../src/UI/components/DeleteButton';
@@ -12,7 +11,6 @@ import _JSXStyle from 'styled-jsx/style'
 export default function ScreenSecretaria({ navigation, props }) {
   return (
     <>
-    <NavBar navigation={navigation} paqueteP={"Pantalla Secretaria"}></NavBar>
     <View style={{ alignItems: 'center', justifyContent: 'center' }}>
       <UploadButton className="botones"></UploadButton>
       <DeleteButton className="botones"></DeleteButton>

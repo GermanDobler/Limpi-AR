@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { Button, View } from 'react-native';
 import SectorSelect from '../src/UI/components/SectorSelect';
-import NavBar from '../src/UI/components/NavBar';
 import ButtonMui from '../src/UI/components/ButtonMui';
 import _JSXStyle from 'styled-jsx/style'
 export default function ScreenSector({ navigation, props }) {
   return (
     <>
-      <NavBar navigation={navigation} paqueteP={"Pantalla Sector"}></NavBar>
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
         <div className="fondo">
           <br />

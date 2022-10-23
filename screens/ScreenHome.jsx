@@ -1,6 +1,4 @@
 import * as React from 'react';
-import NavBar from '../src/UI/components/NavBar'
-import CustomizedAccordions from '../src/UI/components/Accordion';
 import CustomizedCard from '../src/UI/components/Card';
 import _JSXStyle from 'styled-jsx/style';
 import PasilloTaller from '../src/img/sectores/pasillo-taller.png';
@@ -10,7 +8,6 @@ import Carpinteria from '../src/img/sectores/Carpinteria.png';
 import Electricidad from '../src/img/sectores/Electricidad.png';
 import Electronica from '../src/img/sectores/Electronica.png';
 import Cocina from '../src/img/sectores/Cocina.png';
-import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
 import { Grid } from '@mui/material';
 
 // import AdbIcon from '@mui/icons-material/Adb';
@@ -25,11 +22,9 @@ const Sectores = [
   ]; 
 // const Img = require.context('../src/img');
 export default function HomeScreen({ navigation }) {
-  console.log(navigation);
   return (
 
     <div className='color'>
-      <NavBar navigation={navigation} paqueteP={"Pantalla Home"}></NavBar>
       <div className='contenedor-cards'>
       <Grid item xs={12} container>
           {Sectores.map(sector =>(
