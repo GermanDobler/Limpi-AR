@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { AuthProvider } from './src/context/AuthContext';
 import ScreenHome from "./screens/ScreenHome";
 import ScreenLogin from "./screens/ScreenLogin";
 import ScreenSecretaria from "./screens/ScreenSecretaria";
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <>
+    <AuthProvider>
       <Router>
         <div className="container mt-5">
           <Routes>
@@ -59,6 +61,7 @@ function App() {
           </Routes> */}
         </div>
       </Router>
+      </AuthProvider>
     </>
   );
 }
