@@ -6,7 +6,7 @@ import { createUserWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup
 } from 'firebase/auth';
-/*import { auth } from '../db/database';*/
+import { auth } from '../firebase/firebase';
 const authContext = createContext();
 /*Usar el context*/
 export const useAuth = () => {
