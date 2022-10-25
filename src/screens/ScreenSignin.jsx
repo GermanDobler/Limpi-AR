@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { View } from 'react-native';
 import { useAuth } from '../context/AuthContext';
 import { useStyles } from '../context/GlobalStyles';

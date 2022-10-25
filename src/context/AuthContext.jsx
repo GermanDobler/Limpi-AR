@@ -4,7 +4,8 @@ import { createUserWithEmailAndPassword,
     onAuthStateChanged, 
     signOut,
     GoogleAuthProvider,
-    signInWithPopup
+    signInWithPopup,
+    signInWithRedirect
 } from 'firebase/auth';
 import { auth } from '../db/database';
 const authContext = createContext();
@@ -32,6 +33,7 @@ const AuthProvider = ({ children }) => {
     const loginWithGoogle = () => {
         const provider = new GoogleAuthProvider();
         console.log(provider);
+        // return signInWithRedirect(auth, provider);
         return signInWithPopup(auth, provider)
     }
 
