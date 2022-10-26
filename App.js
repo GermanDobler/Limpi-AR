@@ -7,62 +7,33 @@ import ScreenLogin from "./screens/ScreenLogin";
 import ScreenSecretaria from "./screens/ScreenSecretaria";
 import ScreenSector from "./screens/ScreenSector";
 import ScreenPerfil from "./screens/ScreenPerfil";
+import ScreenRegister from "./screens/ScreenRegister";
+import ProtectedRoute from "./src/UI/components/ProtectedRoute";
 function App() {
 
   return (
+    <AuthProvider>
     <>
     <AuthProvider>
       <Router>
         <div className="container mt-5">
+        <AuthProvider>
           <Routes>
-            <Route path="/" element={<ScreenHome />}></Route>
-          </Routes>
-          <Routes>
+          <AuthProvider>
+            <Route path="/" element={<ScreenRegister />}></Route>
             <Route path="/ScreenLogin" element={<ScreenLogin />}></Route>
+            <Route path="/ScreenSecretaria" element={<ProtectedRoute><ScreenSecretaria /></ProtectedRoute>}></Route>
+            <Route path="/ScreenSector" element={<ProtectedRoute><ScreenSector /></ProtectedRoute>}></Route>
+            <Route path="/ScreenPerfil" element={<ProtectedRoute><ScreenPerfil /></ProtectedRoute>}></Route>
+            <Route path="/ScreenHome" element={<ProtectedRoute><ScreenHome /></ProtectedRoute>} ></Route>
+            </AuthProvider>
           </Routes>
-          <Routes>
-            <Route path="/ScreenSecretaria" element={<ScreenSecretaria />}></Route>
-          </Routes>
-          <Routes>
-            <Route
-              path="/ScreenSector"
-              element={<ScreenSector />}
-            ></Route>
-          </Routes>
-          <Routes>
-            <Route path="/ScreenPerfil" element={<ScreenPerfil />}></Route>
-          </Routes>
-          {/* <Routes>
-            <Route
-              path="/Modificar_Visitas"
-              element={<Modificar_Visitas />}
-            ></Route>
-          </Routes>
-          <Routes>
-            <Route
-              path="/Editar_Visitas/:id"
-              element={<Editar_Visitas />}
-            ></Route>
-          </Routes>
-          <Routes>
-            <Route
-              path="/PrincipalNoticia"
-              element={<PrincipalNoticia />}
-            ></Route>
-          </Routes>
-          <Routes>
-            <Route path="/SegundaNoticia" element={<SegundaNoticia />}></Route>
-          </Routes>
-          <Routes>
-            <Route path="/TerceraNoticia" element={<TerceraNoticia />}></Route>
-          </Routes>
-          <Routes>
-            <Route path="/NewBeepcon" element={<NewBeepcon />}></Route>
-          </Routes> */}
+          </AuthProvider>
         </div>
       </Router>
       </AuthProvider>
     </>
+    </AuthProvider>
   );
 }
 

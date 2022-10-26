@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../src/context/AuthContext";
 //import { Alert } from "./Alert";
 
 export function Login() {
@@ -111,7 +111,7 @@ export function Login() {
       </button>
       <p className="my-4 text-sm flex justify-between px-3">
         Don't have an account?
-        <Link to="/register" className="text-blue-700 hover:text-blue-900">
+        <Link to="/ScreenRegister" className="text-blue-700 hover:text-blue-900">
           Register
         </Link>
       </p>

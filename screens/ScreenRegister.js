@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
-import { Alert } from "./Alert";
+import { useAuth } from "../src/context/AuthContext";
+//import { Alert } from "./Alert";
 export function Register() {
   const { signup } = useAuth();
 
