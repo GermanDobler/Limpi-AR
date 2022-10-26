@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import { Alert } from "./Alert";
 export function Register() {
   const { signup } = useAuth();
@@ -68,7 +68,7 @@ export function Register() {
       </form>
       <p className="my-4 text-sm flex justify-between px-3">
         Already have an Account?
-        <Link to="/login" className="text-blue-700 hover:text-blue-900">
+        <Link to="/ScreenLogin" className="text-blue-700 hover:text-blue-900">
           Login
         </Link>
       </p>

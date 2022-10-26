@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { Alert } from "./Alert";
+//import { Alert } from "./Alert";
 
 export function Login() {
   const [user, setUser] = useState({
@@ -48,7 +48,7 @@ export function Login() {
 
   return (
     <div className="w-full max-w-xs m-auto">
-      {error && <Alert message={error} />}
+      {/* {error && <Alert message={error} />} */}
 
       <form
         onSubmit={handleSubmit}
