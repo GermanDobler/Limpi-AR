@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../src/context/AuthContext";
 //import { Alert } from "./Alert";
 
-export function Login() {
+export default function Login() {
   const [user, setUser] = useState({
     email: "",
     password: "",
