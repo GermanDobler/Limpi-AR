@@ -9,7 +9,7 @@ import Electricidad from '../src/img/sectores/Electricidad.png';
 import Electronica from '../src/img/sectores/Electronica.png';
 import Cocina from '../src/img/sectores/Cocina.png';
 import { Grid } from '@mui/material';
-
+import { useAuth } from '../src/context/AuthContext';
 // import AdbIcon from '@mui/icons-material/Adb';
 const Sectores = [
   {id:1, nombre:'Pasillo', estado:true, fecha:"02-09-2022", img:PasilloTaller},
@@ -21,6 +21,17 @@ const Sectores = [
   {id:7, nombre:'Cocina', estado:true, fecha:null, img:Cocina}
   ]; 
 // const Img = require.context('../src/img');
+
+const { logout, user } = useAuth();
+
+  console.log(user);
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 export default function HomeScreen({ navigation }) {
   return (
 
@@ -32,6 +43,12 @@ export default function HomeScreen({ navigation }) {
             <CustomizedCard key={sector.id.toString()} sector={sector}></CustomizedCard>
             ))}
       </Grid>
+      <button
+          className="bg-slate-200 hover:bg-slate-300 rounded py-2 px-4 text-black"
+          onClick={handleLogout}
+        >
+          logout
+        </button>
       </div>
     <style jsx="true" global="true">{`
     .contenedor-cards{
