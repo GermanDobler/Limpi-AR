@@ -11,6 +11,7 @@ export default function ScreenSector({ navigation, props }) {
   return (
     <>
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <form onSubmit={store}> 
         <div className="fondo">
           <br />
           <SectorSelect nombre_sector="Sector 1"></SectorSelect>
@@ -18,8 +19,9 @@ export default function ScreenSector({ navigation, props }) {
           <SectorSelect nombre_sector="Sector 3"></SectorSelect>
           <SectorSelect nombre_sector="Sector 4"></SectorSelect>
           <SectorSelect nombre_sector="Sector 5 (Opcional)"></SectorSelect>
-          <ButtonMui name="Guardar Sectores"></ButtonMui>
+          <ButtonMui name="Guardar Sectores"></ButtonMui> 
         </div>
+        </form>
         <style jsx="true">{`
       body {
         background: #EEE5E3;

@@ -36,7 +36,7 @@ export default function SectorSelect(props) {
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+      <form onSubmit={store}>
         <InputLabel id="demo-simple-select-label">{props.nombre_sector}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -75,7 +75,7 @@ export default function SectorSelect(props) {
           <MenuItem value={'Baño Mujeres (Taller)'}>Baño Mujeres Taller</MenuItem>
           <MenuItem value={'Taller 1 Ajuste'}>Taller 1 Ajuste</MenuItem>
         </Select>
-      </FormControl>
+      </form>
     </Box>
   );
 }
