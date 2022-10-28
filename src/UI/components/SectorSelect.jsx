@@ -23,9 +23,6 @@ export default function SectorSelect(props) {
     });
     navigate("/Home");
   };
-
-  const [idioma, setIdioma] = useState("");
-  
   const [sector, setSector] = React.useState('');
   const handleChange = (event) => {
     setSector(event.target.value);
