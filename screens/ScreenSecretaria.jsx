@@ -62,7 +62,7 @@ export default function ScreenSecretaria({ navigation, props }) {
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">apellido</label>
+              <label className="form-label">Apellido</label>
               <input
                 value={apellido}
                 onChange={(e) => setApellido(e.target.value)}
@@ -71,7 +71,7 @@ export default function ScreenSecretaria({ navigation, props }) {
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">celular</label>
+              <label className="form-label">Nro de Celular</label>
               <input
                 value={celular}
                 onChange={(e) => setCelular(e.target.value)}
@@ -80,7 +80,7 @@ export default function ScreenSecretaria({ navigation, props }) {
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">correo</label>
+              <label className="form-label">Correo Electronico</label>
               <input
                 value={correo}
                 onChange={(e) => setCorreo(e.target.value)}
