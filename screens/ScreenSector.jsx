@@ -1,8 +1,12 @@
-import * as React from 'react';
+import React, { useState } from "react";
 import { Button, View } from 'react-native';
 import SectorSelect from '../src/UI/components/SectorSelect';
 import ButtonMui from '../src/UI/components/ButtonMui';
-import _JSXStyle from 'styled-jsx/style'
+import _JSXStyle from 'styled-jsx/style';
+import { Navigate, useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../src/firebaseconfig/firebase";
+import { async } from "@firebase/util";
 export default function ScreenSector({ navigation, props }) {
   return (
     <>
@@ -14,7 +18,7 @@ export default function ScreenSector({ navigation, props }) {
           <SectorSelect nombre_sector="Sector 3"></SectorSelect>
           <SectorSelect nombre_sector="Sector 4"></SectorSelect>
           <SectorSelect nombre_sector="Sector 5 (Opcional)"></SectorSelect>
-          <ButtonMui name="Guardar Sectores" onClick={() => navigation.navigate('ScreenSecretaria')}></ButtonMui>
+          <ButtonMui name="Guardar Sectores"></ButtonMui>
         </div>
         <style jsx="true">{`
       body {
