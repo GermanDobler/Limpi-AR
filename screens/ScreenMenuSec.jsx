@@ -49,6 +49,46 @@ export default function ScreenMenuSec({ navigation }) {
               >
                 Editar Datos
               </Button>
+              <Grid item xs={12}  sm={6} >
+                  <TextField
+                    required
+                    fullWidth
+                    name="Nombre"
+                    label="Nombre"
+                    type="password"
+                    id="Nombre"
+                  />
+                </Grid>
+                <Grid item xs={12}  sm={6} >
+                  <TextField
+                    required
+                    fullWidth
+                    name="Apellido"
+                    label="Apellido"
+                    type="password"
+                    id="Apellido"
+                  />
+                </Grid>
+                <Grid item xs={12}  sm={6} >
+                  <TextField
+                    required
+                    fullWidth
+                    name="Dni"
+                    label="Dni"
+                    type="password"
+                    id="Dni"
+                  />
+                </Grid>
+                <Grid item xs={12}  sm={6} >
+                  <TextField
+                    required
+                    fullWidth
+                    name="Contraseña"
+                    label="Contraseña"
+                    type="password"
+                    id="Contraseña"
+                  />
+                </Grid>
          </>
     );
 }
