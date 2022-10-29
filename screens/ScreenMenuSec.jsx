@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 export default function ScreenMenuSec({ navigation }) {
   return (
     <>
@@ -18,6 +19,36 @@ export default function ScreenMenuSec({ navigation }) {
               Gestion De Porteros
               </Typography>
          </Box>
+         <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="error"
+                sx={{ mt: 1, mb: 1 }}
+                startIcon={<DeleteIcon />}
+              >
+                eliminar datos
+              </Button>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="error"
+                sx={{ mt: 1, mb: 1 }}
+                startIcon={<DeleteIcon />}
+              >
+                  Editar Sector
+              </Button>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="error"
+                sx={{ mt: 1, mb: 1 }}
+                startIcon={<DeleteIcon />}
+              >
+                Editar Datos
+              </Button>
          </>
     );
 }
