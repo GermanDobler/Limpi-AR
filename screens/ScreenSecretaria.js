@@ -9,7 +9,7 @@ import SendButton from '../src/UI/components/SendButton';
 import _JSXStyle from 'styled-jsx/style'
 import { Navigate, useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../firebase/firebase";
+import { db } from "../src/firebase/firebase";
 import { async } from "@firebase/util";
 
 export default function ScreenSecretaria({ navigation, props }) {

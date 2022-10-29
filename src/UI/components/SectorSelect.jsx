@@ -10,30 +10,8 @@ import { db } from "../../firebase/firebase";
 import { async } from "@firebase/util";
 
 export default function SectorSelect(props) {
-  const porteroCollection = collection(db, "portero");
-  const navigate = useNavigate();
-  const store = async (e) => {
-    e.preventDefault();
-    await addDoc(porteroCollection, {
-      sector1: sector1,
-      sector2:sector2 ,
-      sector3: sector3,
-      sector4: sector4,
-      sector5: sector5,
-    });
-    navigate("/Home");
-  };
-  const [sector, setSector] = React.useState('');
-  const handleChange = (event) => {
-    setSector(event.target.value);
-    {
-      (e) => setSector(e.target.value);
-    }
-  };
-
   return (
     <Box sx={{ minWidth: 120 }}>
-      <form onSubmit={store}>
         <InputLabel id="demo-simple-select-label">{props.nombre_sector}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -72,7 +50,6 @@ export default function SectorSelect(props) {
           <MenuItem value={'Baño Mujeres (Taller)'}>Baño Mujeres Taller</MenuItem>
           <MenuItem value={'Taller 1 Ajuste'}>Taller 1 Ajuste</MenuItem>
         </Select>
-      </form>
     </Box>
   );
 }

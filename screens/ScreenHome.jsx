@@ -22,16 +22,16 @@ const Sectores = [
   ]; 
 // const Img = require.context('../src/img');
 
-const { logout, user } = useAuth();
+//const { logout, user } = useAuth();
 
-  console.log(user);
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
+  //console.log(user);
+ // const handleLogout = async () => {
+  //  try {
+   //   await logout();
+   // } catch (error) {
+    //  console.error(error.message);
+    //}
+  //};
 export default function HomeScreen({ navigation }) {
   return (
 
