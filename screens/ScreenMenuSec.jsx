@@ -89,6 +89,26 @@ export default function ScreenMenuSec({ navigation }) {
                     id="Contraseña"
                   />
                 </Grid>
+                <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="error"
+                sx={{ mt: 1, mb: 1 }}
+                startIcon={<DeleteIcon />}
+              >
+                Guardar Cambios
+              </Button>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="error"
+                sx={{ mt: 1, mb: 1 }}
+                startIcon={<DeleteIcon />}
+              >
+                Cancelar Cambios
+              </Button>
          </>
     );
 }
