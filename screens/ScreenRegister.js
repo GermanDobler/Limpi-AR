@@ -18,7 +18,7 @@ export default function Register() {
     setError("");
     try {
       await signup(user.email, user.password);
-      navigate("/");
+      navigate("/ScreenSecretaria");
     } catch (error) {
       setError(error.message);
     }

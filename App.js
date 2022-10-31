@@ -21,7 +21,7 @@ function App() {
             <Route path="/" element={<ScreenRegister />}></Route>
             <Route path="/ScreenLogin" element={<ScreenLogin />}></Route>
             <Route path="/ScreenSecretaria" element={<ProtectedRoute><ScreenSecretaria /></ProtectedRoute>}></Route>
-            <Route path="/ScreenSector" element={<ProtectedRoute><ScreenSector /></ProtectedRoute>}></Route>
+            <Route path="/ScreenSector/:id" element={<ProtectedRoute><ScreenSector /></ProtectedRoute>}></Route>
             <Route path="/ScreenPerfil" element={<ProtectedRoute><ScreenPerfil /></ProtectedRoute>}></Route>
             <Route path="/ScreenHome" element={<ProtectedRoute><ScreenHome /></ProtectedRoute>} ></Route>
           </Routes>
