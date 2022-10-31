@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-//import { AuthProvider } from './src/context/AuthContext';
+import { AuthProvider } from './src/context/AuthContext';
 import ScreenHome from "./screens/ScreenHome";
 import ScreenLogin from "./screens/ScreenLogin";
 import ScreenSecretaria from "./screens/ScreenSecretaria";
@@ -14,7 +14,8 @@ function App() {
   return (
     //<AuthProvider>
     <>
-      {/* <Router>
+      <Router>
+      <AuthProvider>
         <div className="container mt-5">
           <Routes>
             <Route path="/" element={<ScreenRegister />}></Route>
@@ -25,9 +26,10 @@ function App() {
             <Route path="/ScreenHome" element={<ProtectedRoute><ScreenHome /></ProtectedRoute>} ></Route>
           </Routes>
         </div>
-      </Router> */}
+        </AuthProvider>
+      </Router>
 
-      <Router>
+      {/*<Router>
         <div className="container mt-5">
           <Routes>
             <Route path="/" element={<ScreenSecretaria />}></Route>
@@ -36,7 +38,7 @@ function App() {
             <Route path="/ScreenHome" element={<ScreenHome />} ></Route>
           </Routes>
         </div>
-      </Router>
+      </Router>*/}
     </>
   );
 }
