@@ -31,11 +31,11 @@ export default function ScreenSecretaria({ navigation, props }) {
 
 
   const [portero, setPortero] = useState([]);
-
   const getPortero = async () => {
     const data = await getDocs(porteroCollection);
     setPortero(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    console.log(portero);
+    console.log("quepa".portero);
+    console.log("datos portero asyn");
   };
 
 
@@ -64,6 +64,7 @@ export default function ScreenSecretaria({ navigation, props }) {
     navigate(`/ScreenSector/${portero.id}`);
   };
   useEffect(() => {
+    console.log("datos portero asyn");
     getPortero();
   }, []);
 
