@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Button, View,Image } from 'react-native';
 import { useAuth } from "../src/context/AuthContext";
 //import { Alert } from "./Alert";
 
@@ -29,7 +30,7 @@ export default function Login() {
   const handleGoogleSignin = async () => {
     try {
       await loginWithGoogle();
-      navigate("/");
+      navigate("/ScreenHome");
     } catch (error) {
       setError(error.message);
     }
@@ -47,6 +48,11 @@ export default function Login() {
   };
 
   return (
+    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <Image
+          style={{ width: 300, height: 300, marginBottom: 15 }}
+          source={require("../src/img/Logoviejo.png")}
+        />
     <div className="w-full max-w-xs m-auto">
       {/* {error && <Alert message={error} />} */}
 
@@ -61,6 +67,7 @@ export default function Login() {
           >
             Email
           </label>
+          <br />
           <input
             type="email"
             name="email"
@@ -77,6 +84,7 @@ export default function Login() {
           >
             Password
           </label>
+          <br />
           <input
             type="password"
             name="password"
@@ -89,8 +97,9 @@ export default function Login() {
 
         <div className="flex items-center justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className=" bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
+            style={ {margin: 25} }
           >
             Sign In
           </button>
@@ -103,12 +112,16 @@ export default function Login() {
           </a>
         </div>
       </form>
+      <div className="bg-slate-50 hover:bg-slate-200 text-black  shadow rounded border-2 border-gray-300 py-2 px-4 w-full">
+      <p>sas</p>
       <button
         onClick={handleGoogleSignin}
         className="bg-slate-50 hover:bg-slate-200 text-black  shadow rounded border-2 border-gray-300 py-2 px-4 w-full"
       >
         Google login
       </button>
+      </div>
+      
       <p className="my-4 text-sm flex justify-between px-3">
         Don't have an account?
         <Link to="/" className="text-blue-700 hover:text-blue-900">
@@ -116,5 +129,6 @@ export default function Login() {
         </Link>
       </p>
     </div>
+    </View>
   );
 }

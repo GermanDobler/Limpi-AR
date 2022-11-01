@@ -9,6 +9,7 @@ import ScreenSector from "./screens/ScreenSector";
 import ScreenPerfil from "./screens/ScreenPerfil";
 import ScreenRegister from "./screens/ScreenRegister";
 import ProtectedRoute from "./src/UI/components/ProtectedRoute";
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
 
   return (
