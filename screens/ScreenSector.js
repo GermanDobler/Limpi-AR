@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, View } from 'react-native';
+import { useNavigate, useParams } from "react-router-dom";
 import SectorSelect from '../src/UI/components/SectorSelect';
 import ButtonMui from '../src/UI/components/ButtonMui';
 import InputLabel from "@mui/material/InputLabel";
@@ -8,23 +9,41 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import _JSXStyle from 'styled-jsx/style';
-import { Navigate, useNavigate } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
+import { getDoc, updateDoc, doc } from "firebase/firestore";
 import { db } from "../src/firebase/firebase";
 import { async } from "@firebase/util";
 export default function ScreenSector({ navigation, props }) {
-  const porteroCollection = collection(db, "portero");
+
   const navigate = useNavigate();
-  const store = async (e) => {
+  const { id } = useParams();
+  const update = async (e) => {
+    console.log("Se entro a update");
     e.preventDefault();
-    await addDoc(porteroCollection, {
+    const porteros = doc(db, "portero", id);
+    const data = {
       sector1: sector1,
       sector2: sector2,
       sector3: sector3,
       sector4: sector4,
       sector5: sector5,
-    });
+    };
+    await updateDoc(porteros, data);
     navigate("/ScreenHome");
+  };
+  const getProductById = async (id) => {
+    console.log("Se entro a getproductById flecha");
+    const porteros = await getDoc(doc(db, "portero", id));
+    if (porteros.exists()) {
+      //console.log(product.data())
+      console.log("visitaexiste");
+      setSector1(porteros.data().sector1);
+      setSector2(porteros.data().sector2);
+      setSector3(porteros.data().sector3);
+      setSector4(porteros.data().sector4);
+      setSector5(porteros.data().sector5);
+    } else {
+      console.log("error");
+    }
   };
   const [sector1, setSector1] = React.useState('');
   const handleChangeSector1 = (event) => {
@@ -33,7 +52,11 @@ export default function ScreenSector({ navigation, props }) {
       (e) => setSector1(e.target.value);
     }
   };
-
+  useEffect(() => {
+    console.log("Se entro a useeffect flecha");
+    getProductById(id);
+    // eslint-disable-next-line
+  }, []);
   const [sector2, setSector2] = React.useState('');
   const handleChangeSector2 = (event) => {
     setSector2(event.target.value);
@@ -68,7 +91,7 @@ export default function ScreenSector({ navigation, props }) {
   return (
     <>
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-        <form onSubmit={store}>
+        <form onSubmit={update}>
           <Box sx={{ minWidth: 120 }}>
             <InputLabel id="demo-simple-select-label">Sector N°1</InputLabel>
             <Select
