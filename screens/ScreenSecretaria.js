@@ -125,8 +125,9 @@ export default function ScreenSecretaria({ navigation, props }) {
               </Select>
             </FormControl>
           </Box>
+          <br />
             <button type="submit" className="btn btn-primary" key={portero.id}>
-              CARGAR TURNO
+              CARGAR SECTORES
             </button>
         </form>
 

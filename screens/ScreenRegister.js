@@ -41,7 +41,6 @@ export default function Register() {
           source={require("../src/img/Logoviejo.png")}
         />
     <div className="w-full max-w-xs m-auto text-black">
-      {error && <Alert message={error} />}
 
       <form
         onSubmit={handleSubmit}

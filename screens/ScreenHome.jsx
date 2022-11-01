@@ -43,12 +43,6 @@ export default function HomeScreen({ navigation }) {
             <CustomizedCard key={sector.id.toString()} sector={sector}></CustomizedCard>
             ))}
       </Grid>
-      <button
-          className="bg-slate-200 hover:bg-slate-300 rounded py-2 px-4 text-black"
-          onClick={handleLogout}
-        >
-          logout
-        </button>
       </div>
     <style jsx="true" global="true">{`
     .contenedor-cards{
