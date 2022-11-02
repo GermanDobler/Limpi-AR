@@ -1,4 +1,6 @@
 import * as React from 'react';
+import SendIcon from '@mui/icons-material/Send';
+import Button from '@mui/material/Button';
 import CustomizedCard from '../src/UI/components/Card';
 import _JSXStyle from 'styled-jsx/style';
 import PasilloTaller from '../src/img/sectores/pasillo-taller.png';
@@ -35,15 +37,28 @@ const Sectores = [
 export default function HomeScreen({ navigation }) {
   return (
 
-    <div className='color'>
+    <div className='color'>       
       <div className='contenedor-cards'>
       <Grid item xs={12} container>
           {Sectores.map(sector =>(
             // <CustomizedAccordions key={sector.id.toString()} sector={sector}></CustomizedAccordions>
             <CustomizedCard key={sector.id.toString()} sector={sector}></CustomizedCard>
             ))}
+                      <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="success"
+                sx={{ mt: 1, mb: 1 }}
+                endIcon={<SendIcon />}
+                href="/ScreenPerfil/8XueFtHPmFQtNddXR7ML"
+                />
       </Grid>
+  
       </div>
+   
+
+
     <style jsx="true" global="true">{`
     .contenedor-cards{
       max-height: 100vh;
