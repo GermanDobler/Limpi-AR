@@ -8,6 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import _JSXStyle from 'styled-jsx/style'
+import Typography from '@mui/material/Typography';
 import { Navigate, useNavigate } from "react-router-dom";
 import {
   collection, addDoc, getDocs,
@@ -71,6 +72,9 @@ export default function ScreenSecretaria({ navigation, props }) {
   return (
     <>
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <Typography variant="h1" gutterBottom>
+        Registre Sus Datos Personales
+      </Typography>
         <form onSubmit={store}>
           <div className="mb-3">
             <label className="form-label">Nombre</label>

@@ -17,7 +17,7 @@ function App() {
     <>
       <Router>
       <AuthProvider>
-        <div className="container mt-5">
+        <div className="container mt-12">
           <Routes>
             <Route path="/" element={<ScreenRegister />}></Route>
             <Route path="/ScreenLogin" element={<ScreenLogin />}></Route>

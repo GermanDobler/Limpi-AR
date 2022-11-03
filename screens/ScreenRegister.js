@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../src/context/AuthContext";
 import { Button, View,Image } from 'react-native';
+import Typography from '@mui/material/Typography';
 //import { Alert } from "./Alert";
 export default function Register() {
   const { signup, loginWithGoogle } = useAuth();
@@ -57,7 +58,7 @@ export default function Register() {
           <input
             type="email"
             onChange={(e) => setUser({ ...user, email: e.target.value })}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="youremail@company.tld"
           />
         </div>
@@ -73,7 +74,7 @@ export default function Register() {
           <input
             type="password"
             onChange={(e) => setUser({ ...user, password: e.target.value })}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="*************"
           />
         </div>

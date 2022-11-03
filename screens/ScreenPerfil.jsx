@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Typography from '@mui/material/Typography';
 import { Button, View } from 'react-native';
 import { useNavigate, useParams } from "react-router-dom";
 import SectorSelect from '../src/UI/components/SectorSelect';
@@ -62,6 +63,9 @@ export default function ScreenSector({ navigation, props }) {
   return (
     <>
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <Typography variant="h1" gutterBottom>
+        Asignar Sectores de Limpieza
+      </Typography>
         <form onSubmit={update}>
           <div className="mb-3">
             <label className="form-label">Nombre</label>
