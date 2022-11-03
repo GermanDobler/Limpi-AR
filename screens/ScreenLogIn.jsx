@@ -2,6 +2,7 @@ import { useState, } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, View,Image } from 'react-native';
 import { useAuth } from "../src/context/AuthContext";
+import _JSXStyle from 'styled-jsx/style';
 import Typography from '@mui/material/Typography';
 //import { Alert } from "./Alert";
 

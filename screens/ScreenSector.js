@@ -17,7 +17,6 @@ export default function ScreenSector({ navigation, props }) {
   const navigate = useNavigate();
   const { id } = useParams();
   const update = async (e) => {
-    console.log("Se entro a update");
     e.preventDefault();
     const porteros = doc(db, "portero", id);
     const data = {
@@ -31,7 +30,6 @@ export default function ScreenSector({ navigation, props }) {
     navigate("/ScreenHome");
   };
   const getProductById = async (id) => {
-    console.log("Se entro a getproductById flecha");
     const porteros = await getDoc(doc(db, "portero", id));
     if (porteros.exists()) {
       //console.log(product.data())

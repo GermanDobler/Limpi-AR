@@ -24,11 +24,11 @@ export default function ScreenSecretaria({ navigation, props }) {
   const [celular, setCelular] = useState(0);
   const [correo, setCorreo] = useState("");
   const [turno, setTurno] = useState("");
-  const [sector1, setSector1] = useState("");
-  const [sector2, setSector2] = useState("");
-  const [sector3, setSector3] = useState("");
-  const [sector4, setSector4] = useState("");
-  const [sector5, setSector5] = useState("");
+  const [sector1, setSector1] = useState("Sector 1");
+  const [sector2, setSector2] = useState("Sector 2");
+  const [sector3, setSector3] = useState("Sector 3");
+  const [sector4, setSector4] = useState("Sector 4");
+  const [sector5, setSector5] = useState("Sector 5");
 
 
   const [portero, setPortero] = useState([]);
@@ -72,7 +72,7 @@ export default function ScreenSecretaria({ navigation, props }) {
   return (
     <>
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <Typography variant="h1" gutterBottom>
+      <Typography variant="h2" gutterBottom>
         Registre Sus Datos Personales
       </Typography>
         <form onSubmit={store}>
