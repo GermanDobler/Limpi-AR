@@ -62,7 +62,7 @@ export default function ScreenSecretaria({ navigation, props }) {
       sector4: sector4,
       sector5: sector5,
     });
-    navigate(`/ScreenSector/${portero.id}`);
+    navigate(`/ScreenSector/7l8pIQZMM7owtzN0yn3s`);
   };
   useEffect(() => {
     console.log("datos portero asyn");

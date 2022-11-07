@@ -43,7 +43,7 @@ export default function ScreenSector({ navigation, props }) {
       console.log("error");
     }
   };
-  const [sector1, setSector1] = React.useState('');
+  const [sector1, setSector1] = useState('');
   const handleChangeSector1 = (event) => {
     setSector1(event.target.value);
     {
@@ -55,14 +55,14 @@ export default function ScreenSector({ navigation, props }) {
     getProductById(id);
     // eslint-disable-next-line
   }, []);
-  const [sector2, setSector2] = React.useState('');
+  const [sector2, setSector2] = useState('');
   const handleChangeSector2 = (event) => {
     setSector2(event.target.value);
     {
       (e) => setSector2(e.target.value);
     }
   };
-  const [sector3, setSector3] = React.useState('');
+  const [sector3, setSector3] = useState('');
   const handleChangeSector3 = (event) => {
     setSector3(event.target.value);
     {
@@ -70,7 +70,7 @@ export default function ScreenSector({ navigation, props }) {
     }
   };
 
-  const [sector4, setSector4] = React.useState('');
+  const [sector4, setSector4] = useState('');
   const handleChangeSector4 = (event) => {
     setSector4(event.target.value);
     {
@@ -89,8 +89,10 @@ export default function ScreenSector({ navigation, props }) {
   return (
     <>
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+        <br /><br />
         <form onSubmit={update}>
           <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Sector N°1</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -129,9 +131,11 @@ export default function ScreenSector({ navigation, props }) {
               <MenuItem value={'Baño Mujeres (Taller)'}>Baño Mujeres Taller</MenuItem>
               <MenuItem value={'Taller 1 Ajuste'}>Taller 1 Ajuste</MenuItem>
             </Select>
+            </FormControl>
           </Box>
-
+          <br /><br />
           <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth> 
             <InputLabel id="demo-simple-select-label">Sector N°2</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -170,11 +174,13 @@ export default function ScreenSector({ navigation, props }) {
               <MenuItem value={'Baño Mujeres (Taller)'}>Baño Mujeres Taller</MenuItem>
               <MenuItem value={'Taller 1 Ajuste'}>Taller 1 Ajuste</MenuItem>
             </Select>
+            </FormControl>
           </Box>
-
+          <br /><br />
 
           <Box sx={{ minWidth: 120 }}>
             <InputLabel id="demo-simple-select-label">Sector N°3</InputLabel>
+            <FormControl fullWidth>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -212,10 +218,12 @@ export default function ScreenSector({ navigation, props }) {
               <MenuItem value={'Baño Mujeres (Taller)'}>Baño Mujeres Taller</MenuItem>
               <MenuItem value={'Taller 1 Ajuste'}>Taller 1 Ajuste</MenuItem>
             </Select>
+            </FormControl>
           </Box>
-
+          <br /><br />
 
           <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Sector N°4</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -254,9 +262,11 @@ export default function ScreenSector({ navigation, props }) {
               <MenuItem value={'Baño Mujeres (Taller)'}>Baño Mujeres Taller</MenuItem>
               <MenuItem value={'Taller 1 Ajuste'}>Taller 1 Ajuste</MenuItem>
             </Select>
+            </FormControl>
           </Box>
-
+          <br /><br />
           <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Sector N°5</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -295,7 +305,9 @@ export default function ScreenSector({ navigation, props }) {
               <MenuItem value={'Baño Mujeres (Taller)'}>Baño Mujeres Taller</MenuItem>
               <MenuItem value={'Taller 1 Ajuste'}>Taller 1 Ajuste</MenuItem>
             </Select>
+            </FormControl>
           </Box>
+          <br /><br />
           <button type="submit" className="btn btn-primary">
             CARGAR SECTORES
           </button>
