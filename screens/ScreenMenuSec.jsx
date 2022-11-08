@@ -1,6 +1,14 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Grid from '@mui/material/Grid';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 export default function ScreenMenuSec({ navigation }) {
   return (
     <>
@@ -15,7 +23,7 @@ export default function ScreenMenuSec({ navigation }) {
             <Typography className="Limpi-ar" component="h1" variant="h2" sx={{ mt: 1, mb: 1 }}>
               LIMPI-AR
             </Typography>
-            <Typography component="h3" variant="h4" sx={{ mt: 4 , mb: 1}}>
+            <Typography component="h2" variant="h4" sx={{ mt: 4 , mb: 1}}>
               Gestion De Porteros
               </Typography>
          </Box>
@@ -25,7 +33,7 @@ export default function ScreenMenuSec({ navigation }) {
                 variant="contained"
                 color="error"
                 sx={{ mt: 1, mb: 1 }}
-                startIcon={<DeleteIcon />}
+
               >
                 eliminar datos
               </Button>
@@ -35,7 +43,7 @@ export default function ScreenMenuSec({ navigation }) {
                 variant="contained"
                 color="error"
                 sx={{ mt: 1, mb: 1 }}
-                startIcon={<DeleteIcon />}
+
               >
                   Editar Sector
               </Button>
@@ -45,7 +53,7 @@ export default function ScreenMenuSec({ navigation }) {
                 variant="contained"
                 color="error"
                 sx={{ mt: 1, mb: 1 }}
-                startIcon={<DeleteIcon />}
+      
               >
                 Editar Datos
               </Button>
@@ -95,7 +103,7 @@ export default function ScreenMenuSec({ navigation }) {
                 variant="contained"
                 color="error"
                 sx={{ mt: 1, mb: 1 }}
-                startIcon={<DeleteIcon />}
+
               >
                 Guardar Cambios
               </Button>
@@ -105,7 +113,7 @@ export default function ScreenMenuSec({ navigation }) {
                 variant="contained"
                 color="error"
                 sx={{ mt: 1, mb: 1 }}
-                startIcon={<DeleteIcon />}
+        
               >
                 Cancelar Cambios
               </Button>
