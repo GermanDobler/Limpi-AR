@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 import { db } from '../src/firebase/firebase';
-import { onSnapshot, doc, collection } from 'firebase/firestore';
+import { onSnapshot, doc, collection, deleteDoc } from 'firebase/firestore';
 export default function ScreenMenuSec({ navigation }) {
   const [porteros , setportero] = useState([]);
   useEffect(() => {
@@ -22,8 +22,8 @@ export default function ScreenMenuSec({ navigation }) {
     unsub()
     };
   }, []);
-  const eliminar_portero = () => {
-    
+  const eliminar_portero = async (porteroid) => {
+  await deleteDoc(doc(db,'portero',porteroid))
   }
   return (
     <>
@@ -49,7 +49,7 @@ export default function ScreenMenuSec({ navigation }) {
         variant="contained"
         color="error"
         sx={{ mt: 1, mb: 1 }}
-        onClick={eliminar_portero}
+        onClick={()=>{eliminar_portero(portero.id)}}
       >
         eliminar Portero
       </Button> 
