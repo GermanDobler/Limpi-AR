@@ -45,7 +45,6 @@ export default function ScreenMenuSec({ navigation }) {
           <>
           <h1>{portero.nombre} {portero.apellido}</h1>
           <Button
-        fullWidth
         variant="contained"
         color="error"
         sx={{ mt: 1, mb: 1 }}
