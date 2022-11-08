@@ -22,6 +22,9 @@ export default function ScreenMenuSec({ navigation }) {
     unsub()
     };
   }, []);
+  const eliminar_portero = () => {
+    
+  }
   return (
     <>
       <Box
@@ -38,6 +41,21 @@ export default function ScreenMenuSec({ navigation }) {
         <Typography component="h2" variant="h4" sx={{ mt: 4, mb: 1 }}>
           Gestion De Porteros
         </Typography>
+        {porteros.map((portero) => { return (
+          <>
+          <h1>{portero.nombre} {portero.apellido}</h1>
+          <Button
+        fullWidth
+        variant="contained"
+        color="error"
+        sx={{ mt: 1, mb: 1 }}
+        onClick={eliminar_portero}
+      >
+        eliminar Portero
+      </Button> 
+          </>
+        )
+        })}
       </Box>
       <Button
         type="submit"
@@ -119,7 +137,7 @@ export default function ScreenMenuSec({ navigation }) {
       >
         Guardar Cambios
       </Button>
-      <Button
+      <Button 
         type="submit"
         fullWidth
         variant="contained"
