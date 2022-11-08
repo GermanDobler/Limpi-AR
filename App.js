@@ -10,6 +10,7 @@ import ScreenPerfil from "./screens/ScreenPerfil";
 import ScreenRegister from "./screens/ScreenRegister";
 import ProtectedRoute from "./src/UI/components/ProtectedRoute";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ScreenMenuSec from "./screens/ScreenMenuSec";
 function App() {
 
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/ScreenSector/:id" element={<ProtectedRoute><ScreenSector /></ProtectedRoute>}></Route>
             <Route path="/ScreenPerfil/:id" element={<ProtectedRoute><ScreenPerfil /></ProtectedRoute>}></Route>
             <Route path="/ScreenHome" element={<ProtectedRoute><ScreenHome /></ProtectedRoute>} ></Route>
+            <Route path="/ScreenMenuSec" element={<ProtectedRoute><ScreenMenuSec /></ProtectedRoute>} ></Route>
           </Routes>
         </div>
         </AuthProvider>
