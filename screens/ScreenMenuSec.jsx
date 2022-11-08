@@ -8,8 +8,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {db} from '../src/firebase/firebase';
 export default function ScreenMenuSec({ navigation }) {
+
   return (
     <>
           <Box
