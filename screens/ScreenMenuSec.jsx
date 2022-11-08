@@ -6,16 +6,17 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
 import { db } from '../src/firebase/firebase';
 import { onSnapshot, doc, collection } from 'firebase/firestore';
 export default function ScreenMenuSec({ navigation }) {
+  const [porteros , setportero] = useState([]);
   useEffect(() => {
-    onSnapshot(collection(db, 'portero'), (foto) => {
+    const unsub = onSnapshot(collection(db, 'portero'), (foto) => {
       const porteros = []
-      foto.forEach(() => {
-      
+      foto.forEach((portero) => {
+        porteros.push({ ...portero.data(), id: portero.id })
       })
+      setportero(porteros)
     })
     return () => {
       cleanup
