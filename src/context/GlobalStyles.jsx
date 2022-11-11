@@ -65,7 +65,7 @@ const styles = {
             borderRadius: '25px',
             height: '45px',
             marginTop: '10px',
-            marginBottom: '15px',
+            marginBottom: '10px',
             width: '70%',
             background: '#078282',
             boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
@@ -82,7 +82,6 @@ const styles = {
             width: '100%',
             height: '45px',
             gap: '5px',
-            marginBottom: '15px',
             boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
         },
         //Titulo-Encabezado

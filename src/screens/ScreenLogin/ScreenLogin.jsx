@@ -53,9 +53,13 @@ export default function ScreenLogin({ navigation }) {
                 <p style={{ padding: '0px', margin: '0px', fontSize: '18px' ,fontWeight: '300'}}>Iniciar con Google</p>
               </button>
             </View>
-            <div style={style.ScreenLoginSignin.containerFlex}>              
+            {/* <div style={style.ScreenLoginSignin.containerFlex}>              
             <Text style={{ color: '#121212c4', fontSize: '18px', fontWeight: '300'}}>No tenés cuenta?</Text>
               <Text onClick={() => navigation.navigate('ScreenSignin')} style={{ color: '#078282', fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Registrate</Text>
+            </div> */}
+            <div style={{ display: 'flex', gap: '5px', marginBottom:'30px' }}>
+              <p style={{ color: '#121212c4', fontSize: '18px', fontWeight: '300' }}>Ya tengo cuenta</p>
+              <p onClick={() => navigation.navigate('ScreenSignin')} style={{ color: '#078282', fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Registrate</p>
             </div>
           </View>
         </View>

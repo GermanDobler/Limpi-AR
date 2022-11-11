@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { useAuth } from '../context/AuthContext';
 
 export default function ScreenHome({ navigation }) {
-  const { logout, user, loading } = useAuth();
+  const { logout, user } = useAuth();
 
   const handleLogout = async () => {
     navigation.navigate('ScreenLogin')
