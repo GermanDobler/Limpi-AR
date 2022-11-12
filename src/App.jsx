@@ -1,12 +1,13 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { StyleProvider } from "./components/GlobalStyles";
 import { ProtectedRoutes } from "./components/ProtectedRoutes";
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
+import Secretaria from "./screens/Secretaria";
 
-function App() {
+export default function App() {
   return (
     <StyleProvider>
       <AuthProvider>
@@ -27,4 +28,5 @@ function App() {
   )
 }
 
-export default App
+// }
+

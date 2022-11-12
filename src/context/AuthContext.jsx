@@ -75,8 +75,6 @@ const AuthProvider = ({ children }) => {
         }
     }
 
-    console.log(errorType)
-
     const data = { signup, login, 
         logout, user, loading, 
         getError, errorType, 

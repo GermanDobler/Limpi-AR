@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import Secretaria from './Secretaria';
 
-export default function Home({ navigation }) {
+export default function Home() {
     const { logout, user } = useAuth();
 
     const navigate = useNavigate();
@@ -12,6 +13,9 @@ export default function Home({ navigation }) {
         await logout();
     }
     // console.log(user)
+    if (user.email == 'secretaria.epet20@gmail.com') {
+        return <Secretaria/>
+    } else {
     return (
         <div>
             <p>{user.email}</p>
@@ -19,5 +23,5 @@ export default function Home({ navigation }) {
             <button onClick={handleLogout}>Cerrar Sesión</button>
         </div>
     )
-
+    }
 }
