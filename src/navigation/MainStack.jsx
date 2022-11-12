@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Routes,Route } from 'react-router-dom'
 import ScreenHome from '../screens/ScreenHome';
 import ScreenLogin from '../screens/ScreenLogin/ScreenLogin';
 import ScreenSignin from '../screens/ScreenSignin';
 import { StyleProvider, useStyles } from '../context/GlobalStyles';
-import { View } from 'react-native';
 import { AuthProvider } from '../context/AuthContext';
 const Stack = createNativeStackNavigator();
 
