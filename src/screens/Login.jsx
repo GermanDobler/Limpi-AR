@@ -4,9 +4,12 @@ import { useStyles } from '../components/GlobalStyles';
 import { useAuth } from '../context/AuthContext';
 // import { useStyles } from './context/GlobalStyles';
 // import { motion } from "framer-motion"
-
+import epet20 from '../assets/epet20.jpg';
+import google from '../assets/google.png';
+import { motion } from 'framer-motion'
 export default function Login() {
     const { login, getError, errorType, loginWithGoogle, user } = useAuth();
+    const { style } = useStyles();
     const [userr, setUser] = useState({
         email: '',
         password: ''
@@ -38,26 +41,67 @@ export default function Login() {
     }
 
     return (
-        <div>
-            {errorType && <div>{errorType}</div>}
-            <div>
-                <label>Correo Electrónico</label>
-                <input type="text" name='email' placeholder='Ingrese correo electrónico' onChange={handleChange} />
+        <div className='container mx-auto'>
+            <div className='container mx-auto'>
+                <img src={epet20} alt="epet20" height="50%" width="auto" />
             </div>
-            <div >
-                <label>Contraseña</label>
-                <input type="password" name='password' placeholder='Ingrese contraseña' onChange={handleChange} />
-            </div>
-            <button onClick={handleSubmit} >Iniciar sesión</button>
-            <div >
-                <button onClick={handleGoogleLogin} >
-                    <p style={{ padding: '0px', margin: '0px', fontSize: '18px', fontWeight: '300' }}>Iniciar con Google</p>
-                </button>
-            </div>
-            <div >
-                <p style={{ color: '#121212c4', fontSize: '18px', fontWeight: '300' }}>No tenés cuenta?</p>
-                <p onClick={() => navigate('/Register')} style={{ color: '#078282', fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Registrate</p>
-            </div>
+            <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.5,
+                    delay: 0.3,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+                className='container mx-auto p-10 pt-4'>
+                <p className='text-center text-3xl text-slate-700 font-semibold'>Inicio de Sesión</p>
+                {errorType &&
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0.3,
+                            ease: [0, 0.71, 0.2, 1.01],
+                        }}
+                        className='text-center text-lg text-rose-800 font-semibold'>
+                        {errorType}
+                    </motion.div>}
+                <div className='justify-center'>
+                    <label>Correo Electrónico</label>
+                    <input type="text" name='email' placeholder='Ingrese correo electrónico' className='rounded-lg p-2 w-full border border-neutral-400' onChange={handleChange} />
+                </div>
+                <div >
+                    <label>Contraseña</label>
+                    <input type="password" name='password' placeholder='Ingrese contraseña' className='rounded-lg p-2 w-full border border-neutral-400' onChange={handleChange} />
+                </div>
+                <motion.div className='gap-4 flex justify-center mt-10 mb-5'
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                >
+                    <button onClick={handleSubmit}
+                        className="text-lg text-white rounded-full 
+                    bg-teal-600 w-4/6 h-10 font-semibold">
+                        Iniciar sesión
+                    </button>
+                </motion.div>
+                <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className='gap-4 flex justify-center mt-5 mb-10'>
+                    <button onClick={handleGoogleLogin}
+                        className="rounded-full bg-white w-4/6 h-10
+                        border border-neutral-400 flex
+                        justify-center">
+                        <img src={google} alt="google" height="20px" width="20px" className='mt-2' />
+                        <p style={{ padding: '0px', fontSize: '18px', fontWeight: '300' }} className='mt-1'>Iniciar con Google</p>
+                    </button>
+                </motion.div>
+                <div className="gap-4 justify-items-center flex justify-center ">
+                    <p style={{ color: '#121212c4', fontSize: '18px', fontWeight: '400' }}>No tenés cuenta?</p>
+                    <p onClick={() => navigate('/Register')} style={{ color: '#078282', fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Registrate</p>
+                </div>
+            </motion.div>
         </div>
     )
 }

@@ -5,8 +5,7 @@ import { AuthProvider, useAuth } from "./context/AuthContext";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
-import Secretaria from "./screens/Secretaria";
-
+import './App.css';
 export default function App() {
   return (
     <StyleProvider>
@@ -27,6 +26,4 @@ export default function App() {
     </StyleProvider>
   )
 }
-
-// }
 

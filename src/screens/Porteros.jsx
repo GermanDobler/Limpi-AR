@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-
+import { motion } from 'framer-motion'
 export default function Porteros() {
     const { logout, user } = useAuth();
 
@@ -12,10 +12,10 @@ export default function Porteros() {
         await logout();
     }
     return (
-        <div>
+        <motion.div>
             <p>{user.email}</p>
             <img src={user.photoURL} alt="" />
             <button onClick={handleLogout}>Cerrar Sesión</button>
-        </div>
+        </motion.div>
     )
 }
