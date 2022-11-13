@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useStyles } from '../components/GlobalStyles';
 import { useAuth } from '../context/AuthContext';
 // import { useStyles } from './context/GlobalStyles';
 // import { motion } from "framer-motion"
@@ -9,7 +8,6 @@ import google from '../assets/google.png';
 import { motion } from 'framer-motion'
 export default function Login() {
     const { login, getError, errorType, loginWithGoogle, user } = useAuth();
-    const { style } = useStyles();
     const [userr, setUser] = useState({
         email: '',
         password: ''

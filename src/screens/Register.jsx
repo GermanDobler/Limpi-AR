@@ -6,7 +6,7 @@ import epet20 from '../assets/epet20.jpg';
 import google from '../assets/google.png';
 import { motion } from 'framer-motion'
 import { db } from '../db/database';
-import { addDoc } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 export default function Register() {
     const { signup, getError, errorType, loginWithGoogle } = useAuth();
     const [user, setUser] = useState({
@@ -16,19 +16,32 @@ export default function Register() {
         apellido: '',
     });
 
-    const navigate = useNavigate();
-
     const handleChange = ({ target: { name, value } }) => setUser({ ...user, [name]: value }) //actualizar estado
 
     const handleSubmit = async (e) => {
+        console.log(user)
         e.preventDefault();
         try {
-            await signup(user.email, user.password)
+            await signup(user.email, user.password);
+            if (errorType != 'auth/email-already-in-use' || errorType != 'Email en uso') {
+                const docRef = await addDoc(collection(db, 'Portero'), {
+                    nombre: user.nombre,
+                    apellido: user.apellido,
+                    email: user.email,
+                    password: user.password,
+                });
+                console.log("Document written with ID: ", docRef.id);
+            }
             navigate('/home');
         } catch (error) {
             getError(error)//mando a la funcion el error
         }
     }
+
+    // const dbRef = collection(db, "Usuario");
+
+    const navigate = useNavigate();
+
 
     const handleGoogleLogin = async () => {
         await loginWithGoogle();
@@ -48,7 +61,7 @@ export default function Register() {
                     delay: 0.3,
                     ease: [0, 0.71, 0.2, 1.01],
                 }}
-                className='container mx-auto p-10 pt-4'>
+                className='container mx-auto p-10 pt-4 pb-0'>
                 <p className='text-center text-3xl text-slate-700 font-semibold'>Registro</p>
                 {errorType &&
                     <motion.div
@@ -91,7 +104,7 @@ export default function Register() {
                 <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className='gap-4 flex justify-center mt-5 mb-10'>
+                    className='gap-4 flex justify-center mt-5 mb-5'>
                     <button onClick={handleGoogleLogin}
                         className="rounded-full bg-white w-4/6 h-10
                         border border-neutral-400 flex
