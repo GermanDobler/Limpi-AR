@@ -42,6 +42,11 @@ export default function Register() {
 
     const navigate = useNavigate();
 
+    const submit = () => {
+        let error = {code:''};
+        getError(error)
+        navigate('/Login');
+    }
 
     const handleGoogleLogin = async () => {
         await loginWithGoogle();
@@ -94,7 +99,7 @@ export default function Register() {
                 <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className='gap-4 flex justify-center mt-10 mb-5'>
+                    className='gap-4 flex justify-center mt-5 mb-5'>
                     <button onClick={handleSubmit}
                         className="text-lg text-white rounded-full 
                         bg-teal-600 w-4/6 h-10 font-semibold">
@@ -104,7 +109,7 @@ export default function Register() {
                 <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className='gap-4 flex justify-center mt-5 mb-5'>
+                    className='gap-4 flex justify-center mt-5 mb-2'>
                     <button onClick={handleGoogleLogin}
                         className="rounded-full bg-white w-4/6 h-10
                         border border-neutral-400 flex
@@ -115,7 +120,7 @@ export default function Register() {
                 </motion.div>
                 <div className="gap-4 justify-items-center flex justify-center ">
                     <p style={{ color: '#121212c4', fontSize: '18px', fontWeight: '400' }}>Ya tengo cuenta</p>
-                    <p onClick={() => navigate('/Login')} style={{ color: '#078282', fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Iniciar Sesión</p>
+                    <p onClick={() => submit()} style={{ color: '#078282', fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Iniciar Sesión</p>
                 </div>
             </motion.div>
         </div>

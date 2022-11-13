@@ -69,6 +69,9 @@ const AuthProvider = ({ children }) => {
         case "auth/email-already-in-use":
             setErrorType('Email en uso');
             break;
+        case "":
+            setErrorType("");
+            break;
         default:
             setErrorType('Error desconocido');
             break;

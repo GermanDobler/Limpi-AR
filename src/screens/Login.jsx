@@ -38,6 +38,12 @@ export default function Login() {
         navigate('/Home');
     }
 
+    const submit = () => {
+        let error = {code:''};
+        getError(error)
+        navigate('/Register');
+    }
+
     return (
         <div className='container mx-auto'>
             <div className='container mx-auto'>
@@ -97,7 +103,7 @@ export default function Login() {
                 </motion.div>
                 <div className="gap-4 justify-items-center flex justify-center ">
                     <p style={{ color: '#121212c4', fontSize: '18px', fontWeight: '400' }}>No tenés cuenta?</p>
-                    <p onClick={() => navigate('/Register')} style={{ color: '#078282', fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Registrate</p>
+                    <p onClick={() => submit()} style={{ color: '#078282', fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Registrate</p>
                 </div>
             </motion.div>
         </div>
