@@ -2,15 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion'
+import logoutimg from '../assets/logout.png';
+import Navbar from '../components/Navbar';
 export default function Secretaria() {
     const { logout, user } = useAuth();
-
-    const navigate = useNavigate();
-    
-    const handleLogout = async () => {
-        navigate('/Login')
-        await logout();
-    }
 
   return (
     <motion.div
@@ -22,9 +17,11 @@ export default function Secretaria() {
         ease: [0, 0.71, 0.2, 1],
     }}
     >
-        <h1>Secretaria</h1>
-        <button onClick={handleLogout}>Cerrar Sesión</button>
-        
+        <Navbar/>
+        <div className='flex justify-center'>
+            <p className='text-2xl font-semibold text-slate-700
+            self-center mt-5'>Bienvenido {user.email}</p>
+        </div>
     </motion.div>
 )
 }
