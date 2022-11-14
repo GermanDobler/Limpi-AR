@@ -38,8 +38,6 @@ export default function Register() {
         }
     }
 
-    // const dbRef = collection(db, "Usuario");
-
     const navigate = useNavigate();
 
     const submit = () => {
